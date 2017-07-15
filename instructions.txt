@@ -1,0 +1,34 @@
+Objective:
+
+The objective of this Data collection/creation exercise is to develop a Machine Learning model which can interpret a Natural Language Query and try and generate a UNIX Command for it.
+
+Instructions for Commands:
+
+Make sure the commands are executable and correct.
+Try all possible combinations of options from the man page of linux(0 to all)
+You can add as many commands containing personalised folder/file names. Make sure the corresponding NL Queries matches the names/paths in the command.
+You can search the internet or create your own queries.
+For commands involving paths such as ln, try as many paths as possible. You can vary the path length, names of folders/files, use different symbols such as ~ for /home folder, try keeping same and different lengths of paths in each command with different options. BE CONSISTENT in description of your queries.
+Cover as much variety as possible. For e.g. mkdir ananya, mkdir new_folder etc. are commands of the same type i.e. 'Create a folder named ananya/new_folder'. This should be included but variety is REQUIRED. Different VARIETIES such as mkdir ~/new_folder, mkdir ../new_folder etc. should be included with different names of folders(as shown before), options and file paths.
+
+Instructions for NL Queries:
+
+The NL Query should represent an accurate description of the linux command.
+The NL Query can be a question, a single or multiline description.
+Keep the description simple. The more convoluted the description, the more ambiguous the meaning.
+Use proper punctuations and spellings. Use complete words.
+Minimize typos.
+Make sure the instructions do not contain ambiguous descriptions which describe multiple commands. For e.g.
+command: ln -s ../first-dir/*.c -t .
+This command creates symbolic links of all .c files in the first-dir in the current directory. A description such as: 'Go to first-dir. Create symbolic links of all .c files in current directory.' is not correct. The phrase 'Go to first-dir' corresponds to command 'cd first-dir' which is not desired. 
+DO NOT copy paste the NL descriptios from the man page. You can refer to the description of the commands and their options from man pages, but do not copy paste them as it is in the NL Query.
+The queries need not always be formal. For the command 'ls ..', both queries 'Stuff in one directory before current one.' and 'Contents of parent directory.' are valid. In fact, there should be a good mix of such formal and informal queries. 
+The main purpose is to help people who are not well-versed with Linux commands and are not computer savvy. So, keep a good mix of words such as {directory,folders}, {current directory, this folder}, {absolute path, full path} etc. 
+Special Characters can be included in the description. For e.g. Description of command: ln -s ex1.c ex2.c can be 'Symbolic link from ex2.c -> ex1.c'. Make sure the intent is clear  and put spaces.
+Sometimes the description present on a website is misleading and can cause confusion. Always cross check the function of a command and it's options with linux manual pages.
+
+General Instructions:
+The .py file should be an executable. Make sure there are no errors in the file.
+There should be no extra spaces in any sentence/command. For e.g. 'pwd' is correct while '  pwd' is not. Same goes for NL queries.
+Only two columns named 'Command' and 'NL Queries' should be present in the dataframe. 
+

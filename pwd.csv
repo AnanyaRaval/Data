@@ -1,0 +1,4 @@
+Command,NL Queries
+pwd,"['Current Directory', 'Where am I?', 'What is my current path?', 'What is the path till current directory?', 'Working Directory']"
+pwd -L,"['Print working directory from environment', 'What is my logical working directory?', 'Working Directory with symbolic links']"
+pwd -P,"['Print current physical directory', 'What is current physical location', 'Print current directory. Ignore symbolic links']"
