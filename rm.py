@@ -145,7 +145,7 @@ rm = rm.append({'Command':'rm -vi linuxfile.log','NL Queries':['Remove file linu
 #rm = rm.append({'Command':'rm -vI linuxfile.log','NL Queries':['Remove file linuxfile.log.','Command to remove linuxfile.log .','Command to remove file linuxfile.log .']},ignore_index = True)
 
 #i am not sure whether find is allowed in rm for your project
-rm = rm.append({'Command':'find foo -type f -mtime -1 -exec rm -i {} \;','NL Queries':['Remove file foo which has been modified in the last day and remove them interactively.','Command to remove file foo which has been modified in the last day and remove them interactively.','How to remove file foo which has been modified in the last day and remove them interactively?','Delete file foo which has been modified in the last day and delete them interactively.','Command to delete file foo which has been modified in the last day and delete them interactively.','How to delete file foo which has been modified in the last day and delete them interactively?']},ignore_index = True)
+#rm = rm.append({'Command':'find foo -type f -mtime -1 -exec rm -i {} \;','NL Queries':['Remove file foo which has been modified in the last day and remove them interactively.','Command to remove file foo which has been modified in the last day and remove them interactively.','How to remove file foo which has been modified in the last day and remove them interactively?','Delete file foo which has been modified in the last day and delete them interactively.','Command to delete file foo which has been modified in the last day and delete them interactively.','How to delete file foo which has been modified in the last day and delete them interactively?']},ignore_index = True)
 
 
 print rm.shape
