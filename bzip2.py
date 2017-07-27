@@ -110,7 +110,11 @@ bzip2 = bzip2.append({'Command':'bzcmp file1.bz2 file2.bz2','NL Queries':['How d
 		'How do I run the cmp version with two archived files file1.bz2 and file2.bz2?','How do I use cmp in two zipped files file1.bz1 and file2.bz2?']},ignore_index=True)
 bzip2 = bzip2.append({'Command':'bzdiff my1.bz2 my2.bz2','NL Queries':['How do I run the diff version on two archived files my1.bz2 and my2.bz2?','How do I diff the two archived files my1.bz2 and my2.bz2?','How do I use diff in two zipped files my1.bz2 and my2.bz2?']},ignore_index=True)
 
+bzip2 = bzip2.append({'Command':'bzip2 -vd linux_img.bz2','NL Queries':['Decompress linux_img.bz2 and let me know if the file got successfully decompressed.','How do I get to know if linux_img.bz2 got successfully decompressed when I try decompressing the file?']},ignore_index=True)
+bzip2 = bzip2.append({'Command':'bzip2 -vdf linux_img.bz2','NL Queries':['Forcefully decompress linux_img.bz2 even if linux_img exists in the current directory. Show the files decompressed.','How do I ensure that the existing linux_img gets replaced by the file decompressed from linux_img.bz2? Show the files decompressed','How do I forcefully decompress linux_img.bz2 and show the files decompressed?']},ignore_index=True)
+bzip2 = bzip2.append({'Command':'bzip2 -dk myfile.bz2','NL Queries':['Decompress the files from archive myfile.bz2 and keep the archive as it is.','How do I decompress files from myfile.bz2 without deleting the archive?','Decompress files from myfile.bz2 and do not delete the archive.']},ignore_index=True)
+bzip2 = bzip2.append({'Command':'bzip2 -kf new.txt','NL Queries':['Keep the original new.txt as it is and forcefully create a new archive for it.','How do I compress hello.txt even if hello.txt.bz2 exists and also not delete the current hello.txt?']},ignore_index=True)
 
-print bzip2
+print bzip2.shape
 
 
