@@ -27,6 +27,7 @@ mv = mv.append({'Command':        'mv --backup=existing test1.cpp dir1/test2.cpp
                 'NL Queries':     ['Move test1.cpp into directory dir1 under the name test2.cpp . Create backup at the destination using existing option.',
                                 'Shift test1.cpp to dir1. Rename it to test2.cpp. Take numbered backup of all files in dir1 if numbered backup already exists, otherwise take simple backup.',
                                         'How do I transfer test1.cpp to dir1/test2.cpp? Take backup of all files in destination folder using existing backup strategy of the folder.']}, ignore_index = True)
+
 #3
 mv = mv.append({'Command':        'mv --backup=t test1.cpp dir1/test2.cpp',
                 'NL Queries':     ['Move test1.cpp into directory dir1 under the name test2.cpp . Create numbered backup at the destination.',
@@ -55,41 +56,362 @@ mv = mv.append({'Command':        'mv -n file1.doc fold1/file2.doc',
 
 #7
 mv = mv.append({'Command':        'mv -b -S .bk test1.cpp dir1/test2.cpp',
-                'NL Queries':     ['Move test1.cpp into directory dir1 under the name test2.cpp . Create backup at the destination with .bk extension.']}, ignore_index = True)
+                'NL Queries':     ['Move test1.cpp into directory dir1 under the name test2.cpp . Create backup at the destination with .bk extension.',
+                                   'Cut test1.cpp file and paste it in dir1 folder with name test2.cpp . Create backup, if necessary, with .bk appended to the file name.',
+                                   'Change the location of file test1.cpp to dir1 with name test2.cpp and create backup with .bk extension.']}, ignore_index = True)
 
 #8
 mv = mv.append({'Command':        'mv --help',
-                'NL Queries':     ['Display help for mv command.']}, ignore_index = True)
+                'NL Queries':     ['Display help for mv command.',
+                                   'Show help menu for mv command.',
+                                   'Show usage of mv command.',
+                                   'How to use mv command?',
+                                   'Which options are available for mv command?']}, ignore_index = True)
 
 #9
 mv = mv.append({'Command':        'mv --version',
-                'NL Queries':     ['Display details about mv command.']}, ignore_index = True)
+                'NL Queries':     ['Display details about mv command.',
+                                   'Show version and author details for mv .',
+                                   'Which version of mv am I using?',
+                                   'Who are the authors of mv command?']}, ignore_index = True)
 
 #10
 mv = mv.append({'Command':        'mv file1.txt file2.txt dest1',
-                'NL Queries':     ['Move file1.txt and file2.txt to dest1 directory.']}, ignore_index = True)
+                'NL Queries':     ['Move file1.txt and file2.txt to dest1 directory.',
+                                   'Shift file1.txt and file2.txt to dest1 folder.',
+                                   'Change the location of files file1.txt and file2.txt to dest1 directory.']}, ignore_index = True)
 
 #11
 mv = mv.append({'Command':        'mv file1.txt file2.txt file3.txt dest1',
-                'NL Queries':     ['Move file1.txt, file2.txt and file3.txt to dest1 directory.']}, ignore_index = True)
+                'NL Queries':     ['Move file1.txt, file2.txt and file3.txt to dest1 directory.',
+                                   'Cut the files file1.txt , file2.txt and file3.txt and paste it in dest1 folder.',
+                                   'Transfer the files file1.txt , file2.txt and file3.txt into dest1 folder.',
+                                   'Shift the files file1.txt , file2.txt and file3.txt to dest1 directory.']}, ignore_index = True)
 
 #12
 mv = mv.append({'Command':        'mv -v file1.txt dest1',
-                'NL Queries':     ['Move file1.txt to dest1 directory and give me a details.']}, ignore_index = True)
+                'NL Queries':     ['Move file1.txt to dest1 directory and give me a details.',
+                                   ' Move file1.txt -> dest1/file1.txt and show the progress.',
+                                   'Shift the location of file1.txt from current directory to dest1 directory, which is in current directory. Also give acknowledgement of operations.',
+                                   'Showing the progress of operation, transfer the file file1.txt to dest1 directory.']}, ignore_index = True)
 
 #13
 mv = mv.append({'Command':        'mv -u file1.txt dest1',
-                'NL Queries':     ['Move file1.txt to dest1 directory if it is newer than the file in dest1 or is non-existant.']}, ignore_index = True)
+                'NL Queries':     ['Move file1.txt to dest1 directory if it is newer than the file in dest1 or is non-existant.',
+                                   'If file1.txt in dest1 is older than file1.txt in pwd , move file1.txt -> dest1/file1.txt .',
+                                   'Shift the file file1.txt to dest1 directory if it is newer.']}, ignore_index = True)
 
 #14
 mv = mv.append({'Command':        'mv -Z file1.txt dest1',
-                'NL Queries':     ['Move file1.txt to dest1 directory and change security context to default.']}, ignore_index = True)
+                'NL Queries':     ['Move file1.txt to dest1 directory and change security context to default.',
+                                   'file1.txt -> dest1/file1.txt and update the SELinux security to default.',
+                                   'Shift the location of file1.txt to dest1 folder and set SELinux security to default.']}, ignore_index = True)
 
 #15
 mv = mv.append({'Command':        'mv --strip-trailing-slashes unknown// dest1',
-                'NL Queries':     ['Move unknown// to dest1 directory after removing trailing slashes.']}, ignore_index = True)
+                'NL Queries':     ['Move unknown// to dest1 directory after removing trailing slashes.',
+                                   'Shift unknown// to dest1 after removing following slashes from the unknown// .',
+                                   'Change the location of unknown// to dest1/unknown// after removing trailing slashes from the source.']}, ignore_index = True)
+
+#16
+mv = mv.append({'Command':        'mv -t youtube flv',
+                'NL Queries':     ['Move the flv to the directory youtube .',
+                                   'Change the location of flv to youtube/flv .',
+                                   'flv -> youtube/flv',
+                                   'Shift the file flv into youtube directory.']}, ignore_index = True)
+
+#17
+mv = mv.append({'Command':        'mv -T flv ogg',
+                'NL Queries':     ['Rename the file ogg to flv .',
+                                   'Change the name of ogg to file flv .',
+                                   'Treat flv as file. Change the file ogg to flv .']}, ignore_index = True)
+
+#18
+mv = mv.append({'Command':        'mv -bv duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original and create backup. Show me the details of work done.',
+                                   'duplicate.txt -> original/duplicate.txt and create backup. Show the which were moved.',
+                                   'Shift the file duplicate.txt into original directory. Create backup, if required, and show the tasks performed.']}, ignore_index = True)
+
+#19
+mv = mv.append({'Command':        'mv -v --backup=off duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original and do not create backup. Show me the details of work done.',
+                                   'Shift duplicate.txt -> original/duplicate.txt and show the operations performed. Do not create backup.',
+                                   'Without creating backup move the file duplicate.txt inside original directory and display the tasks performed.']}, ignore_index = True)
+
+#20
+mv = mv.append({'Command':        'mv -v --backup=t  duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original and create numbered backup. Show me the details of work done.',
+                                   'Creating numbered backup, move duplicate.txt file into original directory and show the tasks performed.',
+                                   'duplicate.txt -> original/duplicate.txt creating numbered backups and give the details of operations performed.']}, ignore_index = True)
+
+#21
+mv = mv.append({'Command':        'mv -v --backup=existing  duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original and create existing backup. Show me the details of work done.',
+                                   'Use the existing form of backup and move duplicate.txt to original .',
+                                   './duplicate.txt -> ./original/duplicate.txt and keep the backup in existing format.']}, ignore_index = True)
+
+#22
+mv = mv.append({'Command':        'mv -buv duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original, if it is newer than the one in destination, and create backup. Show me the details of work done.',
+                                   'If the file in destination is older then, shift duplicate.txt -> original/duplicate.txt and make the backup of old duplicate.txt giving the acknowledgement of tasks done.',
+                                   'Shift the file duplicate.txt into original directory, if the destination file is older and make backup of the old file. Show the tasks performed.']}, ignore_index = True)
+
+#23
+mv = mv.append({'Command':        'mv -uv --backup=off duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original, if the destination has older file, and do not create backup. Show me the details of work done.',
+                                   'Without creating backup, move the file duplicate.txt to original folder and give the account of operations done. Perform this only when destination has older version of file.',
+                                   'duplicate.txt -> original/duplicate.txt , if the destination has older file, without maintaining a backup and display the tasks performed.']}, ignore_index = True)
+
+#24
+mv = mv.append({'Command':        'mv -uv --backup=t  duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original, if the destination has older file, and create numbered backup. Show me the details of work done.',
+                                   'Creating numbered backups, move duplicate.txt to original folder, if the destination has an older one and display the tasks done.',
+                                   'duplicate.txt -> original/duplicate.txt and create backup by numbering files. Perform the operations only if duplicate.txt is newer than the duplicate.txt in original directory or is absent. Give the summary of tasks performed.']}, ignore_index = True)
+
+#25
+mv = mv.append({'Command':        'mv -uv --backup=existing  duplicate.txt original/',
+                'NL Queries':     ['Move the file duplicate.txt to directory original, if the destination has older file, and create existing backup. Show me the details of work done.',
+                                   'If the destination file is older then, shift the file duplicate.txt to original folder and make existing style of backups. Perform tasks verbosely.',
+                                   'duplicate.txt -> original/duplicate.txt if the source file is newer and use existing backup format. Verbosely do the tasks.']}, ignore_index = True)
+
+#26
+mv = mv.append({'Command':         'mv -nv undo.txt redo/',
+                'NL Queries':      ['Move the file undo.txt to redo directory and do not overwrite the existing file. Give me the details of operation.',
+                                    'Shift the file undo.txt to redo directory without replacing any file in destination. Show the tasks performed.',
+                                    'Transfer undo.txt -> redo/undo.txt and do not replace any file. Display the operations performed.']}, ignore_index = True)
+
+#27
+mv = mv.append({'Command':         'mv -nZ bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Do not overwrite existing files and set SELinux security context to default settings.',
+                                    'bleach.txt -> anime/bleach.txt and do not overwrite the destination files. Set SELinux security to default.',
+                                    'Shift bleach.txt into anime folder, if no other file of same name is present in destination. Configure SELinux security to default value.']}, ignore_index = True)
+
+#28
+mv = mv.append({'Command':         'mv -iZ bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default.',
+                                    'bleach.txt -> anime/bleach.txt and ask to overwrite the destination files. Set SELinux security to default.',
+                                    'Shift bleach.txt into anime folder, if other file of same name is present in destination ask for overwrite permission. Configure SELinux security to default value.']}, ignore_index = True)
+
+#29
+mv = mv.append({'Command':         'mv -fZ bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default.',
+                                    'bleach.txt -> anime/bleach.txt and set SELinux security context to default. Overwrite, if required.',
+                                    'Shift bleach.txt into anime folder, if other file of same name is present in destination then overwrite. Configure SELinux security to default value.']}, ignore_index = True)
+
+#30
+mv = mv.append({'Command':         'mv -iv bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Ask before overwriting files and show me the operations performed.',
+                                    'bleach.txt -> anime/bleach.txt and ask before overwriting. Display the tasks executed.',
+                                    'Change the location of bleach.txt to anime/bleach.txt and ask for permission to overwrite files in destination. Show operations performed.']}, ignore_index = True)
+
+#31
+mv = mv.append({'Command':         'mv -fv naruto.txt anime/',
+                'NL Queries':      ['Move the file naruto.txt to anime directory. Overwrite the files and show the operations performed.',
+                                    'naruto.txt -> anime/naruto.txt overwriting the existing file and showing the completed tasks.',
+                                    'Shift the file naruto.txt into anime and overwrite any existing file with same name. Display the progress.']}, ignore_index = True)
+
+#32
+mv = mv.append({'Command':         'mv -Z --backup bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Set SELinux security context to default settings. Create simple backup.',
+                                    'bleach.txt -> anime/bleach.txt setting SELinux security to default and creating backup.',
+                                    'Change location of bleach.txt to anime and set SELinux security context to default. Create backup at destination.']}, ignore_index = True)
+
+#33
+mv = mv.append({'Command':         'mv -iZ --backup bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create simple backup.',
+                                    'bleach.txt -> anime/bleach.txt and ask to overwrite the destination files. Set SELinux security to default. Make backup of destination file.',
+                                    'Shift bleach.txt into anime folder, if other file of same name is present in destination ask for overwrite permission. Configure SELinux security to default value. Make backup.']}, ignore_index = True)
+
+#34
+mv = mv.append({'Command':         'mv -fZ --backup bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create simple backup.',
+                                    'naruto.txt -> anime/bleach.txt overwriting the existing file and showing the completed tasks. Take backup of destination files being overwritten.',
+                                    'Shift the file bleach.txt into anime and overwrite any existing file with same name. Display the progress. Create backup of existing files in destination.']}, ignore_index = True)
+
+#35
+mv = mv.append({'Command':         'mv -iv --backup bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Ask before overwriting files and show me the operations performed. Create simple backup.',
+                                    'bleach.txt -> anime/bleach.txt and ask before overwriting. Display the tasks executed. Make backups.',
+                                    'Change the location of bleach.txt to anime/bleach.txt and ask for permission to overwrite files in destination. Show operations performed. Create backup of files being overwritten.']}, ignore_index = True)
+
+#36
+mv = mv.append({'Command':         'mv -fv --backup naruto.txt anime/',
+                'NL Queries':      ['Move the file naruto.txt to anime directory. Overwrite the files and show the operations performed. Create simple backup.',
+                                    'naruto.txt -> anime/naruto.txt overwriting the existing file and showing the completed tasks. Make simple backups.',
+                                    'Shift the file naruto.txt into anime and overwrite any existing file with same name. Display the progress. Save the files before overwriting.']}, ignore_index = True)
+
+#37
+mv = mv.append({'Command':         'mv -Z --strip-trailing-slashes undo//// redo/',
+                'NL Queries':      ['Move undo//// to redo directory after stripping trailing slashes from source and set SElinux security context to default.',
+                                    '']},ignore_index=True)
+
+#38
+mv = mv.append({'Command':         'mv -iZ --backup=existing bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create existing backup.']}, ignore_index = True)
+
+#39
+mv = mv.append({'Command':         'mv -fZ --backup=existing bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create existing backup.']}, ignore_index = True)
+
+#40
+mv = mv.append({'Command':         'mv -iv --backup=existing bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Ask before overwriting files and show me the operations performed. Create existing backup.']}, ignore_index = True)
+
+#41
+mv = mv.append({'Command':         'mv -fv --backup=existing naruto.txt anime/',
+                'NL Queries':      ['Move the file naruto.txt to anime directory. Overwrite the files and show the operations performed. Create existing backup.']}, ignore_index = True)
+
+#42
+mv = mv.append({'Command':         'mv -v --strip-trailing-slashes undo/// redo/'},ignore_index=True)
+
+#43
+mv = mv.append({'Command':         'mv -iZ --backup=t bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask before overwriting files. Set the SELinux security context to default. Create numbered backup.']}, ignore_index = True)
+
+#44
+mv = mv.append({'Command':         'mv -fZ --backup=t bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create numbered backup.']}, ignore_index = True)
+
+#45
+mv = mv.append({'Command':         'mv -iv --backup=t bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Ask before overwriting files and show me the operations performed. Create numbered backup.']}, ignore_index = True)
+
+#46
+mv = mv.append({'Command':         'mv -fv --backup=t naruto.txt anime/',
+                'NL Queries':      ['Move the file naruto.txt to anime directory. Overwrite the files and show the operations performed. Create numbered backup.']}, ignore_index = True)
+
+#47
+mv = mv.append({'Command':         'mv -buvZS .bk --strip-trailing-slashes code.txt anime/',
+                'NL Queries':      ['Move the file code.txt to anime directory after stripping any trailing slashes from source code.txt and show the details of operations performed. Use .bk extension for creating backup files. Set SELinux security context to default.']}, ignore_index = True)
+
+#48
+mv = mv.append({'Command':         'mv -iZS .bk --backup bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create backup with suffix .bk .']}, ignore_index = True)
+
+#49
+mv = mv.append({'Command':         'mv -fZS .bk --backup bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create backup with suffix .bk .']}, ignore_index = True)
+
+#50
+mv = mv.append({'Command':         'mv -ivS .bk --backup bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Ask before overwriting files and show me the operations performed. Create backup with suffix .bk.']}, ignore_index = True)
+
+#51
+mv = mv.append({'Command':         'mv -fvS .bk --backup naruto.txt anime/',
+                'NL Queries':      ['Move the file naruto.txt to anime directory. Overwrite the files and show the operations performed. Create backup with suffix .bk .']}, ignore_index = True)
+
+#52
+mv = mv.append({'Command':         'mv -bvS .bk code.txt anime/',
+                'NL Queries':      ['Move the file code.txt to directoy anime and create backup with extension .bk . Show the operations performed.']}, ignore_index = True)
+
+#53
+mv = mv.append({'Command':         'mv -buvS .bk code.txt anime/',
+                'NL Queries':      ['Move the file code.txt to anime directory, only if the source code.txt file is newer, and show the details of operations performed. Use .bk extension for creating backup files.']}, ignore_index = True)
+
+#54
+mv = mv.append({'Command':         'mv -nvZ bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Do not overwrite existing files and set SELinux security context to default settings. Show the operations performed.']}, ignore_index = True)
+
+#55
+mv = mv.append({'Command':         'mv -ivZ bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Show the operations performed.']}, ignore_index = True)
+
+#56
+mv = mv.append({'Command':         'mv -fvZ bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Show the operations performed.']}, ignore_index = True)
+
+#57
+mv = mv.append({'Command':         'mv -fvZS .bk --backup --strip-trailing-slashes bleach/ anime/',
+                'NL Queries':      ['Move bleach/ to anime directory after removing any trailing slashes from source bleach/ . Overwrite files and set SELinux security context to default. Create backup with suffix .bk . Show the operations performed.']}, ignore_index = True)
+
+#58
+mv = mv.append({'Command':         'mv -ivZ --backup bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create simple backup. Show the operations performed.']}, ignore_index = True)
+
+#59
+mv = mv.append({'Command':         'mv -fvZ --backup bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create simple backup. Show the operations performed.']}, ignore_index = True)
 
 
+#61
+mv = mv.append({'Command':         'mv -ivZ --backup=existing bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create existing backup. Show the operations performed.']}, ignore_index = True)
+
+#62
+mv = mv.append({'Command':         'mv -fvZ --backup=existing bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create existing backup. Show the operations performed.']}, ignore_index = True)
+
+#63
+mv = mv.append({'Command':         'mv -ivZS .bk --strip-trailing-slashes --backup bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory after removing any trailing slashes from source bleach.txt . Ask for overwriting files. Set the SELinux security context to default. Create backup with suffix .bk . Show the operations performed.']}, ignore_index = True)
+
+#64
+mv = mv.append({'Command':         'mv -ivZ --backup=t bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create numbered backup. Show the operations performed.']}, ignore_index = True)
+
+#65
+mv = mv.append({'Command':         'mv -fvZ --backup=t bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create numbered backup. Show the operations performed.']}, ignore_index = True)
+
+#66
+mv = mv.append({'Command':         'mv -fvZ --strip-trailing-slashes --backup=t bleach.txt// anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory after removing trailing slashes fromm source bleach.txt// . Overwrite files and set SELinux security context to default. Create numbered backup. Show the operations performed.']}, ignore_index = True)
+
+#67
+mv = mv.append({'Command':         'mv -ivZS .bk --backup bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory. Ask for overwriting files. Set the SELinux security context to default. Create backup with suffix .bk . Show the operations performed.']}, ignore_index = True)
+
+#68
+mv = mv.append({'Command':         'mv -fvZS .bk --backup bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory. Overwrite files and set SELinux security context to default. Create backup with suffix .bk . Show the operations performed.']}, ignore_index = True)
+
+#69
+mv = mv.append({'Command':         'mv -buvZS .bk code.txt anime/',
+                'NL Queries':      ['Move the file code.txt to anime directory, only if the source file code.txt is newer, and show the details of operations performed. Use .bk extension for creating backup files. Set SELinux security context to default.']}, ignore_index = True)
+
+#70
+mv = mv.append({'Command':         'mv -nvZ --strip-trailing-slashes bleach/// anime/',
+                'NL Queries':      ['Move bleach/// to anime directory after stripping trailing slashes from source bleach/// . Do not overwrite existing files and set SELinux security context to default settings. Show the operations performed.']}, ignore_index = True)
+
+#71
+mv = mv.append({'Command':         'mv -ivZ --strip-trailing-slashes bleach/// anime/',
+                'NL Queries':      ['Move bleach/// to anime directory after stripping trailing slashes from source bleach/// . Ask for overwriting files. Set the SELinux security context to default. Show the operations performed.']}, ignore_index = True)
+
+#72
+mv = mv.append({'Command':         'mv -fvZ --strip-trailing-slashes bleach/// anime/',
+                'NL Queries':      ['Move bleach/// to anime directory after stripping all the trailing slashes from source bleach/// . Overwrite files and set SELinux security context to default. Show the operations performed.']}, ignore_index = True)
+
+#73
+mv = mv.append({'Command':         'mv -ivZ --strip-trailing-slashes --backup=t bleach.txt anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory after removing any trailing slashes from source bleach.txt . Ask for overwriting files. Set the SELinux security context to default. Create numbered backup. Show the operations performed.']}, ignore_index = True)
+
+#74
+mv = mv.append({'Command':         'mv -ivZ --backup --strip-trailing-slashes bleach// anime/',
+                'NL Queries':      ['Move bleach// to anime directory after removing the trailing slashes from source bleach// . Ask for overwriting files. Set the SELinux security context to default. Create simple backup. Show the operations performed.']}, ignore_index = True)
+
+#75
+mv = mv.append({'Command':         'mv -fvZ --backup --strip-trailing-slashes bleach//// anime/',
+                'NL Queries':      ['Move bleach//// to anime directory after removing the trailing slashes from source bleach//// . Overwrite files and set SELinux security context to default. Create simple backup. Show the operations performed.']}, ignore_index = True)
+
+#78
+mv = mv.append({'Command':         'mv -fvZ --strip-trailing-slashes --backup=existing bleach.txt anime/',
+                'NL Queries':      ['Move the file bleach.txt to anime directory after removing any trailing slashes from source bleach.txt . Overwrite files and set SELinux security context to default. Create existing backup. Show the operations performed.']}, ignore_index = True)
+
+#77
+mv = mv.append({'Command':         'mv -ivZ --backup=existing --strip-trailing-slashes bleach.txt/ anime/',
+                'NL Queries':      ['Move bleach.txt file to anime directory after removing any trailing slashes from source bleach.txt/ . Ask for overwriting files. Set the SELinux security context to default. Create existing backup. Show the operations performed.']}, ignore_index = True)
+
+#78
+mv = mv.append({'Command':         'mv -n --strip-trailing-slashes undo/// redo/'},ignore_index=True)
+
+#79
+mv = mv.append({'Command':         'mv -nv --strip-trailing-slashes undo/// redo/'},ignore_index=True)
+
+
+
+commands = mv.ix[:,0]
+from collections import Counter
+print [x for x,v in Counter(commands).items() if v > 1]
 print mv.shape
 
 
