@@ -123,12 +123,12 @@ awk = awk.append({'Command':'awk \'{ORS=\",\";print $1, $2}\' table.csv',
 				'NL Queries':['Print column 1 and 2 contents of table.csv with \',\' as a record separator.',
 							'How do I print column 1 and 2 from table.csv having comma as ORS?',
 							'Display first and second column records of table.csv with comma as record separator.']},ignore_index=True)
-
+'''
 awk = awk.append({'Command':'awk \'{print $1 | \"sort\"}\' table.csv',
 				'NL Queries':['Print column 1 contents of table.csv and sort them.',
 							'How do I print sorted column 1 content from table.csv?',
 							'Display sorted first column content from table.csv.']},ignore_index=True)
-
+'''
 awk = awk.append({'Command':'awk \'{print NF>2, $0}\' table.csv',
 				'NL Queries':['Print records from table.csv having number of fields greater than 2.',
 							'How do I print records from table.csv having number of fields greater than 2?',
