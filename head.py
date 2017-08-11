@@ -2,43 +2,129 @@ import pandas as pd
 
 head = pd.DataFrame(columns = ['Command','NL Queries'])
 
-head = head.append({'Command':'head -n 2 /etc/passwd','NL Queries':['Print first 2 lines of the file /etc/passwd.',
-														'Show the first two lines of /etc/passwd.',
-														'Command to show first two lines of /etc/passwd.',
-														'How do I see the starting two liens of etc/passwd?']},ignore_index=True)
-
 head = head.append({'Command':'head instructions.txt','NL Queries':['Print first few lines of the file instructions.txt.',
-													'Show the starting lines of the file instructions.txt.',
-													'How do I see the first few lines of the file instructions.txt in command line?']},ignore_index=True)
-
-head = head.append({'Command':'head -c 80 instructions.txt','NL Queries':['Print first 80 characters of the file instructions.txt.',
-														'Show the starting 80 characters of the file instructions.txt.',
-														'How do I see the first 80 characters of the file instructions.txt in command line?']},ignore_index=True)
+																	'Show the starting lines of the file instructions.txt.',
+																	'How do I see the first few lines of the file instructions.txt in command line?']},ignore_index=True)
 
 head = head.append({'Command':'head instructions.txt lol.txt','NL Queries':['Print first few lines of the file instructions.txt and lol.txt.',
-												'Show the starting lines of the file instructions.txt and lol.txt.',
-												'How do I see the first few lines of the file instructions.txt and lol.txt in command line?']},ignore_index=True)
+																			'Show the starting lines of the file instructions.txt and lol.txt.',
+																			'How do I see the first few lines of the file instructions.txt and lol.txt in command line?']},ignore_index=True)
 
-head = head.append({'Command':'head -c 80k instructions.txt','NL Queries':['Print first 80 x 1024 characters of the file instructions.txt.',
-											'Show the starting 80 x 1024 characters of the file instructions.txt.',
-											'How do I see the first 80 x 1024 characters of the file instructions.txt in command line?']},ignore_index=True)
+head = head.append({'Command':'head -n 2 /etc/passwd','NL Queries':['Print first 2 lines of the file /etc/passwd.',
+																	'Show the first two lines of /etc/passwd.',
+																	'Command to show first two lines of /etc/passwd.',
+																	'How do I see the starting two lines of etc/passwd?']},ignore_index=True)
+
+head = head.append({'Command':'head -n 2 instructions.txt lol.txt','NL Queries':['Print first 2 lines of the file instructions.txt and lol.txt.',
+																	'Show the first two lines of instructions.txt and lol.txt.',
+																	'Command to show first two lines of instructions.txt and lol.txt.',
+																	'How do I see the starting two lines of instructions.txt and lol.txt?']},ignore_index=True)
+
+#head = head.append({'Command':'head -c 80k instructions.txt','NL Queries':['Print first 80 x 1024 characters of the file instructions.txt.',
+#																		'Show the starting 80 x 1024 characters of the file instructions.txt.',
+#																		'How do I see the first 80 x 1024 characters of the file instructions.txt in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -c 80 instructions.txt','NL Queries':['Print first 80 characters of the file instructions.txt.',
+																		'Show the starting 80 characters of the file instructions.txt.',
+																		'How do I see the first 80 characters of the file instructions.txt in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -c 80 instructions.txt lol.txt','NL Queries':['Print first 80 characters of the file instructions.txt and lol.txt.',
+																		'Show the starting 80 characters of the file instructions.txt and lol.txt.',
+																		'How do I see the first 80 characters of the files instructions.txt and lol.txt in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -n 2 lol.txt > file.txt','NL Queries':['Overwrite file.txt with first 2 lines of the file lol.txt.',
+																			'Overwrite file.txt with the first two lines of lol.txt.',
+																			'Command to overwrite file.txt with first two lines of lol.txt.']},ignore_index=True)
+
+head = head.append({'Command':'head -n 2 lol.txt >> file.txt','NL Queries':['Append file.txt with first 2 lines of the file lol.txt.',
+																			'Append file.txt with the first two lines of lol.txt.',
+																			'Command to append file.txt with first two lines of lol.txt.']},ignore_index=True)
+
+#head = head.append({'Command':'head -n 2 lol.txt','NL Queries':['Print first 2 lines of the file lol.txt.',
+#																'Show the first two lines of lol.txt.',
+#																'Command to show first two lines of lol.txt.']},ignore_index=True)
 
 #head = head.append({'Command':'head *.txt','NL Queries':['Print first few lines of all txt files.',
-#												'Show the starting lines of all .txt files.',
-#												'How do I see the first few lines of .txt all files in command line?']},ignore_index=True)
+#'Show the starting lines of all .txt files.',
+#'How do I see the first few lines of .txt all files in command line?']},ignore_index=True)
 
-head = head.append({'Command':'head -q *.txt','NL Queries':['Print first few lines of all txt files without any header before lines of each file.',
-											'Show the starting lines of all .txt files without any header before lines of each file.',
-											'How do I see the first few lines of .txt all files without any header before lines of each file in command line?']},ignore_index=True)
+#head = head.append({'Command':'head -q *.txt','NL Queries':['Print first few lines of all .txt files without any header before contents of each file.',
+#															'Show the starting lines of all .txt files without any header before contents of each file.',
+#															'How do I see the first few lines of .txt all files without any header before contents of each file in command line?']},ignore_index=True)
 
-head = head.append({'Command':'head -n 2 lol.txt > file.txt','NL Queries':['Overwrite file.txt with first 2 lines of the file lol.txt.','Overwrite file.txt with the first two lines of lol.txt.','Command to Overwrite file.txt with first two lines of lol.txt.']},ignore_index=True)
+head = head.append({'Command':'head -q instructions.txt lol.txt','NL Queries':['Print first few lines of the file instructions.txt and lol.txt without header.',
+																				'Show the starting lines of the file instructions.txt and lol.txt without header.',
+																				'How do I see the first few lines of the file instructions.txt and lol.txt in command line without header?']},ignore_index=True)
 
-head = head.append({'Command':'head -n 2 lol.txt >> file.txt','NL Queries':['Append file.txt with first 2 lines of the file lol.txt.','Append file.txt with the first two lines of lol.txt.','Command to Append file.txt with first two lines of lol.txt.']},ignore_index=True)
+head = head.append({'Command':'head -q instructions.txt','NL Queries':['Print first few lines of the file instructions.txt without header.',
+																		'Show the starting lines of the file instructions.txt without header.',
+																		'How do I see the first few lines of the file instructions.txt in command line without header?']},ignore_index=True)
 
-head = head.append({'Command':'head -n 2 lol.txt','NL Queries':['Print first 2 lines of the file lol.txt.','Show the first two lines of lol.txt.','Command to show first two lines of lol.txt.']},ignore_index=True)
+head = head.append({'Command':'head -v *.txt','NL Queries':['Print first few lines of all .txt files with header before contents of each file.',
+															'Show the starting lines of all .txt files with header before contents of each file.',
+															'How do I see the first few lines of .txt all files with header before contents of each file in command line?']},ignore_index=True)
 
-#head = head.append({'Command':'head -11 lol.txt | tail -n 5','NL Queries':['Show all lines between 7 to 11 of lol.txt.',
-#										'How do I see lines 7 to 10 of lol.txt?','How can I see any specific no. of lines from between of any files?']},ignore_index=True)
+#head = head.append({'Command':'head -v instructions.txt','NL Queries':['Print first few lines of the file instructions.txt with header.',
+#																		'Show the starting lines of the file instructions.txt with header.',
+#																		'How do I see the first few lines of the file instructions.txt in command line with header?']},ignore_index=True)
+
+head = head.append({'Command':'head -v instructions.txt lol.txt','NL Queries':['Print first few lines of the file instructions.txt and lol.txt with header.',
+																				'Show the starting lines of the file instructions.txt and lol.txt with header.',
+																				'How do I see the first few lines and header of the files instructions.txt and lol.txt in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -v -n 2 /etc/passwd','NL Queries':['Print first 2 lines of the file /etc/passwd with header.',
+																		'Show the first two lines of /etc/passwd with header.',
+																		'Command to show first two lines of /etc/passwd with header.',
+																		'How do I see the starting two lines of etc/passwd with header?']},ignore_index=True)
+
+
+head = head.append({'Command':'head -v -c 80 instructions.txt','NL Queries':['Print first 80 characters of the file instructions.txt with header.',
+																			'Show the starting 80 characters of the file instructions.txt with header.',
+																			'How do I see the first 80 characters of the file instructions.txt in command line with header?']},ignore_index=True)
+
+#head = head.append({'Command':'head -v -c 80k instructions.txt','NL Queries':['Print first 80 x 1024 characters of the file instructions.txt with header.',
+#																			'Show the starting 80 x 1024 characters of the file instructions.txt with header.',
+#																			'How do I see the first 80 x 1024 characters of the file instructions.txt in command line with header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q -n 2 /etc/passwd','NL Queries':['Print first 2 lines of the file /etc/passwd without header.',
+																		'Show the first two lines of /etc/passwd with header.',
+																		'Command to show first two lines of /etc/passwd without header.',
+																		'How do I see the starting two lines of etc/passwd without header?']},ignore_index=True)
+
+
+#head = head.append({'Command':'head -q -c 80 instructions.txt','NL Queries':['Print first 80 characters of the file instructions.txt without header.',
+#																			'Show the starting 80 characters of the file instructions.txt without header.',
+#																			'How do I see the first 80 characters of the file instructions.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q -c 80k instructions.txt','NL Queries':['Print first 80 x 1024 characters of the file instructions.txt without header.',
+																			'Show the starting 80 x 1024 characters of the file instructions.txt without header.',
+																			'How do I see the first 80 x 1024 characters of the file instructions.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q -n 2 lol.txt','NL Queries':['Print first 2 lines of the file lol.txt without header.',
+																	'Show the first two lines of lol.txt without header.',
+																	'Command to show first two lines of lol.txt without header.']},ignore_index=True)
+
+head = head.append({'Command':'head --help','NL Queries':['Print what options do I have with head command.',
+														'Show help related to head command.',
+														'How do I get help related to head command?']},ignore_index=True)
+
+head = head.append({'Command':'head --version','NL Queries':['Print the version of head command.',
+															'Show the version of head command.',
+															'How do I get to know the version of head command?']},ignore_index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 '''
 head = head.append({'Command':'head -11 lol.txt | tail -n 5 >> lol2.txt','NL Queries':['Append all lines between 7 to 11 of lol.txt into lol2.txt.','How do I append lines 7 to 10 of lol.txt into lol2.txt?','How can i append any specific no. of lines from between of any files into any another file?']},ignore_index=True)
 
@@ -72,7 +158,7 @@ head = head.append({'Command':'ls | head ','NL Queries':['Print first few lines 
 
 head = head.append({'Command':'ls | head >> lol.txt','NL Queries':['Append first few lines of output of ls into lol.txt.','Append the first few lines of outut of ls command into lol.txt.','Command to append first few lines of output of ls command into another file.']},ignore_index=True)
 
-head = head.append({'Command':'ls | head > lol.txt','NL Queries':['Overwrite lol.txt with first few lines of output of ls.','Overwrite lol.txt with the first few lines of output of ls command.','Command to Overwrite a file with first few lines of output of ls command.']},ignore_index=True)
+head = head.append({'Command':'ls | heapythd > lol.txt','NL Queries':['Overwrite lol.txt with first few lines of output of ls.','Overwrite lol.txt with the first few lines of output of ls command.','Command to Overwrite a file with first few lines of output of ls command.']},ignore_index=True)
 
 head = head.append({'Command':'man head','NL Queries':['Show all options of head command.','How does head command works?','What\'s the power of head command?']},ignore_index=True)
 
