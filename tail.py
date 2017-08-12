@@ -3,46 +3,191 @@ import pandas as pd
 tail = pd.DataFrame(columns = ['Command','NL Queries'])
 
 tail = tail.append({'Command':'tail -c 500 /var/log/messages','NL Queries':['Show last 500 bytes of /var/log/messages.',
-							'How do I see ending of /var/log/messages? I want to see only last 500 bytes.']},ignore_index=True)
+																			'How do I see ending of /var/log/messages? I want to see only last 500 bytes.',
+																			'Command to see last 500 bytes of content of /var/log/messages']},ignore_index=True)
 
 tail = tail.append({'Command':'tail -c 500 /var/log/messages lol.txt','NL Queries':['Show last 500 bytes of /var/log/messages and lol.txt.',
-										'How do I see ending of /var/log/messages and lol.txt? I want to see only last 500 bytes of both.']},ignore_index=True)
+																				'How do I see ending of /var/log/messages and lol.txt? I want to see only last 500 bytes of both.',
+																				'Command to see last 500 bytes of /var/log/messages and lol.txt.']},ignore_index=True)	
 
 #tail = tail.append({'Command':'tail -c 500k /var/log/messages','NL Queries':['Show last 500k(500 x 1024) bytes of /var/log/messages.','How do I see ending of /var/log/messages? I want to see only last 500k bytes.']},ignore_index=True)
 
 #Incomplete Description. Add description for -f
-#tail = tail.append({'Command':'tail -f /var/log/secure /var/log/cron','NL Queries':['Show last few lines of /var/log/secure and /var/log/cron.','How do I see ending of /var/log/cron and /var/log/secure?']},ignore_index=True)
+tail = tail.append({'Command':'tail -f /var/log/secure /var/log/cron','NL Queries':['Show last few lines of /var/log/secure and /var/log/cron and append to output as  the file grows..',
+																					'How do I see ending of /var/log/cron and /var/log/secure and make sure data is appended as the files grow?',
+																					'Command to see last few lines of /var/log/secure and /var/log/cron and see updated data as the files grow.']},ignore_index=True)
 
-tail = tail.append({'Command':'tail -f /var/log/secure','NL Queries':['Show last few lines of /var/log/secure.',
-															'How do I see ending of /var/log/secure?']},ignore_index=True)
+tail = tail.append({'Command':'tail -f /var/log/secure','NL Queries':['Show last few lines of /var/log/secure and append to output as file grows.',
+																	'How do I see ending of /var/log/secure and make sure data is appended as file grows?',
+																	'Command to see last few lines of /var/log/secure and see updated data as file grows.']},ignore_index=True)
 
 tail = tail.append({'Command':'tail lol.txt','NL Queries':['Show last 10 lines of lol.txt.',
-													'How do I see last 10 lines of lol.txt?',
-													'How can I see last 10 lines of some file?']},ignore_index=True)
+															'How do I see last 10 lines of lol.txt?',
+															'Command to see last 10 lines of lol.txt.',
+															'See the ending 10 lines of lol.txt.']},ignore_index=True)
 
-#tail = tail.append({'Command':'tail lol.txt lol2.txt','NL Queries':['Show last 10 lines of both lol.txt and lol2.txt.','How do I see last 10 lines of lol.txt and lol2.txt?','How can i see last 10 lines of mutiple files in single command?']},ignore_index=True)
+tail = tail.append({'Command':'tail lol.txt lol2.txt','NL Queries':['Show last 10 lines of both lol.txt and lol2.txt.',
+																	'How do I see last 10 lines of lol.txt and lol2.txt?',
+																	'Command to see last 10 lines of lol.txt and lol2.txt',
+																	'See ending 10 lines of the files lol.txt and lol2.txt.']},ignore_index=True)
 
 tail = tail.append({'Command':'tail -n7 lol.txt','NL Queries':['Show last 7 lines of lol.txt.',
-											'How do I see last 7 lines of lol.txt?',
-											'How can I see last 7 lines of lol.txt?']},ignore_index=True)
+																'How do I see last 7 lines of lol.txt?',
+																'Command to see last 7 lines of lol.txt.',
+																'See ending 10 lines of the file lol.txt.']},ignore_index=True)
 
-#tail = tail.append({'Command':'tail -n7 lol.txt lol2.txt','NL Queries':['Show last 7 lines of lol.txt nad lol2.txt.','How do I see last 7 lines of lol.txt and lol2.txt?','How can i see last n lines of lol.txt and lol2.txt?']},ignore_index=True)
+tail = tail.append({'Command':'tail -n7 lol.txt lol2.txt','NL Queries':['Show last 7 lines of lol.txt and lol2.txt.',
+																		'How do I see last 7 lines of lol.txt and lol2.txt?',
+																		'Command to see last 7 lines of lol.txt and lol2.txt.',
+																		'See ending 10 lines of the files lol.txt and lol2.txt.']},ignore_index=True)
 
-tail = tail.append({'Command':'tail -7 lol.txt','NL Queries':['Show last 7 lines of lol.txt.',
-															'How do I see last 7 lines of lol.txt?',
-															'How can I see last 7 lines of lol.txt?']},ignore_index=True)
+#tail = tail.append({'Command':'tail -7 lol.txt','NL Queries':['Show last 7 lines of lol.txt.',
+#															'How do I see last 7 lines of lol.txt?',
+#															'Command to see last 7 lines of lol.txt.',
+#															'See ending 10 lines of the file lol.txt.']},ignore_index=True)
 
-#tail = tail.append({'Command':'tail -7 lol.txt lol2.txt','NL Queries':['Show last 7 lines of lol.txt nad lol2.txt.','How do I see last 7 lines of lol.txt and lol2.txt?','How can i see last n lines of lol.txt and lol2.txt?']},ignore_index=True)
+##tail = tail.append({'Command':'tail -7 lol.txt lol2.txt','NL Queries':['Show last 7 lines of lol.txt and lol2.txt.',	
+#																		'How do I see last 7 lines of lol.txt and lol2.txt?',
+#																		'Command to see last 7 lines of lol.txt and lol2.txt.',
+#																		'See ending 10 lines of the file lol.txt and lol2.txt.']},ignore_index=True)
 
 tail = tail.append({'Command':'tail -n+2 lol.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt.',
-													'How do I see all lines starting from line no. 2 of lol.txt?',
-													'How can I see all lines starting from line no. 2?']},ignore_index=True)
+																'How do I see all lines starting from line no. 2 of lol.txt?',
+																'Starting from second line, show content of file lol.txt.',
+																'Show all content of lol.txt starting from second line.']},ignore_index=True)
 
-#tail = tail.append({'Command':'tail -n+2 lol.txt lol2.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt and lol2.txt.','How do I see all lines starting from line no. 2 of lol.txt and lol2.txt?','How can i see all lines starting from line no. n for multiple files at once?']},ignore_index=True)
+tail = tail.append({'Command':'tail -n+2 lol.txt lol2.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt and lol2.txt.',
+																		'How do I see all lines starting from line no. 2 of lol.txt and lol2.txt?',
+																		'Starting from second line, show content of file lol.txt and lol2.txt.',
+																		'Show all content of lol.txt and lol2.txt starting from second line.']},ignore_index=True)
 
 tail = tail.append({'Command':'tail -c+80 lol.txt','NL Queries':['Print all characters starting from 80th character of lol.txt.',
 																'How do I print all characters starting from 80th character of lol.txt?',
-																'How can I see all characters starting from 80th character of lol.txt']},ignore_index=True)
+																'Starting from 80th character, show content of file lol.txt.',
+																'Show all content of lol.txt starting from 80th character.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -c+80 lol.txt lol2.txt','NL Queries':['Print all characters starting from 80th character of lol.txt and lol2.txt.',
+																			'How do I print all characters starting from 80th character of lol.txt and lol2.txt?',
+																			'Starting from 80th character, show content of file lol.txt and lol2.txt.',
+																			'Show all content of lol.txt and lol2.txt starting from 80th character.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v lol.txt','NL Queries':['Show last 10 lines of lol.txt with header.',
+															'How do I see last 10 lines of lol.txt with header?',
+															'Command to see last 10 lines of lol.txt. Show the header information along with it.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v lol.txt lol2.txt','NL Queries':['Show last 10 lines of lol.txt and lol2.txt with header.',
+															'How do I see last 10 lines of lol.txt and lol2.txt with header?',
+															'Command to see last 10 lines of lol.txt and lol2.txt. Show the header information along with it.']},ignore_index=True)
+
+
+tail = tail.append({'Command':'tail -v -c 500 /var/log/messages','NL Queries':['Show last 500 bytes of /var/log/messages with header.',
+																				'How do I see ending of /var/log/messages with header? I want to see only last 500 bytes with header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -c 500 /var/log/messages lol.txt','NL Queries':['Show last 500 bytes of /var/log/messages and lol.txt with header.',
+																						'How do I see ending of /var/log/messages and lol.txt with header? I want to see only last 500 bytes of both with header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -f /var/log/secure','NL Queries':['Show last few lines of /var/log/secure with header and append output as file grows.',
+																		'How do I see ending of /var/log/secure with header and also see the updated output if the file grows?']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -f /var/log/secure lol.txt','NL Queries':['Show last few lines of /var/log/secure and lol.txt with header and append output as file grows.',
+																		'How do I see ending of /var/log/secure with header and lol.txt and also see the updated content if the file grows?']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -n7 lol.txt','NL Queries':['Show last 7 lines of lol.txt with header.',
+																'How do I see last 7 lines of lol.txt with header?',
+																'Command to see the last 7 lines of lol.txt with header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -n7 lol.txt lol2.txt','NL Queries':['Show last 7 lines of lol.txt and lol2.txt with header.',
+																		'How do I see last 7 lines of lol.txt and lol2.txt with header?',
+																		'Command to see the last 7 lines of lol.txt and lol2.txt with header.'
+																		'Show content of last 7 lines and header of lol.txt and lol2.txt.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -n+2 lol.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt with header.',
+																	'How do I see all lines starting from line no. 2 of lol.txt with header?',
+																	'Starting from second line, show content and header of file lol.txt.',
+																	'Show content starting from second line and header of lol.txt starting from second line.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -n+2 lol.txt lol2.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt and lol2.txt with header.',
+																		'How do I see all lines starting from line no. 2 of lol.txt and lol2.txt with header?',
+																		'Starting from second line, show content and header of file lol.txt and lol2.txt.',
+																		'Show all content and header of lol.txt and lol2.txt starting from second line.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -c+80 lol.txt','NL Queries':['Print all characters starting from 80th character of lol.txt with header.',
+																	'How do I print all characters starting from 80th character of lol.txt with header?',
+																	'Starting from 80th character, show content and header of file lol.txt.',
+																	'Show all content and header of lol.txt starting from 80th character.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -c+80 lol.txt lol2.txt','NL Queries':['Print all characters starting from 80th character of lol.txt and lol2.txt with header.',
+																	'How do I print all characters starting from 80th character of lol.txt and lol2.txt with header?',
+																	'Starting from 80th character, show content and header of file lol.txt and lol2.txt.',
+																	'Show all content and header of lol.txt and lol2.txt starting from 80th character.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -c  500 /var/log/messages','NL Queries':['Show last 500 bytes of /var/log/messages without header.',
+																				'How do I see ending of /var/log/messages without header? I want to see only last 500 bytes without header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -c 500 /var/log/messages lol.txt','NL Queries':['Show last 500 bytes of /var/log/messages and lol.txt without header.',	
+																				'How do I see ending of /var/log/messages and lol.txt without header? I want to see only last 500 bytes of both without header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -f /var/log/secure','NL Queries':['Show last few lines of /var/log/secure without header and append output as the file grows.',
+																		'How do I see ending of /var/log/secure without header and show the updated file as it grows?']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q lol.txt','NL Queries':['Show last 10 lines of lol.txt without header.',
+																'How do I see last 10 lines of lol.txt without header?',
+																'Command to see last 10 lines of lol.txt not including the headers.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q lol.txt lol2.txt','NL Queries':['Show last 10 lines of lol.txt and lol2.txt without header.',
+																'How do I see last 10 lines of lol.txt and lol2.txt without header?',
+																'Command to see last 10 lines of lol.txt and lol2.txt not including the headers.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -n7 lol.txt','NL Queries':['Show last 7 lines of lol.txt without header.',
+																'How do I see last 7 lines of lol.txt without header?',
+																'Command to see last 7 lines of lol.txt. Don\'t show the header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -n7 lol.txt lol2.txt ','NL Queries':['Show last 7 lines of lol.txt and lol2.txt without header.',
+																'How do I see last 7 lines of lol.txt and lol2.txt without header?',
+																'Command to see last 7 lines of lol.txt and lol2.txt. Don\'t show the header.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -n+2 lol.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt without header.',
+																	'How do I see all lines starting from line no. 2 of lol.txt without header?',
+																	'Starting from second line, show content without header of file lol.txt.',
+																	'Show content without header of lol.txt starting from second line.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -n+2 lol.txt lol2.txt','NL Queries':['Show all lines starting from line no. 2 of lol.txt and lol2.txt without header.',
+																	'How do I see all lines starting from line no. 2 of lol.txt and lol2.txt without header?',
+																	'Starting from second line, show content without header of file lol.txt and lol2.txt.',
+																	'Show content without header of lol.txt and lol2.txt starting from second line.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -c+80 lol.txt','NL Queries':['Print all characters starting from 80th character of lol.txt without header.',
+																	'How do I print all characters starting from 80th character of lol.txt without header?',
+																	'Starting from 80th character, show content and header of file lol.txt.',
+																	'Show all content and header of lol.txt starting from 80th character.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -c+80 lol.txt lol2.txt','NL Queries':['Print all characters starting from 80th character of lol.txt and lol2.txt without header.',
+																				'How do I print all characters starting from 80th character of lol.txt and lol2.txt without header?',
+																				'Starting from 80th character, show content without header of files lol.txt and lol2.txt.',
+																				'Show all content without headers of lol.txt and lol2.txt starting from 80th character.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -f -s 5 /var/log/secure','NL Queries':['Show last few lines of /var/log/secure. Append to output if file grows after refreshing every 5 seconds.',
+																			'How do I see ending of /var/log/secure and see the appended output after refreshing every 5 seconds?']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -q -f -s 5 /var/log/secure','NL Queries':['Show last few lines of /var/log/secure without header and also show new output as file grows after refreshing every 5 seconds.',
+																			'How do I see ending of /var/log/secure without header.After refreshing every 5 seconds, show the updated output file?',
+																			'See last few lines of /var/log/secure without header. Append output as the file grows every 5 seconds.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -v -f -s 5 /var/log/secure','NL Queries':['Show last few lines of /var/log/secure with header and also show new output as file grows after refreshing every 5 seconds.',
+																			'How do I see ending of /var/log/secure with header.After refreshing every 5 seconds, show the updated output file?',
+																			'See last few lines of /var/log/secure with header. Append output as the file grows every 5 seconds.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -n7 -f -s 5 /var/log/secure','NL Queries':['Show last 7 lines of /var/log/secure and also show new output as file grows after refreshing every 5 seconds.',
+																			'How do I see ending 7 lines of /var/log/secure.After refreshing every 5 seconds, show the updated output file?',
+																			'See last 7 lines of /var/log/secure. Append output as the file grows every 5 seconds.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -n7 -v -f -s 5 /var/log/secure','NL Queries':['Show last 7 lines of /var/log/secure with header and also show new output as file grows after refreshing every 5 seconds.',
+																			'How do I see ending 7 lines with header of /var/log/secure. After refreshing every 5 seconds, show the updated output file?',
+																			'See last 7 lines with header of /var/log/secure. Append output as the file grows every 5 seconds.']},ignore_index=True)
+
+tail = tail.append({'Command':'tail -n7 -q -f -s 5 /var/log/secure','NL Queries':['Show last 7 lines of /var/log/securewithout header and also show new output as file grows after refreshing every 5 seconds.',
+																			'How do I see ending 7 lines without of /var/log/secure.After refreshing every 5 seconds, show the updated output file?',
+																			'See last 7 lines without header of /var/log/secure. Append output as the file grows every 5 seconds.']},ignore_index=True)
 
 #tail = tail.append({'Command':'tail -c+80 lol.txt lol2.txt','NL Queries':['Print all characters starting from 80th character of lol.txt and lol2.txt.','How do I Prints all characters starting from 80th character of lol.txt and lol2.txt?','How can i see all caracters starting from nth character of lol.txt and lol2.txt']},ignore_index=True)
 
@@ -213,4 +358,4 @@ tail = tail.append({'Command':'{head -4 | tail -3; head -6 | tail -1} < lol.txt 
 
 tail = tail.append({'Command':'{head -4 | tail -3; head -6 | tail -1} < lol.txt >> file.txt','NL Queries':['Append dicrete set of lines between 2 to 4 and 6th single file lol.txt in file.txt.','How do I Append file.txt with 2 to 4 and 6th lines single file lol.txt in file.txt?','How can i Append discontionous set of lines from a single file into another file?']},ignore_index=True)
 '''
-print (tail)
+print (tail.shape)
