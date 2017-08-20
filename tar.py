@@ -172,25 +172,25 @@ tar = tar.append({'Command': 'tar -cvwf check.tar Music/',
 
 #27
 tar = tar.append({'Command': 'tar -czwf check.tar.gz Music/',
-                  'NL Queries': ['Create gzipped archive of Music directory named check.tar.gz and ask for each file or directory to be added to archive or not .',
+                  'NL Queries': ['Create gzipped archive of Music directory named check.tar.gz and ask for each each file or directory to be added to archive or not .',
                                  'Interactively ask for each file in Music directory to be added to check.tar.gz gzip archive or not.',
                                  'How do I select for each file to be added to gzipped archive check.tar.gz in Music directory?.']}, ignore_index = True)
 
 #28
 tar = tar.append({'Command': 'tar -cvzwf check.tar.gz Music/',
-                  'NL Queries': ['Create gzipped archive of Music directory named check.tar.gz and ask for each file or directory to be added to archive or not and give me the details.',
+                  'NL Queries': ['Create gzipped archive of Music directory named check.tar.gz and ask for each each file or directory to be added to archive or not and give me the details.',
                                  'Interactively ask for each file in Music directory to be added to check.tar.gz gzip archive or not. Also give the details of task done.',
                                  'How do I select for each file to be added to gzipped archive check.tar.gz in Music directory? Show the tasks being done.']}, ignore_index = True)
 
 #29
 tar = tar.append({'Command': 'tar -cjwf check.tar.bz2 Music/',
-                  'NL Queries': ['Create bzipped2 archive of Music directory named check.tar.bz2 and ask for each file or directory to be added to archive or not .',
+                  'NL Queries': ['Create bzipped2 archive of Music directory named check.tar.bz2 and ask for each each file or directory to be added to archive or not .',
                                  'Interactively ask for each file in Music directory to be added to check.tar.bz2 bzip2 archive or not.',
                                  'How do I select for each file to be added to bzipped2 archive check.tar.bz2 in Music directory?']}, ignore_index = True)
 
 #30
 tar = tar.append({'Command': 'tar -cvjwf check.tar.gz Music/',
-                  'NL Queries': ['Create bzipped2 archive of Music directory named check.tar.bz2 and ask for  each file or directory to be added to archive or not and give me the details.',
+                  'NL Queries': ['Create bzipped2 archive of Music directory named check.tar.bz2 and ask for each each file or directory to be added to archive or not and give me the details.',
                                  'Interactively ask for each file in Music directory to be added to check.tar.bz2 bzip2 archive or not. Also give the details of task done.',
                                  'How do I select for each file to be added to bzipped2 archive check.tar.bz2 in Music directory? Show the tasks being done.']}, ignore_index = True)
 
@@ -316,122 +316,183 @@ tar = tar.append({'Command': 'tar --no-xattrs -cf last.tar text.txt',
 
 #51
 tar = tar.append({'Command': 'tar --xattrs -czf last.tar.gz text.txt',
-                  'NL Queries': ['Create gzip archive, with extended attribute support, last.tar with text.txt in it.']}, ignore_index = True)
+                  'NL Queries': ['Create gzip archive, with extended attribute support, last.tar with text.txt in it.',
+                                 'Tar the text.txt file inside last.tar.gz gzip archive with extended attribute support.',
+                                 'Archive text.txt in new gzip archive last.tar.gz with extended attribute support.']}, ignore_index = True)
 
 #52
 tar = tar.append({'Command': 'tar --no-xattrs -czf last.tar.gz text.txt',
-                  'NL Queries': ['Create gzip archive, without extended attribute support, last.tar with text.txt in it.']}, ignore_index = True)
+                  'NL Queries': ['Create gzip archive, without extended attribute support, last.tar with text.txt in it.',
+                                 'Tar the text.txt file inside last.tar.gz gzip archive without extended attribute support.',
+                                 'Archive text.txt in new gzip archive last.tar.gz without extended attribute support.']}, ignore_index = True)
 
 #53
 tar = tar.append({'Command': 'tar --xattrs -cjf last.tar.bz2 text.txt',
-                  'NL Queries': ['Create bzip2 archive, with extended attribute support, last.tar with text.txt in it.']}, ignore_index = True)
+                  'NL Queries': ['Create bzip2 archive, with extended attribute support, last.tar with text.txt in it.',
+                                 'Tar the text.txt file inside last.tar.bz2 bzip2 archive with extended attribute support.',
+                                 'Archive text.txt in new bzip2 archive last.tar.bz2 with extended attribute support.']}, ignore_index = True)
 
 #54
 tar = tar.append({'Command': 'tar --no-xattrs -cjf last.tar.bz2 text.txt',
-                  'NL Queries': ['Create bxip2 archive, without extended attribute support, last.tar with text.txt in it.']}, ignore_index = True)
+                  'NL Queries': ['Create bxip2 archive, without extended attribute support, last.tar with text.txt in it.',
+                                 'Tar the text.txt file inside last.tar.bz2 bzip2 archive without extended attribute support.',
+                                 'Archive text.txt in new bzip2 archive last.tar.bz2 without extended attribute support.']}, ignore_index = True)
 
 #55
 tar = tar.append({'Command': 'tar --selinux -cf suits.tar harvey.txt',
-                  'NL Queries': ['Create an archive named suits.tar of harvey.txt with SELinux support.']}, ignore_index = True)
+                  'NL Queries': ['Create an archive named suits.tar of harvey.txt with SELinux support.',
+                                 'Archive harvey.txt with name suits.tar and selinux support.',
+                                 'Tar harvey.txt in new archive, suits.tar with sel enabled.']}, ignore_index = True)
 
 #56
 tar = tar.append({'Command': 'tar --no-selinux -cf suits.tar harvey.txt',
-                  'NL Queries': ['Create an archive named suits.tar of harvey.txt without SELinux support.']}, ignore_index = True)
+                  'NL Queries': ['Create an archive named suits.tar of harvey.txt without SELinux support.',
+                                 'Archive harvey.txt with name suits.tar and selinux support disabled.',
+                                 'Tar harvey.txt in new archive, suits.tar without sel.']}, ignore_index = True)
 
 #57
 tar = tar.append({'Command': 'tar --selinux -cjf last.tar.bz2 text.txt',
-                  'NL Queries': ['Create bzip2 archive, with extended selinux support, last.tar with text.txt in it.']}, ignore_index = True)
+                  'NL Queries': ['Create bzip2 archive, with extended selinux support, last.tar with text.txt in it.',
+                                 'Create bz2 archive text.txt with name last.tar.bz2 and selinux support.',
+                                 'Tar text.txt in new bzip2 archive, last.tar with sel enabled.']}, ignore_index = True)
 
 #58
 tar = tar.append({'Command': 'tar --no-selinux -cjf last.tar.bz2 text.txt',
-                  'NL Queries': ['Create bxip2 archive, without selinux support, last.tar with text.txt in it.']}, ignore_index = True)
+                  'NL Queries': ['Create bxip2 archive, without selinux support, last.tar with text.txt in it.',
+                                 'Create bz2 archive text.txt with name last.tar.bz2 and selinux support disabled.',
+                                 'Tar text.txt in new bzip2 archive, last.tar without sel.']}, ignore_index = True)
 
 #59
 tar = tar.append({'Command': 'tar --selinux -czf suits.tar.gz harvey.txt',
-                  'NL Queries': ['Create a gzip archive named suits.tar.gz of harvey.txt with SELinux support.']}, ignore_index = True)
+                  'NL Queries': ['Create a gzip archive named suits.tar.gz of harvey.txt with SELinux support.',
+                                 'gzip archive harvey.txt with name suits.tar.gz and selinux support.',
+                                 'Tar harvey.txt in new gz archive, suits.tar.gz with sel enabled.']}, ignore_index = True)
 
 #60
 tar = tar.append({'Command': 'tar --no-selinux -czf suits.tar.gz harvey.txt',
-                  'NL Queries': ['Create a gzip archive named suits.tar.gz of harvey.txt without SELinux support.']}, ignore_index = True)
+                  'NL Queries': ['Create a gzip archive named suits.tar.gz of harvey.txt without SELinux support.',
+                                 'gzip archive harvey.txt with name suits.tar.gz and selinux support removed.',
+                                 'Tar harvey.txt in new gz archive, suits.tar.gz without sel.']}, ignore_index = True)
 
 #61
 tar = tar.append({'Command': 'tar --no-recursion -cwf anime.tar Manga/',
-                  'NL Queries': ['Create an archive of directory Manga as anime.tar . Do not descend into directories and ask for each file to be added to archive or not.']}, ignore_index = True)
+                  'NL Queries': ['Create an archive of directory Manga as anime.tar . Do not descend into directories and ask for each file to be added to archive or not.',
+                                 'How to archive Manga directory in new archive anime.tar without archiveing subdirectories with my permission?',
+                                 'Archive Manga as anime.tar without descending into sub-folders. Ask for permission for each file to be added to archive.']}, ignore_index = True)
 
 #62
 tar = tar.append({'Command': 'tar --no-recursion -cwzf anime.tar.gz Manga/',
-                  'NL Queries': ['Create an gzip archive of directory Manga as anime.tar.gz . Do not descend into directories and ask for each file to be added to archive or not.']}, ignore_index = True)
+                  'NL Queries': ['Create an gzip archive of directory Manga as anime.tar.gz . Do not descend into directories and ask for each file to be added to archive or not.',
+                                 'Without descending into directories, archive Manga folder in gzip format with name anime.tar.gz . Ask for each file to be added.',
+                                 'Compress Manga folder as anime.tar.gz in gzip format without traversing sub-directories. Ask for permission to add each file.']}, ignore_index = True)
 
 #63
 tar = tar.append({'Command': 'tar --no-recursion -cwjf anime.tar.bz2 Manga/',
-                  'NL Queries': ['Create an bzip2 archive of directory Manga as anime.tar.gz . Do not descend into directories and ask for each file to be added to archive or not.']}, ignore_index = True)
+                  'NL Queries': ['Create an bzip2 archive of directory Manga as anime.tar.gz . Do not descend into directories and ask for each file to be added to archive or not.',
+                                 'Without descending into directories, archive Manga folder in bzip2 format with name anime.tar.bz2 . Ask for each file to be added.',
+                                 'Compress Manga folder as anime.tar.bz2 in bzip2 format without traversing sub-directories. Ask for permission to add each file.']}, ignore_index = True)
 
 #64
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cf anime.tar Manga/',
-                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar .']}, ignore_index = True)
+                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar .',
+                                 'Excluding .avi files, archive Manga directory as anime.tar .',
+                                 'Compress Manga folder inside anime.tar without including .avi files.']}, ignore_index = True)
 
 #65
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cjf anime.tar.bz2 Manga/',
-                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar .']}, ignore_index = True)
+                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar .',
+                                 'Excluding .avi files, archive Manga directory as anime.tar.bz2 . Compress the archive using bz2 method.',
+                                 'Compress Manga folder inside anime.tar.bz without including .avi files. Use bz2 compression method.']}, ignore_index = True)
 
 #66
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -czf anime.tar.gz Manga/',
-                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar .']}, ignore_index = True)
+                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar .',
+                                 'Excluding .avi files, archive Manga directory as anime.tar.gz . Compress the archive using gzip method.',
+                                 'Compress Manga folder inside anime.tar.gz without including .avi files. Use gz compression method.']}, ignore_index = True)
 
 #67
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cvf anime.tar Manga/',
-                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files.']}, ignore_index = True)
+                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files.',
+                                 'Excluding .avi files, archive Manga directory as anime.tar and show the list of added files.',
+                                 'Compress Manga folder inside anime.tar without including .avi files and display the names of files that were archived.']}, ignore_index = True)
 
 #68
-tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -czvf anime.tar.gz Manga/',
-                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files.']}, ignore_index = True)
+tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cjvf anime.tar.bz2 Manga/',
+                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar.bz2 and show the archived files.',
+                                 'Excluding .avi files, archive Manga directory as anime.tar.bz2 . Compress the archive using bz2 method and give acknowledgement for added files.',
+                                 'Compress Manga folder inside anime.tar.bz without including .avi files. Use bz2 compression method and return names of added files for reference.']}, ignore_index = True)
 
 #69
-tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cjvf anime.tar Manga/',
-                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files.']}, ignore_index = True)
+tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -czvf anime.tar.gz Manga/',
+                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files.',
+                                 'Excluding .avi files, archive Manga directory as anime.tar.gz . Compress the archive using gzip method and display the added files.',
+                                 'Compress Manga folder inside anime.tar.gz without including .avi files. Use gz compression method and show the names of added files.']}, ignore_index = True)
 
 #70
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cwf anime.tar Manga/',
-                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar . Ask before adding each file.']}, ignore_index = True)
+                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar . Ask before adding each file.',
+                                 'Excluding .avi files create archive of Manga directory as anime.tar and ask for adding each file.',
+                                 'Archive Manga folder as anime.tar but do not include any file whose name ends with .avi . Ask before adding each file.']}, ignore_index = True)
 
 #71
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cjwf anime.tar.bz2 Manga/',
-                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar . Ask before adding each file.']}, ignore_index = True)
+                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar . Ask before adding each file.',
+                                 'Excluding .avi files create bzip2 archive of Manga directory as anime.tar.bz2 and ask for adding each file.',
+                                 'Archive Manga folder as anime.tar but do not include any file whose name ends with .avi . Ask before adding each file and use bz2 form of compression.']}, ignore_index = True)
 
 #72
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cwzf anime.tar.gz Manga/',
-                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar . Ask before adding each file.']}, ignore_index = True)
+                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar . Ask before adding each file.',
+                                 'Excluding .avi files create gzip archive of Manga directory as anime.tar.gz and ask for adding each file.',
+                                 'Archive Manga folder as anime.tar.gz but do not include any file whose name ends with .avi . Ask before adding each file and use gzip form of compression.']}, ignore_index = True)
 
 #73
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cvwf anime.tar Manga/',
-                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files. Ask before adding each file.']}, ignore_index = True)
+                  'NL Queries': ['Create an archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files. Ask before adding each file.',
+                                 'Excluding .avi files create archive of Manga directory as anime.tar and ask for adding each file. Give acknowledgement for added files.',
+                                 'Archive Manga folder as anime.tar but do not include any file whose name ends with .avi . Ask before adding each file and show the names of added files.']}, ignore_index = True)
 
 #74
 tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -czwvf anime.tar.gz Manga/',
-                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files. Ask before adding each file.']}, ignore_index = True)
+                  'NL Queries': ['Create a gz archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files. Ask before adding each file.',
+                                 'Excluding all files with .avi extension compress Manga directory as gz archive with name anime.tar.gz . Ask before adding each file and show the archived files.',
+                                 'Archive Manga folder as gzip archive under the name anime.tar.gz and do not include .avi files. Ask before adding each file and show the name as acknowledgement for added files.']}, ignore_index = True)
 
 #75
-tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cjwvf anime.tar Manga/',
-                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files. Ask before adding each file.']}, ignore_index = True)
+tar = tar.append({'Command': 'tar --exclude=\"*.avi\" -cjwvf anime.tar.bz2 Manga/',
+                  'NL Queries': ['Create a bz2 archive of Manga directory after excluding all the files ending with \'.avi\' and save it as anime.tar and show the archived files. Ask before adding each file.',
+                                 'Excluding all files with .avi extension compress Manga directory as bz2 archive with name anime.tar.bz2 . Ask before adding each file and show the archived files.',
+                                 'Archive Manga folder as bzip2 archive under the name anime.tar.bz2 and do not include .avi files. Ask before adding each file and show the name as acknowledgement for added files.']}, ignore_index = True)
 
 #76
 tar = tar.append({'Command': 'tar -xf anime.tar --wildcards \"*.txt\"',
-                  'NL Queries': ['Extract all files from anime.tar which end with \'.txt\'.']}, ignore_index = True)
+                  'NL Queries': ['Extract all files from anime.tar which end with \'.txt\' .',
+                                 'Untar all the files ending with .txt inside anime.tar .',
+                                 'Uncompress all files with .txt extension inside anime.tar archive.']}, ignore_index = True)
 
 #77
 tar = tar.append({'Command': 'tar -xvf anime.tar --wildcards \"*.txt\"',
-                  'NL Queries': ['Extract all files from anime.tar which end with \'.txt\' and show the list of extracted files.']}, ignore_index = True)
+                  'NL Queries': ['Extract all files from anime.tar which end with \'.txt\' and show the list of extracted files.',
+                                 'Untar all the files ending with .txt inside anime.tar and show the list of extracted files.',
+                                 'Uncompress all files with .txt extension inside anime.tar archive and display which files were extracted.']}, ignore_index = True)
 
 #78
 tar = tar.append({'Command': 'tar --help',
-                  'NL Queries': ['Display summary of tar command.']}, ignore_index = True)
+                  'NL Queries': ['Display summary of tar command.',
+                                 'Show options available with tar command with details.',
+                                 'Which options are available with tar command? Also show the details for options.']}, ignore_index = True)
 
 #79
 tar = tar.append({'Command': 'tar --usage',
-                  'NL Queries': ['Display options available to use with tar command.']}, ignore_index = True)
+                  'NL Queries': ['Display options available to use with tar command.',
+                                 'How to use tar command?',
+                                 'Display the options available for use with tar command.']}, ignore_index = True)
 
 #80
 tar = tar.append({'Command': 'tar --version',
-                  'NL Queries': ['Display version of tar command.']}, ignore_index = True)
+                  'NL Queries': ['Display version of tar command.',
+                                 'Show version number of tar command.',
+                                 'Display authors of tar command.',
+                                 'Display authors and version of tar command.']}, ignore_index = True)
 
-print tar.shape
+print tar
