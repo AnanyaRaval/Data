@@ -2,15 +2,11 @@ import pandas as pd
 
 sort = pd.DataFrame(columns = ['Command','NL Queries'])
 
-sort = sort.append({'Command':'sort data.txt','NL Queries':['Sort the file data.txt in this directory.',
-                                'What is the command to sort file data.txt in alphabetical order?',
-                                'How do I sort contents of file data.txt present in this directory, in ascending order?']},ignore_index = True)
+sort = sort.append({'Command':'sort data.txt','NL Queries':['Sort the file data.txt in this directory.','What is the command to sort file data.txt in alphabetical order?','How do I sort contents of file data.txt present in this directory, in ascending order?']},ignore_index = True)
+sort = sort.append({'Command':'sort -f data.txt','NL Queries':['Sort the file data.txt in alphabetical order. Ignore the case of the words.','How do I sort the contents of file data.txt in this folder with being case sensitive?']},ignore_index=True)
+sort = sort.append({'Command':'sort -k2 test.txt','NL Queries':['Sort contents of text.txt using values in second column.','How do I sort test.txt using contents of second column?']},ignore_index=True)
 
-sort = sort.append({'Command':'sort -f data.txt','NL Queries':['Sort the file data.txt in alphabetical order. Ignore the case of the words.',
-                                    'How do I sort the contents of file data.txt in this folder with being case sensitive?']},ignore_index=True)
 
-sort = sort.append({'Command':'sort -k2 test.txt','NL Queries':['Sort contents of text.txt using values in second column.',
-                                'How do I sort test.txt using contents of second column?']},ignore_index=True)
 
 #1
 sort = sort.append({'Command':     'sort -r another.txt',
@@ -225,7 +221,7 @@ sort = sort.append({'Command':     'sort -z blag.doc',
 
 #32
 sort = sort.append({'Command':     'sort -z blag.doc -o output',
-                    'NL Queries':  ['Sort lines in blag.doc and treat NUL as line delimiter. Save it in file named output .',
+                    'NL Queries':  ['Sort lines in blag.doc and treat NULL as line delimiter. Save it in file named output .',
                                     'Treating NULL as delimiter sort the file blag.doc and save the output as output file.',
                                     'Save the output of sorting blag.doc file, if NULL is treated as line delimiter, in file output .']}, ignore_index = True)
 
@@ -355,7 +351,7 @@ sort = sort.append({'Command':     'sort -rz blag.doc',
 sort = sort.append({'Command':     'sort -rz blag.doc -o output',
                     'NL Queries':  ['Reverse sort lines in blag.doc and treat NULL as line delimiter. Save it in file named output .',
                                     'Sort the file blag.doc in reverse order treating NULL as line delimiter. Save the result as output file.',
-                                    'Arrange the content of file blag.doc in reverse order and NUL is the line terminator. Store the result in file output .']}, ignore_index = True)
+                                    'Arrange the content of file blag.doc in reverse order and NULL is the line terminator. Store the result in file output .']}, ignore_index = True)
 
 #54
 sort = sort.append({'Command':     'sort -rM months.txt',
@@ -515,10 +511,10 @@ sort = sort.append({'Command':     'sort big.txt --compress-program=zip',
                                     'Use zip for compressing temporary files, sort big.txt file.']}, ignore_index = True)
 
 #79
-#sort = sort.append({'Command':     'sort big.txt --compress-program=zip -o sortedbig.txt',
-#                    'NL Queries':  ['Sort the file big.txt and use zip command for compressing temporary files. Save the output in sortedbig.txt file.',
-#                                    'Use zip for compressing temporary files, sort big.txt file. Store the output in sortedbig.txt file.',
-#                                    'Order the contents of big.txt and use zip for compressing temporary files and saving the result in sortedbig.txt .']}, ignore_index = True)
+sort = sort.append({'Command':     'sort big.txt --compress-program=zip -o sortedbig.txt',
+                    'NL Queries':  ['Sort the file big.txt and use zip command for compressing temporary files. Save the output in sortedbig.txt file.',
+                                    'Use zip for compressing temporary files, sort big.txt file. Store the output in sortedbig.txt file.',
+                                    'Order the contents of big.txt and use zip for compressing temporary files and saving the result in sortedbig.txt .']}, ignore_index = True)
 
 #80
 sort = sort.append({'Command':     'sort -r big.txt --compress-program=gzip',
@@ -602,7 +598,7 @@ sort = sort.append({'Command':     'sort -R --random-source=rand.txt text.txt',
 sort = sort.append({'Command':     'sort -R --random-source=rand.txt text.txt -o randomize.txt',
                     'NL Queries':  ['Sort the lines of text.txt randomly using seed from rand.txt file and save the output in randomize.txt file.',
                                     'Using seeds from rand.txt sort text.txt . Store the output in randomize.txt file.',
-                                    'Randomly sort text.txt . Use random seeding from rand.txt file. Save the result as randomize.txt .']}, ignore_index = True)
+                                    'Randomly sort text.txt . Use random seeding from rand.txt file. Save th result as randomize.txt .']}, ignore_index = True)
 
 #94
 sort = sort.append({'Command':     'sort --parallel=24 bigdata.txt',
@@ -709,8 +705,8 @@ sort = sort.append({'Command':     'sort -du dup.txt',
 #111
 sort = sort.append({'Command':     'sort -dt\'-\' manga.txt',
                     'NL Queries':  ['Sort the lines in manga.txt file in dictionary order using - as field separator.',
-                                    'Order the contents of dup.txt in dictionary style and remove duplicates using - as field separator.',
-                                    'Removing duplicate lines, arrange the data in dup.txt in dictionary format using - as a field separator.']}, ignore_index = True)
+                                    'Order the contents of dup.txt in dictionary style and remove duplicates. Use \'-\' to separate words.',
+                                    'Removing duplicate lines, arrange the data in dup.txt in dictionary format. Words are separated by - symbol.']}, ignore_index = True)
 
 #112
 sort = sort.append({'Command':     'sort -Mk3,3 reg.txt',
@@ -757,359 +753,537 @@ sort = sort.append({'Command':     'sort -hb readme.txt',
 #119
 sort = sort.append({'Command':     'sort -hk2,2 readme.txt',
                     'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use second key to sort.',
-                                    '']}, ignore_index = True)
+                                    'Using second word as sorting key, sort readme.txt treating the content as human friendly numerals.',
+                                    'Arrange contents of readme.txt using second word as key in human readable form.']}, ignore_index = True)
 
 #120
 sort = sort.append({'Command':     'sort -ht\';\' readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use ; as delimiter for keys.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use ; as delimiter for keys.',
+                                    'Arrange the contents of readme.txt in human readable format. Use ; as word separator.',
+                                    'Order the data in readme.txt in human readable format separated by ; .']}, ignore_index = True)
 
 #121
 sort = sort.append({'Command':     'sort -hu readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines.',
+                                    'Removing duplicate lines sort readme.txt as human readable number.',
+                                    'Arrange the contents of readme.txt considering them human interpretable numbers and remove duplicate lines.']}, ignore_index = True)
 
 #122
 sort = sort.append({'Command':     'sort -hut\'-\' readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys.',
+                                    'Removing duplicate lines sort readme.txt as human readable number. Use - as key delimiter.',
+                                    'Arrange the contents of readme.txt considering them human interpretable numbers and remove duplicate lines. Use - as word delimiter.']}, ignore_index = True)
 
 #123
 sort = sort.append({'Command':     'sort -hbt\'-\' readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter.',
+                                    'Arrange the contents of readme.txt in human readable format. Use ; as word separator and ignore leading spaces.',
+                                    'Order the data in readme.txt in human readable format separated by ; . Do not consider starting blanks.']}, ignore_index = True)
 
 #124
 sort = sort.append({'Command':     'sort -hk5,5 -t\':\' readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key.',
+                                    'Using fifth word as sorting key, sort readme.txt treating the content as human friendly numerals. Use : as key delimiter.',
+                                    'Arrange contents of readme.txt using fifth word as key in human readable form. Use : as word separator.']}, ignore_index = True)
 
 #125
 sort = sort.append({'Command':     'sort -hft\',\' readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison.',
+                                    'Arrange the contents of readme.txt in human readable format with , as word separator. Do case-insensitive comparison.',
+                                    'Order the contents of readme.txt file as if they are human readable numbers and use \',\' for separating words. Consider upper and lower case alphabets as same.']}, ignore_index = True)
 
 #126
 sort = sort.append({'Command':     'sort -huk4,7  readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use word columns 4 through 7 as keys.',
+                                    'Using words 4 through 7 as keys, in order, sort contents of readme.txt in human readable style. Remove duplicate lines.',
+                                    'Removing duplicate lines, sort readme.txt using words 4 to 7 in human readable number format.']}, ignore_index = True)
 
 #127
 sort = sort.append({'Command':     'sort -hbk2,5 readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5.',
+                                    'Using words 2 through 5 as keys, in order, sort contents of readme.txt in human readable style. Do not consider leading blanks.',
+                                    'Sort readme.txt using words 2 to 5 in human readable number format. Ignore starting blank spaces.']}, ignore_index = True)
 
 #128
 sort = sort.append({'Command':     'sort -huk5,8 -t\'.\' readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use . as delimiter and columns 5 through 8 as keys. Remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use . as word delimiter and columns 5 through 8 as keys. Remove duplicate lines.',
+                                    'Using words 5 through 8 as keys, in order, sort contents of readme.txt in human readable style. Remove duplicate lines and use \'.\' as separator.',
+                                    'Removing duplicate lines, sort readme.txt using words 5 to 8 in human readable number format. Use \'.\' as word delimiter.']}, ignore_index = True)
 
 #129
 sort = sort.append({'Command':     'sort -hbuk3,6 readme.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines.',
+                                    'Using words 3 through 6 as keys, in order, sort contents of readme.txt in human readable style. Do not consider leading blanks and remove repeating lines.',
+                                    'Removing duplicate lines, sort readme.txt using words 3 to 6 in human readable number format. Ignore starting blank spaces and do not show identical lines.']}, ignore_index = True)
 
 #130
 sort = sort.append({'Command':     'sort -bdr random.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and in dictionary order.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and in dictionary order.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse dictionary order.',
+                                     'Arrange the contents of random.txt in reverse dictionary order and ignoring leading spaces.']}, ignore_index = True)
 
 #131
 sort = sort.append({'Command':     'sort -bfr random.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and case of alphabets.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and case of alphabets.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse order without considering case sensitivity.',
+                                     'Arrange the contents of random.txt in reverse order and ignoring leading spaces and case differences.']}, ignore_index = True)
 
 #132
 sort = sort.append({'Command':     'sort -bMr random.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and sort the months in year.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and sort the months in year.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse order of months of year.',
+                                     'Arrange the contents of random.txt in reverse order of months and ignoring leading spaces.']}, ignore_index = True)
 
 #133
 sort = sort.append({'Command':     'sort -bnr random.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use numeric sorting.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use numeric sorting.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse numeric order.',
+                                     'Arrange the contents of random.txt in reverse numeric order and ignoring leading spaces.']}, ignore_index = True)
 
 #134
 sort = sort.append({'Command':     'sort -bru random.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Suppress duplicate lines.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Suppress duplicate lines.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse order. Remove redundant lines.',
+                                     'Arrange the contents of random.txt in reverse order and ignoring leading spaces. Remove identical lines.']}, ignore_index = True)
 
 #135
 sort = sort.append({'Command':     'sort -brt\';\' random.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use ; as field separator.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use ; as field separator.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse order. ; should be treated as key delimiter.',
+                                     'Arrange the contents of random.txt in reverse order and ignoring leading spaces. Treat ; as word separator.']}, ignore_index = True)
 
 #136
 sort = sort.append({'Command':     'sort -drk2,2 random.txt',
-                    'NL Queries':  ['Reverse sort the lines in file random.txt according to the second word in the lines in dictionary order.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the lines in file random.txt according to the second word in the lines in dictionary order.',
+                                    'Sort data in random.txt file in reverse dictionary order. Use 2nd word as key.',
+                                    'Arrange the contents of random.txt in reverse order as that in a dictionary using 2nd column of word for sorting.']}, ignore_index = True)
 
 #137
 sort = sort.append({'Command':     'sort -dru dup.txt',
-                    'NL Queries':  ['Reverse sort the lines in dup.txt in dictionary order and remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the lines in dup.txt in dictionary order and remove duplicate lines.',
+                                    'Sort data in random.txt file in reverse dictionary order. Do not show redundant lines.',
+                                    'Arrange the contents of random.txt in reverse order as that in a dictionary using 2nd column of word for sorting. Show unique lines only.']}, ignore_index = True)
 
 #138
 sort = sort.append({'Command':     'sort -drt\'-\' manga.txt',
-                    'NL Queries':  ['Reverse sort the lines in manga.txt file in dictionary order using - as field separator.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the lines in manga.txt file in dictionary order using - as field separator.',
+                                    'Sort the contents of manga.txt in reverse order as that in a dictionary and use - to separate words.',
+                                    'Arrange the contents of manga.txt in reverse dictionary order. Use \'-\' as word separator. ']}, ignore_index = True)
 
 #139
 sort = sort.append({'Command':     'sort -rMk3,3 reg.txt',
-                    'NL Queries':  ['Reverse sort the file reg.txt using third key as the only key. Do month sorting.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the file reg.txt using third key as the only key. Do month sorting.',
+                                    'Order the contents of reg.txt using month sorting. Use 3rd word as key. Sort in reverse order.',
+                                    'Arrange the data in reg.txt in reverse month sorting order using 3rd word as sorting key.']}, ignore_index = True)
 
 #140
 sort = sort.append({'Command':     'sort -rMk3,3 -t\';\' rendom.txt',
-                    'NL Queries':  ['Reverse sort the file rendom.txt using third key as the only key. Do month sorting. Use ; as delimiter.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the file rendom.txt using third key as the only key. Do month sorting. Use ; as delimiter.',
+                                    'Order the contents of reg.txt using month sorting. Use 3rd word as key. Sort in reverse order using ; as key delimiter.',
+                                    'Arrange the data in reg.txt in reverse month sorting order using 3rd word as sorting key. Words are separated by ; character.']}, ignore_index = True)
 
 #141
 sort = sort.append({'Command':     'sort -rnk2,2 nums.txt',
-                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key.']}, ignore_index = True)
+                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key.',
+                                    'Use 2nd word as sorting key to numerically sort nums.txt in reverse order.',
+                                    'Set column 2 as sorting key and sort the file nums.txt in reverse numeric order.']}, ignore_index = True)
 
 #142
 sort = sort.append({'Command':     'sort -rnk2,2 -t\',\' nums.txt',
-                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use , as delimiter.']}, ignore_index = True)
+                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use , as delimiter.',
+                                    'Use 2nd word as sorting key to numerically sort nums.txt in reverse order. Treat ; as delimiter of words.',
+                                    'Set column 2 as sorting key and sort the file nums.txt in reverse numeric order. Use \';\' as separator of keys.']}, ignore_index = True)
 
 #143
 sort = sort.append({'Command':     'sort -rnt\';\' nums.txt',
-                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use ; as delimiter.']}, ignore_index = True)
+                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use ; as delimiter.',
+                                    'Numerically sort nums.txt in reverse order. Treat ; as delimiter of words.',
+                                    'Sort the file nums.txt in reverse numeric order. Use \';\' as separator of keys.']}, ignore_index = True)
 
 #144
 sort = sort.append({'Command':     'sort -rh readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. Show the output.',
+                                    'Sort the file, readme.txt considering them as human readable numbers. Sort in decreasing order.']}, ignore_index = True)
 
 #145
 sort = sort.append({'Command':     'sort -hrb readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore the spaces at the starting of line.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore the spaces at the starting of line.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers and ignoring leading blanks. Show the output.',
+                                    'Sort the file, readme.txt considering them as human readable numbers and not considering starting white spaces. Sort in decreasing order.']}, ignore_index = True)
 
 #146
 sort = sort.append({'Command':     'sort -hrk2,2 readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use second key as the only key to sort.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use second key as the only key to sort.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers and using 2nd column of words. Show the output.',
+                                    'Sort the file, readme.txt considering them as human readable numbers. Sort in decreasing order, if 2nd word of each line is used as key.']}, ignore_index = True)
 
 #147
 sort = sort.append({'Command':     'sort -rht\';\' readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use ; as delimiter for keys.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use ; as delimiter for keys.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. \';\' is to be treated as word separator. Show the output.',
+                                    'Sort the file, readme.txt considering them as human readable numbers and ; is the key separator. Sort in decreasing order.']}, ignore_index = True)
 
 #148
 sort = sort.append({'Command':     'sort -hru readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. Show the output removing duplicate lines.',
+                                    'Sort the file, readme.txt considering them as human readable numbers. Sort in decreasing order and remove redundant sentences.']}, ignore_index = True)
 
 #149
 sort = sort.append({'Command':     'sort -hrut\'-\' readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. \';\' is to be treated as word separator. Show the output of only unique lines.',
+                                    'Sort the file, readme.txt considering them as human readable numbers and - is the key separator. Sort in decreasing order and remove redundant lines.']}, ignore_index = True)
 
 #150
 sort = sort.append({'Command':     'sort -rhbt\'-\' readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers without taking starting spaces into account. \'-\' is to be treated as word separator. Show the output.',
+                                    'Sort the file, readme.txt considering them as human readable numbers and - is the key separator. Sort in decreasing order ignoring leading blanks.']}, ignore_index = True)
 
 #151
 sort = sort.append({'Command':     'sort -rhk5,5 -t\':\' readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key.',
+                                    'How do I arrange the lines of readme.txt in reverse order, if they are considered as shortened numbers, with : acting as separator between words. Use 5th column of word as sorting key.',
+                                    'Rearrange the contents of readme.txt in reverse order considering them as human readable numbers. 5th word column is to be used as sorting parameter and : as word delimiter.']}, ignore_index = True)
 
 #152
 sort = sort.append({'Command':     'sort -rhft\',\' readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison.',
+                                    'Performing case insensitive comparison, arrange the contents of readme.txt treating the contents as human interpretable numbers. Use , as word delimiter.',
+                                    'Arrange the contents of readme.txt in human readable style in reverse order. Use \',\' as word separator. Treat upper and lowercase as equivalent.']}, ignore_index = True)
 
 #153
 sort = sort.append({'Command':     'sort -rhuk4,7  readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order. Contents are shortened numbers and display only unique lines.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers? Show only unique lines and use words 4 through 7 for sorting.']}, ignore_index = True)
 
 #154
 sort = sort.append({'Command':     'sort -rhbk2,5 readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order. Contents are shortened numbers and ignore leading blanks.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers? Neglect leading spaces and use words 4 through 7 for sorting.']}, ignore_index = True)
 
 #155
 sort = sort.append({'Command':     'sort -rhuk5,8 -t\'.\' readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use . as delimiter and columns 5 through 8 as keys. Remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use . as delimiter and columns 5 through 8 as keys. Remove duplicate lines.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order. Contents are shortened numbers and display only unique lines. Treat \'.\' as word delimiter.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers? Show only unique lines and use words 4 through 7 for sorting. Use \'.\' to separate two words.']}, ignore_index = True)
 
 #156
 sort = sort.append({'Command':     'sort -rhbuk3,6 readme.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting blank spaces and remove duplicate lines.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order. Contents are shortened numbers and display only unique lines. Neglect leading blank spaces.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers? Show only unique lines and use words 4 through 7 for sorting. Omit starting spaces.']}, ignore_index = True)
 
 #157
 sort = sort.append({'Command':     'sort -bd random.txt -o sorted.txt',
-                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces and in dictionary order. Save the output as sorted.txt .']}, ignore_index = True)
+                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces and in dictionary order. Save the output as sorted.txt .',
+                                     'Arrange the contents of random.txt in dictionary order ignoring the leading blanks and store the result in sorted.txt file.',
+                                     'Save the ordered contents of file random.txt in dictionary style in sorted.txt . Do not consider leading blanks.']}, ignore_index = True)
 
 #158
 sort = sort.append({'Command':     'sort -bf random.txt -o sorted.txt',
-                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces and case of alphabets. Save the output as sorted.txt .']}, ignore_index = True)
+                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces and case of alphabets. Save the output as sorted.txt .',
+                                     'Arrange the data in file random.txt without considering leading blanks and case of alphabets. Store the result to sorted.txt file.',
+                                     'Ignoring case and leading blanks, sort random.txt file and save the result as sorted.txt file.']}, ignore_index = True)
 
 #159
 sort = sort.append({'Command':     'sort -bM random.txt -o sorted.txt',
-                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces and sort the months in year. Save the output as sorted.txt .']}, ignore_index = True)
+                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces and sort the months in year. Save the output as sorted.txt .',
+                                     'Arrange the contents of random.txt in order of months ignoring the leading blanks. Save the sorted content to sorted.txt .',
+                                     'Order the contents of file random.txt in month style and save the final result to sorted.txt . Do not consider leading blanks.']}, ignore_index = True)
 
 #160
 sort = sort.append({'Command':     'sort -bn random.txt -o sad.txt',
-                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces. Use numeric sorting. Save the output as sad.txt file.']}, ignore_index = True)
+                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces. Use numeric sorting. Save the output as sad.txt file.',
+                                     'Use numeric sorting to arrange the content of random.txt and ignore leading white spaces. Use sad.txt to store the sorted result.',
+                                     'Order the contents of random.txt in numeric order ignoring spaces at the start. Create sad.txt file and save the result into it.']}, ignore_index = True)
 
 #161
 sort = sort.append({'Command':     'sort -bu random.txt -o mad.txt',
-                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces. Suppress duplicate lines. Save the output as mad.txt file.']}, ignore_index = True)
+                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces. Suppress duplicate lines. Save the output as mad.txt file.',
+                                     'Sort the contents of random.txt ignoring leading spaces. Remove repeating lines and save the result as mad.txt file.',
+                                     'Remove redundant lines and sort random.txt ignoring leading spaces. Store the sorted content to mad.txt .']}, ignore_index = True)
 
 #162
 sort = sort.append({'Command':     'sort -bt\';\' random.txt -o tank.txt',
-                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces. Use ; as field separator. Save the output as tank.txt file.']}, ignore_index = True)
+                    'NL Queries':   ['Sort the lines in the file random.txt ignoring starting white spaces. Use ; as field separator. Save the output as tank.txt file.',
+                                     'Using ; as word delimiter, sort random.txt without considering leading blanks.',
+                                     'Arrange the contents of random.txt . Ignore starting spaces of each line and treat ; as word separator.']}, ignore_index = True)
 
 #163
 sort = sort.append({'Command':     'sort -dk2,2 random.txt -o pratik.txt',
-                    'NL Queries':  ['Sort the lines in file random.txt according to the second word in the lines in dictionary order. Save the output as tank.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the lines in file random.txt according to the second word in the lines in dictionary order. Save the output as tank.txt file.',
+                                    'Arrange the data in random.txt using second word as key for dictionary sorting. Save the arranged data to pratik.txt file.',
+                                    'Save the ordered lines of random.txt in pratik.txt . Arrange them in dictionary style using 2nd word as key.']}, ignore_index = True)
 
 #164
 sort = sort.append({'Command':     'sort -du dup.txt -o pratik.txt',
-                    'NL Queries':  ['Sort the lines in dup.txt in dictionary order and remove duplicate lines. Save the output as pratik.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the lines in dup.txt in dictionary order and remove duplicate lines. Save the output as pratik.txt file.',
+                                    'Order the contents of dup.txt in dictionary style and remove duplicates. Store the result as pratik.txt .',
+                                    'Removing duplicate lines, arrange the data in dup.txt in dictionary format. Create pratik.txt file and save the sorted content to it.']}, ignore_index = True)
 
 #165
 sort = sort.append({'Command':     'sort -dt\'-\' manga.txt -o holla.txt',
-                    'NL Queries':  ['Sort the lines in manga.txt file in dictionary order using - as field separator. Save the output as holla.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the lines in manga.txt file in dictionary order using - as field separator. Save the output as holla.txt file.',
+                                    'Saving the final output to holla.txt , order the contents of dup.txt in dictionary style and remove duplicates.',
+                                    'Removing duplicate lines, arrange the data in dup.txt in dictionary format. Store the final output to holla.txt .']}, ignore_index = True)
 
 #166
 sort = sort.append({'Command':     'sort -Mk3,3 reg.txt -o ~/ink.txt',
-                    'NL Queries':  ['Sort the file reg.txt using third key as the only key. Do month sorting. Save the output as ink.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the file reg.txt using third key as the only key. Do month sorting. Save the output as ink.txt in home directory.',
+                                    'Do month sort on content of reg.txt using 3rd word as key and store the output to ~/ink.txt .',
+                                    'Perform month sorting on reg.txt using third word as key. Save the result in ink.txt in home directory.']}, ignore_index = True)
 
 #167
 sort = sort.append({'Command':     'sort -Mk3,3 -t\';\' rendom.txt -o ~/waka.txt',
-                    'NL Queries':  ['Sort the file rendom.txt using third key as the only key. Do month sorting. Use ; as delimiter. Save the output as waka.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the file rendom.txt using third key as the only key. Do month sorting. Use ; as delimiter. Save the output as waka.txt in home directory.',
+                                    'Do month sort on content of reg.txt using 3rd word as key. Use ; as separator and save the result to ~/waka.txt file.',
+                                    'Perform month sorting on reg.txt using third word as key. For separating keys use ; and store the sorted result in ~/waka.txt .']}, ignore_index = True)
 
 #168
 sort = sort.append({'Command':     'sort -nk2,2 nums.txt -o ~/anthrax.txt',
-                    'NL Queries':  ['Do numeric sort on the lines of file nums.txt base on second key. Save the output as anthrax.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Do numeric sort on the lines of file nums.txt base on second key. Save the output as anthrax.txt in home directory.',
+                                    'Perform numeric sort on nums.txt and use second word as key. Use ~/anthrax.txt to save the result.',
+                                    'Order the lines of nums.txt treating them as numbers and use 2nd word for sorting. ~/anthrax.txt should be used to save the output.']}, ignore_index = True)
 
 #169
 sort = sort.append({'Command':     'sort -nk2,2 -t\',\' nums.txt -o ~/numb.txt',
-                    'NL Queries':  ['Do numeric sort on the lines of file nums.txt base on second key. Use , as delimiter. Save the output as ~/numb.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Do numeric sort on the lines of file nums.txt base on second key. Use , as delimiter. Save the output as ~/numb.txt file.',
+                                    'Use , as field separator. Perform numeric sort on nums.txt and use second word as key. Keep the sorted content in ~/numb.txt file.',
+                                    'Use , as word separator. Order the lines of nums.txt treating them as numbers and use 2nd word for sorting. ~/numb.txt should be used for storing the output.']}, ignore_index = True)
 
 #170
 sort = sort.append({'Command':     'sort -nt\';\' nums.txt -o ~/tower.txt',
-                    'NL Queries':  ['Do numeric sort on the lines of file nums.txt base on second key. Use ; as delimiter. Save the output as tower.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Do numeric sort on the lines of file nums.txt base on second key. Use ; as delimiter. Save the output as tower.txt in home directory.',
+                                    'Use , as field separator. Perform numeric sort on nums.txt and store the result to ~/tower.txt file.',
+                                    'Use , as word separator. Order the lines of nums.txt treating them as numbers and saving the sorted content to tower.txt in home folder.']}, ignore_index = True)
 
 #171
 sort = sort.append({'Command':     'sort -h readme.txt -o ~/texas.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Save the output as texas.txt file in home.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Save the output as texas.txt file in home.',
+                                    'Saving the output to ~/texas.txt sort the file named readme.txt in human readable format.',
+                                    'Use ~/texas.txt for storing the final result, sort readme.txt treating the content as human interpretable numbers.']}, ignore_index = True)
 
 #172
 sort = sort.append({'Command':     'sort -hb readme.txt -o ~/otter.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore the spaces at the starting of line. Save the output as ~/otter.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore the spaces at the starting of line. Save the output as ~/otter.txt file.',
+                                    'Ignoring leading blanks , sort readme.txt treating the contents as human friendly numbers. Final result should be saved to ~/otter.txt file.',
+                                    'Arrange the contents of readme.txt considering them as human readable. Do not consider starting white spaces. Use ~/otter.txt to store the sorted content.']}, ignore_index = True)
 
 #173
 sort = sort.append({'Command':     'sort -hk2,2 readme.txt -o ~/kettle.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use second key as the only key to sort. Save the file as kettle.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use second key as the only key to sort. Save the file as kettle.txt in home directory.',
+                                    'Using second word as sorting key, sort readme.txt and store the result in ~/kettle.txt fil. Treat the contents as human friendly numerals.',
+                                    'Arrange contents of readme.txt using second word as key in human readable form and save the resulting output to ~/kettle.txt .']}, ignore_index = True)
 
 #174
 sort = sort.append({'Command':     'sort -ht\';\' readme.txt -o ~/nevada.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use ; as delimiter for keys. Save the file as nevada.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use ; as delimiter for keys. Save the file as nevada.txt in home directory.',
+                                    'Arrange the contents of readme.txt in human readable format. Use ; as word separator and ~/nevada.txt to save the output.',
+                                    'Save the ordered data of readme.txt in ~/nevada.txt file. For sorting, treat them as human readable numbers separated by ; .']}, ignore_index = True)
 
 #175
 sort = sort.append({'Command':     'sort -hu readme.txt -o ~/ostrich.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines. Save the file as ostritch.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines. Save the file as ostritch.txt in home directory.',
+                                    'Removing duplicate lines sort readme.txt them as human readable numbers. For future lookup store them in ~/ostritch.txt file.',
+                                    'Use ~/ostritch.txt to save the final output. Arrange the contents of readme.txt considering them human interpretable numbers and remove duplicate lines.']}, ignore_index = True)
 
 #176
 sort = sort.append({'Command':     'sort -hut\'-\' readme.txt -o ~/water.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys. Save the file as water.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys. Save the file as water.txt in home directory.',
+                                    'Removing duplicate lines sort readme.txt as human readable number. Use - as key delimiter and save the final output to ~/water.txt .',
+                                    'Arrange the contents of readme.txt considering them human interpretable numbers and remove duplicate lines. Use - as word delimiter. For saving the result, use ~/water.txt file.']}, ignore_index = True)
 
 #177
 sort = sort.append({'Command':     'sort -hbt\'-\' readme.txt -o ~/yak.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter. Save the file as yak.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter. Save the file as yak.txt in home directory.',
+                                    'Save the arranged contents of readme.txt to ~/yak.txt. Treat the contents as human readable numbers. Use ; as word separator and ignore leading spaces.',
+                                    'Order the data in readme.txt in human readable format separated by ; . Do not consider starting blanks. Save the contents to ~/yak.txt file.']}, ignore_index = True)
 
 #178
 sort = sort.append({'Command':     'sort -hk5,5 -t\':\' readme.txt -o ~/orange.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key. Save the file as orange.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key. Save the file as orange.txt in home directory.',
+                                    'Using fifth word as sorting key, sort readme.txt treating the content as human friendly numerals. Use : as key delimiter and ~/orange.txt to store output..',
+                                    'Arrange contents of readme.txt using fifth word as key in human readable form. Use : as word separator. ~/orange.txt should be used for saving the result.']}, ignore_index = True)
 
 #179
 sort = sort.append({'Command':     'sort -huk4,7  readme.txt -o check.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys. Save the output as check.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys. Save the output as check.txt file.',
+                                    'Using words 4 through 7 as keys, in order, sort contents of readme.txt in human readable style. Remove duplicate lines and save the result to check.txt for future reference.',
+                                    'Removing duplicate lines, sort readme.txt using words 4 to 7 in human readable number format. Use check.txt to store the result.']}, ignore_index = True)
 
 #180
 sort = sort.append({'Command':     'sort -hbk2,5 readme.txt -o another.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5. Save the output as another.txt named file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5. Save the output as another.txt named file.',
+                                    'Using words 2 through 5 as keys, in order, sort contents of readme.txt in human readable style. Do not consider leading blanks and save the final answer to another.txt file.',
+                                    'Sort readme.txt using words 2 to 5 in human readable number format. Ignore starting blank spaces and store the result to another.txt file.']}, ignore_index = True)
 
 #181
 sort = sort.append({'Command':     'sort -huk5,8 -t\'.\' readme.txt -o stand.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use . as delimiter and columns 5 through 8 as keys. Remove duplicate lines. Save the output as stand.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use . as delimiter and columns 5 through 8 as keys. Remove duplicate lines. Save the output as stand.txt file.',
+                                    'Using words 5 through 8 as keys, in order, sort contents of readme.txt in human readable style and save it to stand.txt file. Remove duplicate lines and use \'.\' as separator.',
+                                    'Removing duplicate lines, sort readme.txt using words 5 to 8 in human readable number format. Use \'.\' as word delimiter and stand.txt to store the final result.']}, ignore_index = True)
 
 #182
 sort = sort.append({'Command':     'sort -hbuk3,6 readme.txt -o miranda.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines. Save the output as miranda.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines. Save the output as miranda.txt file.',
+                                    'Using words 3 through 6 as keys, in order, sort contents of readme.txt in human readable style. Do not consider leading blanks and remove repeating lines. Store the final result to miranda.txt .',
+                                    'Removing duplicate lines, sort readme.txt using words 3 to 6 in human readable number format and store the result to miranda.txt . Ignore starting blank spaces and do not show identical lines.']}, ignore_index = True)
 
 #183
 sort = sort.append({'Command':     'sort -brd random.txt -o sorted.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and in dictionary order. Save the output as sorted.txt .']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and in dictionary order. Save the output as sorted.txt .',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse dictionary order. For future retrieval of output use sorted.txt to save it.',
+                                     'Arrange the contents of random.txt in reverse dictionary order and ignoring leading spaces. Use sorted.txt to store the final output.']}, ignore_index = True)
 
 #184
 sort = sort.append({'Command':     'sort -rbf random.txt -o sorted.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and case of alphabets. Save the output as sorted.txt .']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and case of alphabets. Save the output as sorted.txt .',
+                                     'Save the output of following command to sorted.txt . Order the contents of random.txt ignoring starting blanks and in reverse order without considering case sensitivity.',
+                                     'Arrange the contents of random.txt in reverse order and ignoring leading spaces and case differences. Use sorted.txt to store the result.']}, ignore_index = True)
 
 #185
 sort = sort.append({'Command':     'sort -rbM random.txt -o sorted.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and sort the months in year. Save the output as sorted.txt .']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces and sort the months in year. Save the output as sorted.txt .',
+                                     'Save the ordered contents of random.txt to sorted.txt file. Ignore starting blanks and sort in reverse order of months of year.',
+                                     'Arrange the contents of random.txt in reverse order of months and ignoring leading spaces. Save the sorted content to sorted.txt file.']}, ignore_index = True)
 
 #186
 sort = sort.append({'Command':     'sort -rbn random.txt -o sad.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use numeric sorting. Save the output as sad.txt file.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use numeric sorting. Save the output as sad.txt file.',
+                                     'Removing leading white spaces, sort random.txt in numeric order. Reverse the output and store it in sad.txt file.',
+                                     'Not considering blanks at the start sort random.txt file, as if they were numbers, in reverse order and store the final result in sad.txt file.']}, ignore_index = True)
 
 #187
 sort = sort.append({'Command':     'sort -rbu random.txt -o mad.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Suppress duplicate lines. Save the output as mad.txt file.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Suppress duplicate lines. Save the output as mad.txt file.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse order. Remove redundant lines and store the result to mad.txt file.',
+                                     'Arrange the contents of random.txt in reverse order and ignoring leading spaces. Remove identical lines and for future referral to same answer, store the output as mad.txt .']}, ignore_index = True)
 
 #188
 sort = sort.append({'Command':     'sort -rbt\';\' random.txt -o tank.txt',
-                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use ; as field separator. Save the output as tank.txt file.']}, ignore_index = True)
+                    'NL Queries':   ['Reverse sort the lines in the file random.txt ignoring starting white spaces. Use ; as field separator. Save the output as tank.txt file.',
+                                     'Order the contents of random.txt ignoring starting blanks and in reverse order. ; should be treated as key delimiter and save the final result to tank.txt file.',
+                                     'Arrange the contents of random.txt in reverse order and ignoring leading spaces. Treat ; as word separator and store the sorted content to tank.txt file.']}, ignore_index = True)
 
 #189
 sort = sort.append({'Command':     'sort -rdk2,2 random.txt -o pratik.txt',
-                    'NL Queries':  ['Reverse sort the lines in file random.txt according to the second word in the lines in dictionary order. Save the output as tank.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the lines in file random.txt according to the second word in the lines in dictionary order. Save the output as tank.txt file.',
+                                    'Sort the lines of random.txt file in reverse dictionary order using 2nd key. Store the output in pratik.txt file.',
+                                    'Sort data in random.txt file in reverse dictionary order. Use 2nd word as key and save the result to pratik.txt file.',
+                                    'Arrange the contents of random.txt in reverse order as that in a dictionary using 2nd column of word for sorting and store the output in pratik.txt file.']}, ignore_index = True)
 
 #190
 sort = sort.append({'Command':     'sort -rdu dup.txt -o pratik.txt',
-                    'NL Queries':  ['Reverse sort the lines in dup.txt in dictionary order and remove duplicate lines. Save the output as pratik.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the lines in dup.txt in dictionary order and remove duplicate lines. Save the output as pratik.txt file.'
+                                    'Sort data in random.txt file in reverse dictionary order. Do not show redundant lines and save the final result in pratik.txt .',
+                                    'Arrange the contents of random.txt in reverse order as that in a dictionary using 2nd column of word for sorting. Save unique lines only to pratik.txt folder.']}, ignore_index = True)
 
 #191
 sort = sort.append({'Command':     'sort -rdt\'-\' manga.txt -o holla.txt',
-                    'NL Queries':  ['Sort the lines in manga.txt file in reverse dictionary order using - as field separator. Save the output as holla.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the lines in manga.txt file in reverse dictionary order using - as field separator. Save the output as holla.txt file.',
+                                    'Sort the contents of manga.txt in reverse order as that in a dictionary and use - to separate words. Store the ouptput in holla.txt file.',
+                                    'Arrange the contents of manga.txt in reverse dictionary order. Use \'-\' as word separator. Save the final result in holla.txt file.']}, ignore_index = True)
 
 #192
 sort = sort.append({'Command':     'sort -rMk3,3 reg.txt -o ~/ink.txt',
-                    'NL Queries':  ['Revevrse sort the file reg.txt using third key as the only key. Do month sorting. Save the output as ink.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Revevrse sort the file reg.txt using third key as the only key. Do month sorting. Save the output as ink.txt in home directory.',
+                                    'Order the contents of reg.txt using month sorting. Use 3rd word as key. Sort in reverse order and save the output to ~/ink.tt file.',
+                                    'Arrange the data in reg.txt in reverse month sorting order using 3rd word as sorting key and store the output in ink.txt in home directory.']}, ignore_index = True)
 
 #193
 sort = sort.append({'Command':     'sort -rMk3,3 -t\';\' rendom.txt -o ~/waka.txt',
-                    'NL Queries':  ['Sort the file rendom.txt using third key as the only key. Do reverse month sorting. Use ; as delimiter. Save the output as waka.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the file rendom.txt using third key as the only key. Do reverse month sorting. Use ; as delimiter. Save the output as waka.txt in home directory.',
+                                    'Order the contents of reg.txt using month sorting. Use 3rd word as key. Sort in reverse order using ; as key delimiter, saving the output to ~/waka.txt file.',
+                                    'Arrange the data in reg.txt in reverse month sorting order using 3rd word as sorting key. Words are separated by ; character and store the final result to waka.txt in ~ directory..']}, ignore_index = True)
 
 #194
 sort = sort.append({'Command':     'sort -rnk2,2 nums.txt -o ~/anthrax.txt',
-                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Save the output as anthrax.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Save the output as anthrax.txt in home directory.',
+                                    'Use 2nd word as sorting key to numerically sort nums.txt in reverse order and finally save the result in anthrax.txt in home directory.',
+                                    'Set column 2 as sorting key and sort the file nums.txt in reverse numeric order. Use ~/anthrax.txt to save the output.']}, ignore_index = True)
 
 #195
 sort = sort.append({'Command':     'sort -rnk2,2 -t\',\' nums.txt -o ~/numb.txt',
-                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use , as delimiter. Save the output as ~/numb.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use , as delimiter. Save the output as ~/numb.txt file.',
+                                    'Use 2nd word as sorting key to numerically sort nums.txt in reverse order. Treat ; as delimiter of words and save the output to ~/numb.txt file.',
+                                    'Set column 2 as sorting key and sort the file nums.txt in reverse numeric order. Use \';\' as separator of keys and finally save the result to numb.txt in home directory.']}, ignore_index = True)
 
 #196
 sort = sort.append({'Command':     'sort -rnt\';\' nums.txt -o ~/tower.txt',
-                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use ; as delimiter. Save the output as tower.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Do reverse numeric sort on the lines of file nums.txt base on second key. Use ; as delimiter. Save the output as tower.txt in home directory.',
+                                    'Numerically sort nums.txt in reverse order. Treat ; as delimiter of words. Store the final output in ~/tower.txt .',
+                                    'Sort the file nums.txt in reverse numeric order. Use \';\' as separator of keys. Use ~/tower.txt to save the sorted result for future purposes.']}, ignore_index = True)
 
 #197
 sort = sort.append({'Command':     'sort -rh readme.txt -o ~/texas.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Save the output as texas.txt file in home.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Save the output as texas.txt file in home.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. Save the output in ~/texas.txt file.',
+                                    'Sort the file, readme.txt considering them as human readable numbers. Sort in decreasing order and finally use ~/texas.txt for saving the output.']}, ignore_index = True)
 
 #198
 sort = sort.append({'Command':     'sort -rhb readme.txt -o ~/otter.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore the spaces at the starting of line. Save the output as ~/otter.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore the spaces at the starting of line. Save the output as ~/otter.txt file.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers without taking starting spaces into account. \'-\' is to be treated as word separator. Save the output to ~/otter.txt file.',
+                                    'Sort the file, readme.txt considering them as human readable numbers and - is the key separator. Sort in decreasing order ignoring leading blanks and finally use ~/otter.txt to save the result.']}, ignore_index = True)
 
 #199
 sort = sort.append({'Command':     'sort -rhk2,2 readme.txt -o ~/kettle.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use second key as the only key to sort. Save the file as kettle.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use second key as the only key to sort. Save the file as kettle.txt in home directory.',
+                                    'How do I arrange the lines of readme.txt in reverse order, if they are considered as shortened numbers, with : acting as separator between words? Use 5th column of word as sorting key and ~/kettle.txt for saving the result.',
+                                    'Rearrange the contents of readme.txt in reverse order considering them as human readable numbers. 5th word column is to be used as sorting parameter, ~/kettle.txt for saving output and : as word delimiter.']}, ignore_index = True)
 
 #200
 sort = sort.append({'Command':     'sort -rht\';\' readme.txt -o ~/nevada.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use ; as delimiter for keys. Save the file as nevada.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use ; as delimiter for keys. Save the file as nevada.txt in home directory.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. \';\' is to be treated as word separator. Save the output as ~/nevada.txt file.',
+                                    'Sort the file, readme.txt considering them as human readable numbers and ; is the key separator. Sort in decreasing order and save the sorted content in ~/nevada.txt file.']}, ignore_index = True)
 
 #201
 sort = sort.append({'Command':     'sort -rhu readme.txt -o ~/ostrich.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines. Save the file as ostritch.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines. Save the file as ostritch.txt in home directory.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. Save the output after removing duplicate lines in file named ostrich.txt in home.',
+                                    'Sort the file, readme.txt considering them as human readable numbers. Sort in decreasing order and remove redundant sentences and store the result in ~/ostrich.txt file.']}, ignore_index = True)
 
 #202
 sort = sort.append({'Command':     'sort -rhut\'-\' readme.txt -o ~/water.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys. Save the file as water.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use - as delimiter between keys. Save the file as water.txt in home directory.',
+                                    'Perform reverse sort on readme.txt treating them as human interpretable numbers. Save the output after removing duplicate lines in file named ostrich.txt in home. Use \'-\' as word separator.',
+                                    'Using - as key separator, sort the file, readme.txt considering them as human readable numbers. Sort in decreasing order and remove redundant sentences and store the result in ~/ostrich.txt file.']}, ignore_index = True)
 
 #203
 sort = sort.append({'Command':     'sort -rhbt\'-\' readme.txt -o ~/yak.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter. Save the file as yak.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting spaces and use - as delimiter. Save the file as yak.txt in home directory.',
+                                    'Save the sorted content of readme.txt to ~/yak.txt file. Use human readable style of sorting in reverse order. Do not consider leading blank spaces and treat - as word separator.',
+                                    'Using - as word delimiter, arrange the contents of readme.txt in reverse order and save them to ~/yak.txt file. For sorting ignore leading blanks and treat contents as compressed numerals.']}, ignore_index = True)
 
 #204
 sort = sort.append({'Command':     'sort -rhk5,5 -t\':\' readme.txt -o ~/orange.txt',
-                    'NL Queries':  ['Revevrse sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key. Save the file as orange.txt in home directory.']}, ignore_index = True)
+                    'NL Queries':  ['Revevrse sort the readme.txt file as human readable numbers. Using : as delimiter and 5th key as the only key. Save the file as orange.txt in home directory.',
+                                    'Using word column 5 for sorting, arrange the contents of readme.txt treating them human friendly numbers in reverse order. Use : as word separator. Save the final output to ~/orange.txt file.',
+                                    'Sort the contents of readme.txt file in reverse order considering them as human readable numbers separated by \':\'. Use 5th column for sorting and finally save the content to ~/orange.txt file.']}, ignore_index = True)
 
 #205
 sort = sort.append({'Command':     'sort -rhft\',\' readme.txt -o ~/ukraine.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison. Save the output as ~/ukraine.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison. Save the output as ~/ukraine.txt file.',
+                                    'Treat the contents of readme.txt as human interpretable numerals. Sort them as if they are separated by \',\'. Use case insensitive comparison and save the output to ~/ukraine.txt in reverse order.',
+                                    'Comprehending the contents of readme.txt as compressed number format, arrange them in reverse order. Words in the file are separated by , and save the final result to ~/ukraine.txt file.']}, ignore_index = True)
 
 #206
 sort = sort.append({'Command':     'sort -rhuk4,7  readme.txt -o check.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys. Save the output as check.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Remove duplicate lines and use columns 4 through 7 as keys. Save the output as check.txt file.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order. Contents are shortened numbers and display only unique lines. Finally store the output to check.txt in same directory.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers and save them to check.txt ? Show only unique lines and use words 4 through 7 for sorting.']}, ignore_index = True)
 
 #207
 sort = sort.append({'Command':     'sort -rhbk2,5 readme.txt -o another.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5. Save the output as another.txt named file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Ignore starting blank spaces and use keys 2 through 5. Save the output as another.txt named file.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order and store the output to another.txt file. Contents are shortened numbers and ignore leading blanks.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers, and save the final result to another.txt file? Neglect leading spaces and use words 4 through 7 for sorting.']}, ignore_index = True)
 
 #208
 sort = sort.append({'Command':     'sort -rhuk5,8 -t\'.\' readme.txt -o stand.txt',
@@ -1117,11 +1291,15 @@ sort = sort.append({'Command':     'sort -rhuk5,8 -t\'.\' readme.txt -o stand.tx
 
 #209
 sort = sort.append({'Command':     'sort -rhbuk3,6 readme.txt -o miranda.txt',
-                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines. Save the output as miranda.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Reverse sort the readme.txt file as human readable numbers. Use columns 3 to 6 for comparison. Ignore starting white spaces and remove duplicate lines. Save the output as miranda.txt file.',
+                                    'Using columns 4 through 7 as sorting keys, sort the contents of readme.txt in reverse order and save the output in miranda.txt . Contents are shortened numbers and display only unique lines. Neglect leading blank spaces.',
+                                    'How to arrange the lines of readme.txt in reverse order, if treated as human interpreted numbers, and store the output in miranda.txt ? Show only unique lines and use words 4 through 7 for sorting. Omit starting spaces.']}, ignore_index = True)
 
 #210
 sort = sort.append({'Command':     'sort -hft\',\' readme.txt -o ~/ukraine.txt',
-                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison. Save the output as ~/ukraine.txt file.']}, ignore_index = True)
+                    'NL Queries':  ['Sort the readme.txt file as human readable numbers. Use , as delimiter and do case-insensitive comparison. Save the output as ~/ukraine.txt file.',
+                                    'Arrange the contents of readme.txt in human readable format with , as word separator. Do case-insensitive comparison and save the result to ukraine.txt in home folder.',
+                                    'Saving the output to ~/ukraine.txt, order the contents of readme.txt file as if they are human readable numbers and use \',\' for separating words. Consider upper and lower case alphabets as same.']}, ignore_index = True)
 
 
-print sort.shape
+print sort
