@@ -430,4 +430,6 @@ chown = chown.append({'Command':'chown --help','NL Queries':['How do I get help 
 #chown = chown.append({'Command':'chown root *','NL Queries':['How do I change the ownership details for all files in the current directory to root?','Changes the ownership for the files present in the current directory to root.']},ignore_index=True)
 
 
+### Add commands here: { --from= ; --from =user; --from=:group; --from= user:group} X {-R,-H,-r -H,--dereference} X {-c,-v,-f}
+
 print chown.shape
