@@ -56,7 +56,7 @@ cat = cat.append({'Command':'cat -E instructions.txt',
 cat = cat.append({'Command':'cat -s instructions.txt',
 				'NL Queries':['Open file instructions.txt. Squeeze multiple adjacent empty lines.',
 							'Display file instructions.txt, squeeze multiple adjacent empty lines.',
-							'How do see contents removing adjacent multiple empty lines?']},ignore_index = True)
+							'How do I see contents removing adjacent multiple empty lines?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -v instructions.txt',
 				'NL Queries':['Open file instructions.txt with non-printing characters.',
@@ -88,34 +88,34 @@ cat = cat.append({'Command':'cat -tn instructions.txt',
 							'How do I see the content of file instructions.txt with line numbers, non-printing characters and TAB character as ^I?',
 							'Open file instructions.txt. Show line numbers for each line. Show non-printing characters and TAB character as ^I.',
 							'Show the content of instructions.txt with numbering of each line, non-printing characters and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with line numbers, non-printing characters and TAB character as ^I.']},ignore_index = True)
+							'In the command line ,how do I see contents of file instructions.txt with line numbers, non-printing characters and TAB character as ^I?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -tb instructions.txt',
 				'NL Queries':['Display file instructions.txt with line numbers for non-blank lines, non-printing characters and TAB character as ^I.',
 							'How do I see the content of file instructions.txt with line numbers for non-blank lines, non-printing characters and TAB character as ^I?',
 							'Open file instructions.txt. Show line numbers for non-blank lines. Show non-printing characters and TAB character as ^I.',
 							'Show the content of instructions.txt with numbering of each non-blank line, non-printing characters and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with line numbers for non-blank lines only, non-printing characters and TAB character as ^I.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers for non-blank lines only, non-printing characters and TAB character as ^I?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -te instructions.txt',
 				'NL Queries':['Display file instructions.txt with $ at end of each line, non-printing characters and TAB character as ^I.',
 							'How do I see the content of file instructions.txt with $ at end of each line, non-printing characters and TAB character as ^I?',
 							'Open file instructions.txt. Show $ symbol at end of each line. Show non-printing characters and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with $ at end of each line, non-printing characters and TAB character as ^I.',
+							'In the command line, how do I see contents of file instructions.txt with $ at end of each line, non-printing characters and TAB character as ^I?',
 							'Show the content of instructions.txt with $ at end of each line, non-printing characters and TAB character as ^I.']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -ts instructions.txt',
 				'NL Queries':['Display file instructions.txt with squeezing multiple adjacent empty lines, non-printing characters and TAB character as ^I.',
 							'How do I see the content of file instructions.txt with squeezing multiple adjacent empty lines, non-printing characters and TAB character as ^I?',
 							'Open file instructions.txt. Squeeze multiple adjacent empty lines. Show non-printing characters and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with squeezing multiple adjacent empty lines, non-printing characters and TAB character as ^I.',
+							'In the command line, how do I see contents of file instructions.txt with squeezing multiple adjacent empty lines, non-printing characters and TAB character as ^I?',
 							'Show the content of instructions.txt with squeezing multiple adjacent empty lines, non-printing characters and TAB character as ^I.']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -tu instructions.txt',
 				'NL Queries':['Display file instructions.txt with output buffering disabled, non-printing characters and TAB character as ^I.',
 							'How do I see the content of file instructions.txt with output buffering disabled, non-printing characters and TAB character as ^I?',
 							'Open file instructions.txt. Set output buffering disabled. Show non-printing characters and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with output buffering disabled, non-printing characters and TAB character as ^I.',
+							'In the command line, how do I see contents of file instructions.txt with output buffering disabled, non-printing characters and TAB character as ^I?',
 							'Show the content of instructions.txt with output buffering disabled, non-printing characters and TAB character as ^I.']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -Tn instructions.txt',
@@ -123,14 +123,14 @@ cat = cat.append({'Command':'cat -Tn instructions.txt',
 							'How do I see the content of file instructions.txt with line numbers and TAB character as ^I?',
 							'Open file instructions.txt. Show line numbers for each line. Show TAB character as ^I.',
 							'Show the content of instructions.txt with numbering of each line and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with line numbers and TAB character as ^I.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers and TAB character as ^I?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -Tb instructions.txt',
 				'NL Queries':['Display file instructions.txt with line numbers for non-blank lines and TAB character as ^I.',
 							'How do I see the content of file instructions.txt with line numbers for non-blank lines and TAB character as ^I?',
 							'Open file instructions.txt. Show line numbers for non-blank lines. Show TAB character as ^I.',
 							'Show the content of instructions.txt with numbering of each non-blank line and TAB character as ^I.',
-							'In the command line how do I see contents of file instructions.txt with line numbers for non-blank lines only and TAB character as ^I.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers for non-blank lines only and TAB character as ^I?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -TE instructions.txt',
 				'NL Queries':['Display file instructions.txt with $ at end of each line and TAB character as ^I.',
@@ -158,49 +158,49 @@ cat = cat.append({'Command':'cat -vn instructions.txt',
 							'How do I see the content of file instructions.txt with line numbers and non-printing characters?',
 							'Open file instructions.txt. Show line numbers for each line. Show non-printing characters.',
 							'Show the content of instructions.txt with numbering of each line and non-printing characters.',
-							'In the command line how do I see contents of file instructions.txt with line numbers and non-printing characters.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers and non-printing characters?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -vb instructions.txt',
 				'NL Queries':['Display file instructions.txt with line numbers for non-blank lines and non-printing characters.',
 							'How do I see the content of file instructions.txt with line numbers for non empty lines and non-printing characters?',
 							'Open file instructions.txt. Show line numbers for each non empty line. Show non-printing characters.',
 							'Show the content of instructions.txt with numbering of each non empty line and non-printing characters.',
-							'In the command line how do I see contents of file instructions.txt with line numbers for non-blank lines and non-printing characters.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers for non-blank lines and non-printing characters?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -vs instructions.txt',
 				'NL Queries':['Display file instructions.txt with squeezing multiple adjacent blank lines and non-printing characters.',
 							'How do I see the content of file instructions.txt with squeezing multiple adjacent empty lines and non-printing characters?',
 							'Open file instructions.txt. Squeeze multiple adjacent empty lines. Show non-printing characters.',
 							'Show the content of instructions.txt with squeezing multiple adjacent blank lines and non-printing characters.',
-							'In the command line how do I see contents of file instructions.txt with squeezing multiple adjacent empty lines and non-printing characters.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with squeezing multiple adjacent empty lines and non-printing characters?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -vu instructions.txt',
 				'NL Queries':['Display file instructions.txt with output buffering disabled and non-printing characters.',
 							'How do I see the content of file instructions.txt with output buffering disabled and non-printing characters?',
 							'Open file instructions.txt. Set output buffering disabled. Show non-printing characters.',
 							'Show the content of instructions.txt with output buffering disabled and non-printing characters.',
-							'In the command line how do I see contents of file instructions.txt with output buffering disabled and non-printing characters.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with output buffering disabled and non-printing characters?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -un instructions.txt',
 				'NL Queries':['Display file instructions.txt with line numbers and output buffering disabled.',
 							'How do I see the content of file instructions.txt with line numbers and output buffering disabled?',
 							'Open file instructions.txt. Show line numbers for each line. Set output buffering disabled.',
 							'Show the content of instructions.txt with numbering of each line and output buffering disabled.',
-							'In the command line how do I see contents of file instructions.txt with line numbers and output buffering disabled.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers and output buffering disabled?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -ub instructions.txt',
 				'NL Queries':['Display file instructions.txt with line numbers for non-blank lines and output buffering cancelled.',
 							'How do I see the content of file instructions.txt with line numbers for non empty lines and output buffering cancelled?',
 							'Open file instructions.txt. Show line numbers for each non empty line. Set output buffering cancelled.',
 							'Show the content of instructions.txt with numbering of each non empty line and output buffering off.',
-							'In the command line how do I see contents of file instructions.txt with line numbers for non-blank lines and output buffering off.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt with line numbers for non-blank lines and output buffering off?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -us instructions.txt',
 				'NL Queries':['Display file instructions.txt after squeezing multiple adjacent blank lines and output buffering off.',
 							'How do I see the content of file instructions.txt after squeezing multiple adjacent empty lines and output buffering off?',
 							'Open file instructions.txt. Squeeze multiple adjacent empty lines. Set output buffering off.',
 							'Show the content of instructions.txt after squeezing multiple adjacent blank lines and output buffering disabled.',
-							'In the command line how do I see contents of file instructions.txt after squeezing multiple adjacent empty lines and output buffering cancelled.']},ignore_index = True)
+							'In the command line, how do I see contents of file instructions.txt after squeezing multiple adjacent empty lines and output buffering cancelled?']},ignore_index = True)
 
 cat = cat.append({'Command':'cat -ue instructions.txt',
 				'NL Queries':['Display file instructions.txt with $ at end of each line, non-printing characters and output buffering disabled.',
@@ -519,7 +519,7 @@ cat = cat.append({'Command':'cat -bEsT instructions.txt',
 							'How do i open a file instructions.txt with line numbers for non empty lines, $ at end of each line, squeeze adjacent multiple empty lines and TAB character as ^I?',
 							'Show the content of instructions.txt with line numbers each line which is not empty, $ at end of each line, squeeze adjacent multiple empty lines and TAB character as ^I.',
 							'In the command line how do I see contents of file instructions.txt with line numbers for each non empty or non-blank line, $ at end of each line, squeeze adjacent multiple empty lines and TAB character as ^I.']},ignore_index = True)
-print cat.shape
+
 cat = cat.append({'Command':'cat -nEsu instructions.txt',
 				'NL Queries':['Display file instructions.txt with line numbers for non empty lines, $ at end of each line, squeeze adjacent multiple empty lines and disable output buffering.',
 							'Open file instructions.txt. Display line numbers for non-blank lines. Add $ at end of each line. Squeeze adjacent multiple empty lines. Set output buffering to be disabled.',
