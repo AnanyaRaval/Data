@@ -1,4 +1,4 @@
-import pandas as pd 
+import pandas as pd
 
 head = pd.DataFrame(columns = ['Command','NL Queries'])
 
@@ -39,6 +39,15 @@ head = head.append({'Command':'head -n 2 lol.txt > file.txt','NL Queries':['Over
 head = head.append({'Command':'head -n 2 lol.txt >> file.txt','NL Queries':['Append file.txt with first 2 lines of the file lol.txt.',
 																			'Append file.txt with the first two lines of lol.txt.',
 																			'Command to append file.txt with first two lines of lol.txt.']},ignore_index=True)
+
+head = head.append({'Command':'head -c 80 lol.txt > file.txt','NL Queries':['Overwrite file.txt with first 80 characters of the file lol.txt.',
+																			'Overwrite file.txt with the first 80 characters lines of lol.txt.',
+																			'Command to overwrite file.txt with first 80 characters lines of lol.txt.']},ignore_index=True)
+
+head = head.append({'Command':'head -c 80 lol.txt >> file.txt','NL Queries':['Append file.txt with first 80 characters lines of the file lol.txt.',
+																			'Append file.txt with the first 80 characters lines of lol.txt.',
+																			'Command to append file.txt with first 80 characters lines of lol.txt.']},ignore_index=True)
+
 
 #head = head.append({'Command':'head -n 2 lol.txt','NL Queries':['Print first 2 lines of the file lol.txt.',
 #																'Show the first two lines of lol.txt.',
