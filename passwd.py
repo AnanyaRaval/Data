@@ -1,4 +1,4 @@
-import pandas as pd 
+import pandas as pd
 
 passwd = pd.DataFrame(columns = ['Command','NL Queries'])
 
@@ -63,9 +63,126 @@ passwd = passwd.append({'Command':'sudo passwd -xq 999 jane','NL Queries':['Set 
 																			'How do I set maximum no. of days for validity of password to 999 days of account jane quietly?',
 																			'Without any messages on command prompt, make 999 the maximum number of days for validity of password of account jane.']},ignore_index=True)
 
-passwd = passwd.append({'Command':'sudo passwd -qw 9 jane','NL Queries':['Set no. of days of warning before a password change is required to 9 days of username jane quietly.',
-																		'How do I Set no. of days of warning before a password change is required to 9 days of account jane quietly?',
-																		'Without any mesages on command prompt, make 9 days as warning period before a password change is require for account jane.']},ignore_index=True)
+passwd = passwd.append({'Command':'sudo passwd -n 5 -w 9 jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days of username jane.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days for account with username jane?',
+																		'Set minimum number of days between password changes of account with username jane to 5 and Set no. of days of warning before a password change is required to 9 days of jane only.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -x 999 -w 9 jane','NL Queries':['Set maximum no. of days for validity of password to 999 days and Set no. of days of warning before a password change is required to 9 days of username jane.',
+																			'How do I set maximum no. of days for validity of password to 999 days and Set no. of days of warning before a password change is required to 9 days of account jane?',
+																			'Set 999 days as maximum number of days of validity of password and Set no. of days of warning before a password change is required to 9 days of account with username jane.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -n 5 -x 999 jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set maximum no. of days for validity of password to 999 days of username jane.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set maximum no. of days for validity of password to 999 days for account with username jane?',
+																		'Set minimum number of days between password changes of account with username jane to 5 and for jane also Set maximum no. of days for validity of password to 999 days .']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -n 5 -x 999 -w 9 jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days and Set maximum no. of days for validity of password to 999 days of username jane.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days and Set maximum no. of days for validity of password to 999 days for account with username jane?',
+																		'Set minimum number of days between password changes of account with username jane to 5 and Set no. of days of warning before a password change is required to 9 days and for jane also Set maximum no. of days for validity of password to 999 days .']},ignore_index=True)
+
+
+'''
+passwd = passwd.append({'Command':'sudo passwd -e jane && sudo passwd -S jane','NL Queries':['Expire password of username jane and show its status just after that.',
+																	'How do I expire password account jane  and get its status just after that?',
+																	'How can we expire the password of account jane and get its status just after that?',
+																	'Command to immediately expire password of account jane with showing its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -d jane && sudo passwd -S jane','NL Queries':['Delete password of jane\'s account  and prints its status just after that.',
+																		'How do I delete password of jane and get its status just after that?',
+																		'How can we delete password of username jane and get its status just after that?']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -n 5 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days of username jane and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days for account with username jane and get its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane to 5 with printing its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -x 999 jane && sudo passwd -S jane','NL Queries':['Set maximum no. of days for validity of password to 999 days of username jane and print its status just after that.',
+																			'How do I set maximum no. of days for validity of password to 999 days of account jane and get its status just after that?',
+																			'Set 999 days as maximum number of days of validity of password of account with username jane and prints its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -w 9 jane && sudo passwd -S jane','NL Queries':['Set no. of days of warning before a password change is required to 9 days of username jane and show its status just after that.',
+																		'How do I set no. of days of warning before a password change is required to 9 days of account jane and get its status just after that?'
+																		'Set 9 days as warning period of password change for account with username jane  and prints its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -l jane && sudo passwd -S jane','NL Queries':['Lock account with username jane until system administrator unlocks it and show its status just after that.',
+																		'How do I lock password of username jane and get its status just after that?',
+																		'How do I stop access to the account jane, by locking the password and getting its status just after that, so that she cannot log in?']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -u jane && sudo passwd -S jane','NL Queries':['Unlock password for account with username jane and show its status just after that.',
+																	'How do I unlock password for username jane and get its status just after that?',
+																	'How do I open access to the account jane so that she can log in and prints its status just after that?']},ignore_index=True)
+
+
+
+#w and l and u
+passwd = passwd.append({'Command':'sudo passwd -qe jane && sudo passwd -S jane','NL Queries':['Expire password of username jane quietly and show its status just after that.',
+																		'How do I expire password account jane quietly and print its status just after that?',
+																		'Without any messages on command prompt, expire password of account with username jane and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qd jane && sudo passwd -S jane','NL Queries':['Delete password of jane\'s account quietly and show its status just after that.',
+																		'How do I delete password of jane quietly and show its status just after that?',
+																		'Without any messages on command prompt, delete the password of account with username jane and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qn 0 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password change to 0 days of username jane quietly and show its status just after that.',
+																		'How do I set minimum no. of days between password change to 0 days of account jane quietly and show its status just after that?',
+																		'Without any messages on command prompt, make number of days between password changes to 0 for username jane and show its status just after that?']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qx 999 jane && sudo passwd -S jane','NL Queries':['Set maximum no. of days for validity of password to 999 days of username jane quietly and show its status just after that.',
+																			'How do I set maximum no. of days for validity of password to 999 days of account jane quietly and show its status just after that?',
+																			'Without any messages on command prompt, make 999 the maximum number of days for validity of password of account jane and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qw 9 jane && sudo passwd -S jane','NL Queries':['Set no. of days of warning before a password change is required to 9 days quietly of username jane and show its status just after that.',
+																		'How do I set no. of days of warning before a password change is required to 9 days quietly of account jane and get its status just after that?'
+																		'Set 9 days as warning period quietly of password change for account with username jane  and prints its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -ql jane && sudo passwd -S jane','NL Queries':['Lock account with username jane until system administrator unlocks it quietly and show its status just after that.',
+																		'How do I lock password of username jane quietly and get its status just after that?',
+																		'How do I stop access to the account jane, by locking the password quietly and getting its status just after that, so that she cannot log in?']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qu jane && sudo passwd -S jane','NL Queries':['Unlock password for account with username jane quietly and show its status just after that.',
+																	'How do I unlock password for username jane quietly and get its status just after that?',
+																	'How do I open access to the account jane so that she can log in quietly and prints its status just after that?']},ignore_index=True)
+'''
+
+
+
+'''
+
+passwd = passwd.append({'Command':'sudo passwd -n 5 -w 9 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days of username jane and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days for account with username jane and show its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane to 5 and Set no. of days of warning before a password change is required to 9 days of jane only and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -x 999 -w 9 jane && sudo passwd -S jane','NL Queries':['Set maximum no. of days for validity of password to 999 days and Set no. of days of warning before a password change is required to 9 days of username jane and show its status just after that.',
+																			'How do I set maximum no. of days for validity of password to 999 days and Set no. of days of warning before a password change is required to 9 days of account jane and show its status just after that?',
+																			'Set 999 days as maximum number of days of validity of password and Set no. of days of warning before a password change is required to 9 days of account with username jane and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -n 5 -x 999 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set maximum no. of days for validity of password to 999 days of username jane and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set maximum no. of days for validity of password to 999 days for account with username jane and show its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane to 5 and for jane also Set maximum no. of days for validity of password to 999 days and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -n 5 -x 999 -w 9 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days and Set maximum no. of days for validity of password to 999 days of username jane and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days and Set maximum no. of days for validity of password to 999 days for account with username jane and show its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane to 5 and Set no. of days of warning before a password change is required to 9 days and for jane also Set maximum no. of days for validity of password to 999 days and show its status just after that.']},ignore_index=True)
+
+
+
+passwd = passwd.append({'Command':'sudo passwd -qn 5 -w 9 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days of username jane quietly and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days for account with username jane quietly and show its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane quietly to 5 and Set no. of days of warning before a password change is required to 9 days of jane only quietly and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qx 999 -w 9 jane && sudo passwd -S jane','NL Queries':['Set maximum no. of days for validity of password to 999 days and Set no. of days of warning before a password change is required to 9 days of username jane quietly and show its status just after that.',
+																			'How do I set maximum no. of days for validity of password to 999 days and Set no. of days of warning before a password change is required to 9 days of account jane quietly and show its status just after that?',
+																			'Set 999 days as maximum number of days of validity of password and Set no. of days of warning before a password change is required to 9 days of account with username jane quietly and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qn 5 -x 999 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set maximum no. of days for validity of password to 999 days of username jane quietly and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set maximum no. of days for validity of password to 999 days for account with username jane quietly and show its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane to 5 quietly and for jane also Set maximum no. of days for validity of password to 999 days quietly and show its status just after that.']},ignore_index=True)
+
+passwd = passwd.append({'Command':'sudo passwd -qn 5 -x 999 -w 9 jane && sudo passwd -S jane','NL Queries':['Set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days and Set maximum no. of days for validity of password to 999 days of username jane quietly and show its status just after that.',
+																		'How do I set minimum no. of days between password changes to 5 days and Set no. of days of warning before a password change is required to 9 days and Set maximum no. of days for validity of password to 999 days for account with username jane quietly and show its status just after that?',
+																		'Set minimum number of days between password changes of account with username jane quietly to 5 and Set no. of days of warning before a password change is required to 9 days and for jane quietly also Set maximum no. of days for validity of password to 999 days and show its status just after that.']},ignore_index=True)
+
+
+
+
 
 #passwd = passwd.append({'Command':'man passwd','NL Queries':['How do I know what the command passwd could do?',
 #															'Get complete details of passwd command.',
@@ -74,7 +191,7 @@ passwd = passwd.append({'Command':'sudo passwd -qw 9 jane','NL Queries':['Set no
 
 
 
-'''
+
 
 passwd = passwd.append({'Command':'whatis passwd','NL Queries':['How do I know what the command passwd does?','Get one line description of passwd command.','How do I see what passwd command in linux does?']},ignore_index=True)
 
@@ -106,5 +223,3 @@ passwd = passwd.append({'Command':'sudo passwd -e jane','NL Queries':['Expire ac
 
 '''
 print (passwd.shape)
-
-
