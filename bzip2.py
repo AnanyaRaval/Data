@@ -7,9 +7,9 @@ bzip2 = bzip2.append({'Command':'bzip2 file.txt','NL Queries':['Compress file.tx
 																'Command to compress file.txt using bzip2.',
 																'How do I compress file.txt?']},ignore_index=True)
 
-bzip2 = bzip2.append({'Command':'bzip2 -c file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2. Name the compressed file as file.txt.bz and keep file.txt as it is.',
-																			'How do I compress file.txt using bzip2,keep the original file and name the compressed file file.txt.bz?',
-																			'Zip file.txt to file.txt.bz and keep the original file.']},ignore_index=True)
+bzip2 = bzip2.append({'Command':'bzip2 -c file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz.']},ignore_index=True)
 
 bzip2 = bzip2.append({'Command':'bzip2 -d file.txt.bz2','NL Queries':['Decompress file.txt.bz.',
 																'How to decompress data of file.txt.bz present in this folder?',
@@ -510,6 +510,86 @@ bzip2 = bzip2.append({'Command':'bzip2 -8 -f -k -v file.txt','NL Queries':['How 
 bzip2 = bzip2.append({'Command':'bzip2 -9 -f -k -v file.txt','NL Queries':['How do I compress the file file1.txt with level 9 compression, keep the original file file.txt, overwrite if file.txt.bz2 exists and see the compression ratio?',
 								'Compress the file file.txt with level 9 compression, don\'t delete file.txt, show the compression ratio and overwrite if output file exists.',
 								'Compress the file file.txt. Use level 9 compression. Keep the original file. Overwrite if the output file exists. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -v -k file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2. Name the compressed file as file.txt.bz and keep file.txt as it is.',
+																			'How do I compress file.txt using bzip2,keep the original file and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz and keep the original file.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -1 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 1 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 1 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 1 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -2 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 2 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 2 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 2 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -3 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 3 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 3 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 3 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -4 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 4 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 4 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 4 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -5 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 5 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 5 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 5 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -6 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 6 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 6 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 6 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -7 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 7 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 7 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 7 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -8 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 8 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 8 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 8 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -9 file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 9 compression. Name the compressed file as file.txt.bz.',
+																			'How do I compress file.txt using bzip2 with level 9 compression and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 9 compression.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -1 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 1 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 1 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 1 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -2 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 2 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 2 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 2 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -3 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 3 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 3 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 3 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -4 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 4 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 4 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 4 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -5 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 5 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 5 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 5 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -6 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 6 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 6 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 6 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -7 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 7 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 7 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 7 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -8 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 8 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 8 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 8 compression. Display compression ratio.']},ignore_index=True)
+
+bzip2 = bzip2.append({'Command':'bzip2 -c -k -9 -v file.txt > file.txt.bz','NL Queries':['Compress file file.txt using bzip2 with level 9 compression. Name the compressed file as file.txt.bz. Show the compression ratio.',
+																			'How do I compress file.txt using bzip2 with level 9 compression, see the compression ratio and name the compressed file file.txt.bz?',
+																			'Zip file.txt to file.txt.bz. Use level 9 compression. Display compression ratio.']},ignore_index=True)
 
 '''
 bzip2 = bzip2.append({'Command':'bzmore my.txt.bz2','NL Queries':['How do I display the more version of the file my.txt from the archive my.txt.bz2?',
