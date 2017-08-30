@@ -26,7 +26,7 @@ chown = chown.append({'Command':'chown -v --from=guest root tmpfile','NL Queries
 																					'How do I replace the owner of tmpfile from guest to root without any error messages displayed?',
 																					'The owner of tmpfile is guest. Change it to root. Don\'t show any error messages.']},ignore_index=True)
 
-chown = chown.append({'Command':'chown --from= root new1.txt','NL Queries':['How to change the ownership of file new1.txt to root?',
+chown = chown.append({'Command':'chown --from= root new1.txt','NL Queries':['How to change the ownership of file new1.txt to root ? Prvious owner is unknown.',
 																			'How do I change the ownership of the file new1.txt to root without knowing the current owner?',
 																			'Change ownership of new1.txt to root without knowing the current owner.',
 																			'Change ownership of file new1.txt to root. I do not know the current owner.']},ignore_index=True)
@@ -430,6 +430,248 @@ chown = chown.append({'Command':'chown --help','NL Queries':['How do I get help 
 #chown = chown.append({'Command':'chown root *','NL Queries':['How do I change the ownership details for all files in the current directory to root?','Changes the ownership for the files present in the current directory to root.']},ignore_index=True)
 
 
-### Add commands here: { --from= ; --from =user; --from=:group; --from= user:group} X {-R,-H,-r -H,--dereference} X {-c,-v,-f}
+### Add commands here: { --from= ; --from =user; --from=:group; --from= user:group} X {-R,-h -H,--dereference} X {-c,-v,-f}
+
+chown = chown.append({'Command':'chown -h --from= root tmpfile','NL Queries':['How to change the ownership of symbolic link file tmpfile to root? Previous owner is unknown.',
+																			'How do I change the ownership of symbolic link file tmpfile to root without knowing the current owner?',
+																			'Change ownership of symbolic link tmpfile to root without knowing the current owner.',
+																			'Change ownership of symbolic link tmpfile to root. I do not know the current owner.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown --dereference --from= root tmpfile','NL Queries':['How to change the ownership of reference of symbolic link file tmpfile to root? Previous owner is unknown.',
+																			'How do I change the ownership of reference of symbolic link file tmpfile to root without knowing the current owner?',
+																			'Change ownership of refeence of symbolic link tmpfile to root without knowing the current owner.',
+																			'Change ownership of reference to symbolic link tmpfile to root. I do not know the current owner.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -H --from= root temp_link','NL Queries':['How to change the ownership of folder referenced by symbolic link temp_link to root? Previous owner is unknown.',
+																			'How do I change the ownership of folder referenced by symbolic link temp_link without knowing the current owner?',
+																			'Change ownership of folder referenced by symbolic link temp_link to root without knowing the current owner.',
+																			'Change ownership of folder referenced by symbolic link temp_link to root. I do not know the current owner.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -h --from=guest root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root.',
+													'How do I make root the owner of symbolic link tmpfile instead of guest?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root?',
+													'The owner of symbolic link tmpfile is guest. Change it to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown --dereference --from=guest root tmpfile','NL Queries':['Change ownership of reference of symbolic link tmpfile from guest to root.',
+													'How do make root the owner of reference of symbolic link tmpfile root instead of guest?',
+													'How do I replace the owner of reference of symbolic tmpfile, which is a symbolic link, from guest to root?',
+													'The owner of reference of symbolic link tmpfile is guest. Change it to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -H --from=guest root temp','NL Queries':['Change ownership of folder referenced by symbolic link temp from guest to root.',
+													'How do  I make root the owner of folder referenced by symbolic link temp instead of guest?',
+													'How do I replace the owner of folder referenced by symbolic link temp from guest to root?',
+													'The owner of folder referenced by symbolic link temp is guest. Change it to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -h --from=:guest :root tmpfile','NL Queries':['Change group ownership of symbolic link tmpfile from guest to root.',
+													'How do I make root the group owner of symbolic link tmpfile instead of guest?',
+													'How do I replace the group owner of symbolic link tmpfile from guest to root?',
+													'The group owner of symbolic link tmpfile is guest. Change it to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown --dereference --from=:guest :root tmpfile','NL Queries':['Change group ownership of reference of symbolic link tmpfile from guest to root.',
+													'How do I make root the group owner of file referenced by symbolic link named tmpfile instead of guest.',
+													'How do I replace the group owner of file referenced by symbolic link tmpfile from guest to root?',
+													'The group owner of file referenced by symbolic link tmpfile is guest. Change it to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -H --from=:guest :root tmp','NL Queries':['Change group ownership of folder referenced by symbolic link tmp from guest to root.',
+													'How do I make root the group owner of folder referenced by symbolic link tmp instead of guest?',
+													'How do I replace the group owner of folder referenced by symbolic link tmp from guest to root?',
+													'The group owner of folder referenced by symbolic link tmp is guest. Change it\'s ownership to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -h --from=guest:group root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root if group owner is group.',
+													'How do make root the owner of symbolic link tmpfile instead of guest if group owner is group?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root if group owner is group?',
+													'The owner of symbolic link tmpfile is guest. Change it to root if group owner is group.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown --dereference --from=guest:group root tmpfile','NL Queries':['Change ownership of reference of symbolic link tmpfile from guest to root if group owner is group.',
+													'How do I make root the owner of reference of symbolic link tmpfile instead of guest if group owner is group.',
+													'How do I replace the owner of reference of symbolic link tmpfile from guest to root if group owner is group?',
+													'The owner of reference of symbolic link tmpfile is guest and group owner is group. Change owner to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -H --from=guest:group root tmpfile','NL Queries':['Change ownership of folder referenced by symbolic link tmpfile from guest to root if group owner is group.',
+													'How do make I root the owner of folder referenced by symbolic link tmpfile instead of guest if group owner is group?',
+													'How do I replace the owner of folder referenced by symbolic link tmpfile from guest to root if group owner is group?',
+													'The owner of folder referenced by symbolic link tmpfile is guest and group owner is group. Change owner to root.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -h --from= root tmpfile','NL Queries':['How to change the ownership of symbolic link file tmpfile to root? Previous owner is unknown. Display ownership when ownership is changed',
+																			'How do I change the ownership of symbolic link file tmpfile to root and display ownership if changed without knowing the current owner? ',
+																			'Change ownership of symbolic link tmpfile to root without knowing the current owner and display ownership when ownership is changed.',
+																			'Change ownership of symbolic link tmpfile to root and display ownership when ownership is changed. I do not know the current owner.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c --dereference --from= root tmpfile','NL Queries':['How to change the ownership of reference of symbolic link file tmpfile to root? Previous owner is unknown. Display ownership when ownership is changed',
+																			'How do I change the ownership of reference of symbolic link file tmpfile to root and display ownership when if changed without knowing the current owner?',
+																			'Change ownership of refeence of symbolic link tmpfile to root without knowing the current owner and display ownership when ownership is changed.'
+																			'Change ownership of reference to symbolic link tmpfile to root and display ownership when ownership is changed. I do not know the current owner.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -H --from= root temp_link','NL Queries':['How to change the ownership of folder referenced by symbolic link temp_link to root? Previous owner is unknown. Display ownership if changed',
+																			'How do I change the ownership of folder referenced by symbolic link temp_link and see ownership when changed without knowing the current owner?',
+																			'Change ownership of folder referenced by symbolic link temp_link to root and see ownership when changed without knowing the current owner.',
+																			'Change ownership of folder referenced by symbolic link temp_link to root and display ownership if changed. I do not know the current owner.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -h --from=guest root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root and display ownership when ownership is changed.',
+													'How do make root the owner of symbolic link tmpfile instead of guest and display ownership when ownership is changed?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root and display ownership when ownership is changed?',
+													'The owner of symbolic link tmpfile is guest. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c --dereference --from=guest root tmpfile','NL Queries':['Change ownership of symolic link tmpfile from guest to root. Display ownership when ownership is changed',
+													'How do make root the owner of symbolic link tmpfile instead of guest and display ownership if changed',
+													'How do I replace the owner of symbolic link tmpfile from guest to root and display ownership if changed?',
+													'The owner of symbolic link tmpfile is guest. Change it to root and display ownership if changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -H --from=guest root tmpfile','NL Queries':['Change ownership of folder referenced by symbolic link tmpfile from guest to root and display ownership when ownership is changed.',
+													'How do I make root the owner of folder referenced by symbolic link tmpfile instead of guest and display ownership when ownership is changed?',
+													'How do I replace the owner of folder referenced by symbolic link tmpfile from guest to root and display ownership when ownership is changed?',
+													'The owner of folder referenced by symbolic link tmpfile is guest. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -h --from=:guest :root tmpfile','NL Queries':['Change group ownership of symbolic link tmpfile from guest to root and display ownership when ownership is changed.',
+													'How do I make root the group owner of symbolic link tmpfile instead of guest and display ownership when ownership is changed?',
+													'How do I replace the group owner of symbolic link tmpfile from guest to root and display ownership when ownership is changed?',
+													'The group owner of symbolic link tmpfile is guest. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c --dereference --from=:guest :root tmpfile','NL Queries':['Change group ownership of file referenced by tmpfile from guest to root. Display ownership when ownership is changed',
+													'How do I make root the group owner of file referenced by tmpfile instead of guest and display ownership when ownership is changed',
+													'How do I replace the group owner of file referenced by tmpfile from guest to root and display ownership when ownership is changed?',
+													'The group owner of file referenced by tmpfile is guest. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -H --from=:guest :root tmpfile','NL Queries':['Change group ownership of folder referenced by symbolic link tmpfile from guest to root and display ownership when ownership is changed.',
+													'How do I make root the group owner of folder referenced by symbolic link tmpfile instead of guest and display ownership when ownership is changed?',
+													'How do I replace the group owner of folder referenced by symbolic link tmpfile from guest to root and display ownership when ownership is changed?',
+													'The group owner of folder referenced by symbolic link tmpfile is guest. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -h --from=guest:group root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root if group owner is group and display ownership when ownership is changed.',
+													'How do I make root the owner of symbolic link tmpfile instead of guest if group owner is group and display ownership when ownership is changed?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root if group owner is group and display ownership when ownership is changed?',
+													'The owner of symbolic link tmpfile is guest. Change it to root if group owner is group and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c --dereference --from=guest:group root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile from guest to root if group owner is group. Display ownership when ownership is changed.',
+													'How do I make root the owner of file referenced by symbolic link tmpfile instead of guest if group owner is group and display ownership when ownership is changed',
+													'How do I replace the owner of file referenced by symbolic link tmpfile from guest to root if group owner is group and display ownership when ownership is changed?',
+													'The owner of file referenced by symbolic link tmpfile is guest and group owner is group. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -c -H --from=guest:group root tmpfile','NL Queries':['Change ownership of folder referenced by symbolic link tmpfile from guest to root if group owner is group and display ownership when ownership is changed.',
+													'How do I make root the owner of folder referenced by symbolic link tmpfile instead of guest if group owner is group and display ownership when ownership is changed?',
+													'How do I replace the owner of folder referenced by symbolic link tmpfile from guest to root if group owner is group and display ownership when ownership is changed?',
+													'The owner of folder referenced by symbolic link tmpfile is guest and group owner is group. Change it to root and display ownership when ownership is changed.']},ignore_index=True)
+
+###
+chown = chown.append({'Command':'chown -v -h --from= root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile to root without knowing the previous owner and display the ownership details.',
+													'How do I make root the owner of symbolic link tmpfile without knowing the previous owner and display the ownership details?',
+													'How do I replace the owner of symbolic link tmpfile to root? Previous owner is unknown. Display the ownership details?',
+													'The owner of symbolic link tmpfile is unknown. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v --dereference --from= root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile to root without knowing the previous owner. Display the ownership details.',
+													'How do I make root the owner of file referenced by symbolic link tmpfile without knowing the previous owner and display the ownership details',
+													'How do I replace the owner of file referenced by symbolic link tmpfile to root without knowing the previous owner and display the ownership details?',
+													'The owner of file referenced by symbolic link tmpfile is unknown. Change it to root and  display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v -H --from= root tmp','NL Queries':['Change ownership of folder referenced by symbolic link tmp to root without knowing the previous owner and display the ownership details.',
+													'How do I make root the owner of folder referenced by symbolic link tmp without knowing the previous owner and display the ownership details?',
+													'How do I replace the owner of folder referenced by symbolic link tmp to root? Previous owner is unknown. Display the ownership details?',
+													'The owner of folder referenced by symbolic link tmp is unknown. Change it to root and display the ownership details.']},ignore_index=True)
+###
+chown = chown.append({'Command':'chown -v -h --from=guest root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root and display the ownership details.',
+													'How do I make root the owner of symbolic link tmpfile instead of guest and display the ownership details?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root and display the ownership details?',
+													'The owner of symbolic link tmpfile is guest. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v --dereference --from=guest root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile from guest to root. Display the ownership details.',
+													'How do I make root the owner of file referenced by symbolic link tmpfile instead of guest and display the ownership details',
+													'How do I replace the owner of file referenced by symbolic link tmpfile from guest to root and display the ownership details?',
+													'The owner of file referenced by symbolic link tmpfile is guest. Change it to root and  display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v -H --from=guest root tmp','NL Queries':['Change ownership of folder referenced by symbolic link tmp from guest to root and display the ownership details.',
+													'How do I make root the owner of folder referenced by symbolic link tmp instead of guest and display the ownership details?',
+													'How do I replace the owner of folder referenced by symbolic link tmp from guest to root and display the ownership details?',
+													'The owner of folder referenced by symbolic link tmp is guest. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v -h --from=:group :root tmpfile','NL Queries':['Change group ownership of symbolic link tmpfile from group to root and display the ownership details.',
+													'How do I make root the group owner of symbolic link tmpfile instead of group and display the ownership details?',
+													'How do I replace the group owner of symbolic link tmpfile from group to root and display the ownership details?',
+													'The group owner of symbolic link tmpfile is group. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v --dereference --from=:group :root tmpfile','NL Queries':['Change group ownership of file referenced by symbolic link tmpfile from group to root. Display the ownership details.',
+													'How do I make root the group owner of file referenced by symbolic link tmpfile instead of group and display the ownership details.',
+													'How do I replace the group owner of file referenced by symbolic link tmpfile from group to root and display the ownership details?',
+													'The group owner of file referenced by symbolic link tmpfile is guest. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v -H --from=:guest :root tmp','NL Queries':['Change group ownership of folder referenced by symbolic link tmp from guest to root and display the ownership details.',
+													'How do I make root the group owner of folder referenced by symbolic link tmp instead of guest and display the ownership details?',
+													'How do I replace the group owner of folder referenced by symbolic link tmp from guest to root and display the ownership details?',
+													'The group owner of folder referenced by symbolic link tmp is guest. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v -h --from=guest:group root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root if group owner is group and display the ownership details.',
+													'How do I make root the owner of symbolic link tmpfile instead of guest if group owner is group and display the ownership details?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root if group owner is group and display the ownership details?',
+													'The owner of symbolic link tmpfile is guest. Change it to root if group owner is group and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v --dereference --from=guest:group root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile from guest to root if group owner is group. Display the ownership details',
+													'How do I make root the owner of file referenced by symbolic link tmpfile instead of guest if group owner is group and see the ownership details',
+													'How do I replace the owner of file referenced by symbolic link tmpfile from guest to root if group owner is group and see the ownership details?',
+													'The owner of file referenced by symbolic link tmpfile is guest and group owner is group. Change it to root and display the ownership details.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -v -H --from=guest:group root tmp','NL Queries':['Change ownership of folder referenced by symbolic link tmp from guest to root if group owner is group and display the ownership details.',
+													'How do I make root the owner of folder referenced by symbolic link tmp instead of guest if group owner is group and display the ownership details?',
+													'How do I replace the owner of folder referenced by symbolic link tmp from guest to root if group owner is group and display the ownership details?',
+													'The owner of folder referenced by symbolic link tmp is guest and group owner is group. Change it to root and display the ownership details.']},ignore_index=True)
+###
+chown = chown.append({'Command':'chown -f -h --from= root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile to root without knowing the previous owner and suppress all the warnings.',
+													'How do I make root the owner of symbolic link tmpfile without knowing the previous owner and suppress all the warnings?',
+													'How do I replace the owner of symbolic link tmpfile to root. Previous owner is unknown. Suppress all the warnings?',
+													'The owner of symbolic link tmpfile is unknown. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f --dereference --from= root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile to root without knowing the previous owner. Suppress all the warnings',
+													'How do I make root the owner of file referenced by symbolic link tmpfile without knowing the previous owner and suppress all the warnings.',
+													'How do I replace the owner of file referenced by symbolic link tmpfile to root. Previous owner is unknown. Suppress all the warnings?',
+													'The owner of file referenced by symbolic link tmpfile is unknown. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f -H --from= root tmp','NL Queries':['Change ownership of folder referenced by symbolic link tmp to root without knowing the previous owner and suppress all the warnings.',
+													'How do I make root the owner of folder referenced by symbolic link tmp without knowing the previous owner and suppress all the warnings?',
+													'How do I replace the owner of folder referenced by symbolic link tmp from guest. Previous owner is unknown. Suppress all the warnings?',
+													'The owner of folder referenced by symbolic link tmp is unknown. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+###
+chown = chown.append({'Command':'chown -f -h --from=guest root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root and suppress all the warnings.',
+													'How do I make root the owner of symbolic link tmpfile instead of guest and suppress all the warnings?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root and suppress all the warnings?',
+													'The owner of symbolic link tmpfile is guest. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f --dereference --from=guest root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile from guest to root. Suppress all the warnings',
+													'How do I make root the owner of file referenced by symbolic link tmpfile instead of guest while suppressing all the warnings',
+													'How do I replace the owner of file referenced by symbolic link tmpfile from guest to root and suppress all the warnings?',
+													'The owner of file referenced by symbolic link tmpfile is guest. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f -H --from=guest root tmp','NL Queries':['Change ownership of folder referenced by symbolic link tmp from guest to root and suppress all the warnings.',
+													'How do I make root the owner of folder referenced by symbolic link tmp instead of guest and suppress all the warnings?',
+													'How do I replace the owner of folder referenced by symbolic link tmp from guest to root and suppress all the warnings?',
+													'The owner of folder referenced by symbolic link tmp is guest. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f -h --from=:group :root tmpfile','NL Queries':['Change group ownership of symbolic link tmpfile from group to root and suppress all the warnings.',
+													'How do I make root the group owner of symbolic link tmpfile instead of group and suppress all the warnings?',
+													'How do I replace the group owner of symbolic link tmpfile from group to root and suppress all the warnings?',
+													'The group owner of symbolic link tmpfile is group. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f --dereference --from=:group :root tmpfile','NL Queries':['Change group ownership of file referenced by symbolic link tmpfile from group to root. Suppress all the warnings',
+													'How do I make root the group owner of file referenced by symbolic link tmpfile instead of group and suppress all the warnings',
+													'How do I replace the group owner of file referenced by symbolic link tmpfile from group to root while suppressing all the warnings?',
+													'The group owner of file referenced by symbolic link tmpfile is guest. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f -H --from=:guest :root tmp','NL Queries':['Change group ownership of folder referenced by symbolic link tmpfile from guest to root and suppress all the warnings.',
+													'How do I make root the group owner of folder referenced by symbolic link tmpfile instead of guest and suppress all the warnings?',
+													'How do I replace the group owner of folder referenced by symbolic link tmpfile from guest to root and suppress all the warnings?',
+													'The group owner of folder referenced by symbolic link tmpfile is guest. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f -h --from=guest:group root tmpfile','NL Queries':['Change ownership of symbolic link tmpfile from guest to root if group owner is group and suppress all the warnings.',
+													'How do I make root the owner of symbolic link tmpfile instead of guest if group owner is group while suppressing all the warnings?',
+													'How do I replace the owner of symbolic link tmpfile from guest to root if group owner is group while suppressing all the warnings?',
+													'The owner of symbolic link tmpfile is guest. Change it to root if group owner is group and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f --dereference --from=guest:group root tmpfile','NL Queries':['Change ownership of file referenced by symbolic link tmpfile from guest to root if group owner is group. Suppress all the warnings',
+													'How do I make root the owner of file referenced by symbolic link tmpfile instead of guest if group owner is group and suppress all the warnings',
+													'How do I replace the owner of file referenced by symbolic link tmpfile from guest to root if group owner is group and suppress all the warnings?',
+													'The owner of file referenced by symbolic link tmpfile is guest and group owner is group. Change it to root and suppress all the warnings.']},ignore_index=True)
+
+chown = chown.append({'Command':'chown -f -H --from=guest:group root tmp','NL Queries':['Change ownership of folder referenced by symbolic link tmp from guest to root if group owner is group and suppress all the warnings.',
+													'How do make root the owner of folder referenced by symbolic link tmp instead of guest if group owner is group and suppress all the warnings?',
+													'How do I replace the owner of folder referenced by symbolic link tmp from guest to root if group owner is group and suppress all the warnings?',
+													'The owner of folder referenced by symbolic link tmp is guest and group owner is group. Change it to root and suppress all the warnings.']},ignore_index=True)
 
 print chown.shape
