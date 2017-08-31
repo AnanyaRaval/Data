@@ -23,7 +23,7 @@ getfacl = getfacl.append({'Command':'getfacl -d newdir','NL Queries':['Display t
 													'What are the default owner, group names for the directory newdir ?']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -c instructions.txt','NL Queries':['Display file name,owner, group, access control list of instructions.txt without the header.',
-													'Show all information about the file instuctions.txt present in this folder. Don\'t display the comment header',
+													'Show all information about the file instuctions.txt present in this folder. Don\'t display the comment header.',
 													'Display the filename, permissions, acl of the file instructions.txt without the file name,owner name, group name.',
 													'Display all ownership related information about the file instructions.txt present in the current directory.Don\'t print the header comments.']},ignore_index=True)
 
@@ -37,7 +37,7 @@ getfacl = getfacl.append({'Command':'getfacl -E ../sample/files','NL Queries':['
 				'Display the filename, permissions, acl of ../sample/files .Don\'t display the comments about effective permissions.',
 				'Display all ownership related information about the file named files present in the sample folder in the previous directory.Do not display the comments about the effective rights.']},ignore_index=True)
 
-getfacl = getfacl.append({'Command':'getfacl -s smallfile.txt','NL Queries':['Display file name,owner, group, access control list of smallfile.txt iff it has other than the base ACL entries.',
+getfacl = getfacl.append({'Command':'getfacl -s smallfile.txt','NL Queries':['Display file name,owner, group, access control list of smallfile.txt if it has other than the base ACL entries.',
 											'If the file => smallfile.txt has only base ACL entries, show all information about the it.',
 											'Display the filename, permissions, acl of smallfile.txt, if it has other than the base ACL entries.',
 											'Skip showing the details about the file = smallfile.txt if it has only the base ACL entries.']},ignore_index=True)
@@ -45,7 +45,7 @@ getfacl = getfacl.append({'Command':'getfacl -s smallfile.txt','NL Queries':['Di
 getfacl = getfacl.append({'Command':'getfacl -R somedir','NL Queries':['Display file name,owner, group, access control list of directory, somedir recursively including somedir.',
 						'Show all information about the file and folders inside somedir, including somedir itself.',
 						'Display the filename, permissions, acl of the all files and folders recursively for the folder somedir.',
-						'Display all ownership related information about the folder somedir.Recursievly display the information about all the subfiles and folders.']},ignore_index=True)
+						'Display all ownership related information about the folder somedir.Recursively display the information about all the subfiles and folders.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -t instructions.txt.','NL Queries':['Display file name,owner, group, access control list of instructions.txt.Show it in a tabular format.',
 					'Show all information about the file instuctions.txt in a tabular format.The file is present in this folder.',
