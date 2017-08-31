@@ -100,7 +100,7 @@ ifconfig = ifconfig.append({'Command':'ifconfig lo -allmulti','NL Queries':['Dis
 
 ifconfig = ifconfig.append({'Command':'ifconfig wlan0 metric 1','NL Queries':['Set the interface metric as 1 for wlan0',
 						'How to set interface metric as 1 for wlan0?',
-						'For wlan0 network interface, set the metrci as 1.']},ignore_index=True)
+						'For wlan0 network interface, set the metric as 1.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig enp2s0 dstaddr 255.255.255.244','NL Queries':['Make destination address of enp2s0 as 255.255.255.224.',
 							'How do I assign destination address as 255.255.255.224 to interface enp2s0?',
@@ -114,9 +114,9 @@ ifconfig = ifconfig.append({'Command':'ifconfig eth0 del 2001:0db8:0:f101::1/64'
 								'How do I remove the IPv6 address 2001:0db8:0:f101::1/64 to the interface eth0?',
 								'Delete IPv6 address to eth0 => 2001:0db8:0:f101::1/64.']},ignore_index=True)
 
-ifconfig = ifconfig.append({'Command':'ifconfig sit0 tunnel 172.16.254.1','NL Queries':['Add a tunneling address 172.16.254.1 to eth0.',
+ifconfig = ifconfig.append({'Command':'ifconfig sit0 tunnel 172.16.254.1','NL Queries':['Add a tunneling address 172.16.254.1 to sit0.',
 						'How do I assign a SIT address 172.16.254.1 to the interface sit0?',
-						'Add SIT address to sit0 => 172.16.254.1.']},ignore_index=True)
+						'Add SIT address = 172.16.254.1 to sit0.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig eth0 irq 15','NL Queries':['Set the interrupt line for eth0 as 15.',
 																'How to change the interrupt line to 15 for the eth0 port?',
@@ -139,9 +139,9 @@ ifconfig = ifconfig.append({'Command':'ifconfig eth1 media auto','NL Queries':['
 												'How to set the medium type for eth1 automatically?',
 												'Auto-detect the medium type for eth1.']},ignore_index=True)
 
-ifconfig = ifconfig.append({'Command':'ifconfig eth0 broadcast 123.25.22.1','NL Queries':['Set broadcast address 123.25.22.1 to eth0.',
-										'How to add the broadcast address 123.25.22.1 to eth0?',
-										'Assign broadcast address 123.25.22.1 to eth0 port.']},ignore_index=True)
+#ifconfig = ifconfig.append({'Command':'ifconfig eth0 broadcast 123.25.22.1','NL Queries':['Set broadcast address 123.25.22.1 to eth0.',
+#										'How to add the broadcast address 123.25.22.1 to eth0?',
+#										'Assign broadcast address 123.25.22.1 to eth0 port.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig eth0 -broadcast 123.25.22.1','NL Queries':['Clear broadcast address 123.25.22.1 to eth0.',
 												'How to remove the broadcast address 123.25.22.1 for eth0?',
