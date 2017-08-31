@@ -15,7 +15,7 @@ ifconfig = ifconfig.append({'Command':'ifconfig eth0 172.16.25.125','NL Queries'
 																		'Change ip address of eth0 = 172.16.25.125.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig -a','NL Queries':['Show all interactive network interface details.',
-															'How do I check link, hardware address, inetaddress, broadcast address etc. of all network interfaces?',
+															 'How do I check link, hardware address, inetaddress, broadcast address etc. of all network interfaces?',
 															'Check the network hardware I have in my computer']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig enp2s0','NL Queries':['Show network interface details of enp2s0.',
