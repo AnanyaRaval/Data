@@ -14,7 +14,7 @@ getfacl = getfacl.append({'Command':'getfacl -a instructions.txt','NL Queries':[
 
 getfacl = getfacl.append({'Command':'getfacl -n instructions.txt','NL Queries':['Display file name, owner, group, access control list of instructions.txt. Show numeric owner and group IDs.',
 										'Show all information of file instructions.txt with numeric IDs.',
-										'Display the filename, permissions, acl of the file instructions.txt with numeric user and group iDs',
+										'Display the filename, permissions, acl of the file instructions.txt with numeric user and group IsDs',
 										'Display all ownership related information, with numeric user and group IDs, about the file instructions.txt present in the current directory.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -d newdir','NL Queries':['Display the default access control list for the directory newdir.', 
@@ -70,7 +70,7 @@ getfacl = getfacl.append({'Command':'getfacl -.','NL Queries':['Display file nam
 getfacl = getfacl.append({'Command':'getfacl -- -queries.','NL Queries':['Display file name,owner, group, access control list of -queries, whose name starts with a - character.',
 					'Show all information about the file -queries present in this folder.',
 					'Display the filename, permissions, acl of the file -queries, having a "-" in the start of the name.',
-					'Display all ownership related information about the file "-queries" present in the current directory.Dont let the - be considered as a flag']},ignore_index=True)
+					'Display all ownership related information about the file "-queries" present in the current directory.Dont let the - be considered as a flag.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl problems solutions.','NL Queries':['Display file name,owner, group, access control list of the files problems, solutions .',
 						'Show all information about files problems, solutions present in this folder.',
@@ -82,10 +82,10 @@ getfacl = getfacl.append({'Command':'getfacl -ac news.txt','NL Queries':['Displa
 						'Show the permissions,named user,named group,effective rights mask of the file news.txt. Don\'t show the headers about filename, user name and group name .',
 						'What are the base Acl entries,named user and group entries and rights mask of news.txt ?.Don\'t display the first 3 lines of the output.']},ignore_index=True)
 
-getfacl = getfacl.append({'Command':'getfacl -an dir1','NL Queries':['Display access control list for the directory dir1 .Show numeric user and group ids', 
-						'How do I see the access control list of dir1 with numeric user and group ids?',
-						'Show the permissions,named user,named group,effective rights mask,numeric user and group ids of the directory dir1.',
-						'What are the base Acl entries,named user and group entries and rights mask of dir1.txt ? Include numbered user and group ids.']},ignore_index=True)
+getfacl = getfacl.append({'Command':'getfacl -an dir1','NL Queries':['Display access control list for the directory dir1 .Show numeric user and group IDs', 
+						'How do I see the access control list of dir1 with numeric user and group IDs?',
+						'Show the permissions,named user,named group,effective rights mask,numeric user and group IDs of the directory dir1.',
+						'What are the base Acl entries,named user and group entries and rights mask of dir1.txt ? Include numbered user and group IDs.']},ignore_index=True)
 
 
 getfacl = getfacl.append({'Command':'getfacl -ad instructions.txt.','NL Queries':['Display file name,owner, group, access control list,default acl, of instructions.txt.',
@@ -96,7 +96,7 @@ getfacl = getfacl.append({'Command':'getfacl -ad instructions.txt.','NL Queries'
 getfacl = getfacl.append({'Command':'getfacl -ae instructions.txt.','NL Queries':['Display file name,owner, group, access control list of instructions.txt along with the effective rights comments.',
 					'Show all information about the file instuctions.txt present in this folder.Also include comments about the effective rights',
 					'Display the filename, permissions, acl of the file instructions.txt with comments on the effective rights.',
-					'Display all ownership related information about the file instructions.txt present in the current directory. Include comments about effective rights, even though they are identical to the rights in the ACL entrys about effective rights, eventhough they are identical to the rights in the ACL entry']},ignore_index=True)
+					'Display all ownership related information about the file instructions.txt present in the current directory. Include comments about effective rights,even though they are identical to the rights in the ACL entry.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -aE instructions.txt.','NL Queries':['Display file name,owner, group, access control list of instructions.txt without effective rights comments.',
 				'Show all information about the file instuctions.txt present in this folder.No need to display effective rights comments.',
@@ -104,7 +104,7 @@ getfacl = getfacl.append({'Command':'getfacl -aE instructions.txt.','NL Queries'
 				'Display all ownership related information about the file instructions.txt present in the current directory without effective rights permissions.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -as a.txt b.txt','NL Queries':['Display access control list for files a.txt and b.txt only if the file has other than base entries.',
-						 'How do I see the access control list of a.txt and b.txt? Show the details for each file if it has other than the base acl entries?']},ignore_index=True)
+						 'How do I see the access control list of a.txt and b.txt? Show the details for each file if it has other than the base acl entries.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -aR dir3','NL Queries':['Display access control list for directory dir3 recursively.', 
 						'How do I see the access control list of all files and folders in dir3 directory rec?',
@@ -118,33 +118,33 @@ getfacl = getfacl.append({'Command':'getfacl -at instructions.txt','NL Queries':
 
 getfacl = getfacl.append({'Command':'getfacl -nd instructions.txt','NL Queries':['Display file name, owner, group, default access control list of instructions.txt. Show numeric owner and group IDs.',
 					'Show all information of file instructions.txt with numeric IDs.',
-					'Display the filename, permissions, acl of the file instructions.txt with numeric user and group iDs',
-					'Display all ownership related information, with numeric user and group iDs, about the file instructions.txt present in the current directory.']},ignore_index=True)
+					'Display the filename, permissions, acl of the file instructions.txt with numeric user and group IDs',
+					'Display all ownership related information, with numeric user and group IDs, about the file instructions.txt present in the current directory.']},ignore_index=True)
 
-getfacl = getfacl.append({'Command':'getfacl -nc processes.txt','NL Queries':['Display file name, owner, group, access control list of processes.txt. Show numeric owner and group IDs but donot show the headers.',
-						'Show all information of file processes.txt with numeric IDs.Don\'t show the headers',
-						'Display the filename, permissions, acl of the file processes.txt with numeric user and group iDs but exclude the comments regarding file name, user name, group name.',
-						'Display all ownership related information, with numeric user and group iDs, about the file processes.txt present in the current directory.No need of displaying the comments in the top 3 lines.']},ignore_index=True)
+getfacl = getfacl.append({'Command':'getfacl -nc processes.txt','NL Queries':['Display file name, owner, group, access control list of processes.txt. Show numeric owner and group IDs but do not show the headers.',
+						'Show all information of file processes.txt with numeric IDs. Don\'t show the headers',
+						'Display the filename, permissions, acl of the file processes.txt with numeric user and group IDs but exclude the comments regarding file name, user name, group name.',
+						'Display all ownership related information, with numeric user and group IDs, about the file processes.txt present in the current directory.No need of displaying the comments in the top 3 lines.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -ne pictures','NL Queries':['Display file name, owner, group, access control list of pictures. Show numeric owner and group IDs  and the effective rights column.',
 					'Show all information of pictures with numeric IDs and effective rights comments.',
-					'Display the filename, permissions, acl of pictures with numeric user and group iDs and effective rights.',
-					'Display all ownership related information, with numeric user and group iDs, about the file pictures present in the current directory. Also display a column on the effective rights of users and groups, default and otherwise.']},ignore_index=True)
+					'Display the filename, permissions, acl of pictures with numeric user and group IDs and effective rights.',
+					'Display all ownership related information, with numeric user and group IDs, about the file pictures present in the current directory. Also display a column on the effective rights of users and groups, default and otherwise.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -nE pictures','NL Queries':['Display file name, owner, group, access control list of pictures. Show numeric owner and group IDs but not the effective rights column.',
 					'Show all information of pictures with numeric IDs. Exclude the effective rights comments.',
-					'Display the filename, permissions, acl of pictures with numeric user and group iDs. Don\'t display the effective rights of user and group.',
-					'Display all ownership related information, with numeric user and group iDs, about the file pictures present in the current directory. Don\'t display a column on the effective rights.']},ignore_index=True)
+					'Display the filename, permissions, acl of pictures with numeric user and group IDs. Don\'t display the effective rights of user and group.',
+					'Display all ownership related information, with numeric user and group IDs, about the file pictures present in the current directory. Don\'t display a column on the effective rights.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -nR myfolder','NL Queries':['Display file name, owner, group, access control list of all files and folders in myfolder, recursively. Show numeric owner and group IDs.',
 					'Show all information of all files and folders in myfolders with numeric IDs.Do it recursively',
-					'Display the filename, permissions, acl of the folder => myfolder with numeric user and group iDs recursively.',
+					'Display the filename, permissions, acl of the folder => myfolder with numeric user and group IDs recursively.',
 					'Display all ownership related information, with numeric user and group iDs, about the folder myfolder recursively.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -ns instructions.txt','NL Queries':['Display file name, owner, group, access control list of instructions.txt. Show numeric owner and group IDs; ACL , default ACL in a table.',
 					'Show all information of file instructions.txt with numeric IDs in a table.',
-					'Display the filename, permissions, acl of the file instructions.txt with numeric user and group iDs, in a table',
-					'Display all ownership related information, with numeric user and group iDs, about the file instructions.txt present in the current directory. Give the output in a table.']},ignore_index=True)
+					'Display the filename, permissions, acl of the file instructions.txt with numeric user and group IDs, in a table',
+					'Display all ownership related information, with numeric user and group IDs, about the file instructions.txt present in the current directory. Give the output in a table.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -dc newdir','NL Queries':['Display the default access control list for the directory newdir without the header comments.',
 				 'How do I see the default access control list of newdir,without header comments ?',
@@ -165,15 +165,16 @@ getfacl = getfacl.append({'Command':'getfacl -dR newdir','NL Queries':['Display 
 
 getfacl = getfacl.append({'Command':'getfacl -dt ../newdir','NL Queries':['Display the default access control list for the directory ../newdir in a table.', 
 			'How do I see the default access control list of ../newdir in a table?',
-			'Show the default acl of newdir present in the parent folder. Use a table.']},ignore_index=True)
+			'Show the default acl of newdir present in the parent folder. Show in a table.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -ce news.txt','NL Queries':['Display file name,owner, group, access control list, effective rights comments of news.txt without the header.',
 				'Show all information about the file news.txt present in this folder. Don\'t display the comment header but display the effective rights comments.',
-				'Display the filename, permissions, acl, effective rights comments  of the file => news.txt without the file name,owner name, group name.','Display all ownership related information about the file news.txt present in the current directory. Print the comments about the effective user and group rights. Don\'t print the header comments.']},ignore_index=True)
+				'Display the filename, permissions, acl, effective rights comments  of the file => news.txt without the file name,owner name, group name.',
+				'Display all ownership related information about the file news.txt present in the current directory. Print the comments about the effective user and group rights. Don\'t print the header comments.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -cE news.txt','NL Queries':['Display file name,owner, group, access control list of news.txt without the header and effective rights comments.',
 			'Show all information about the file news.txt present in this folder. Don\'t display the comment header and the effective rights comments.',
-			'Display the filename, permissions, acl of the file => news.txt without the file name,owner name, group name and effecitve rights of user and group.',
+			'Display the filename, permissions, acl of the file => news.txt without the file name,owner name, group name and effective rights of user and group.',
 			'Display all ownership related information about the file news.txt present in the current directory. Don\'t print the comments about the effective user and group rights and the header comments.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -cR myfolder','NL Queries':['Display file name,owner, group, access control list of all files and folders, recursively, in myfolder without the header.',
@@ -189,17 +190,17 @@ getfacl = getfacl.append({'Command':'getfacl -eR ~/sample','NL Queries':['Displa
 getfacl = getfacl.append({'Command':'getfacl -ER ../sample/files','NL Queries':['Display file name, owner, group, access control list of all files and folders in ../sample/files recursively,without the effective permissions.',
 		'Show all information about all the files and folders in the directory ../sample/files without the comments for effective rights.',
 		'Display the filename, permissions, acl of all files and folders in ../sample/files recursively.Don\'t display the comments about effective permissions.',
-		'Display all ownership related information about all the files and folders in  ../sample/files, in a recursive fashion. Donot display the comments about the effective rights.']},ignore_index=True)
+		'Display all ownership related information about all the files and folders in  ../sample/files, in a recursive fashion. Do not display the comments about the effective rights.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -Et ../sample/files','NL Queries':['Display file name, owner, group, access control list of ../sample/files without the effective permissions in a tabular format.',
 		'Show all information about the directory ../sample/files without the comments for effective rights in a table.',
-		'Display the filename, permissions, acl of ../sample/files .Don\'t display the comments about effective permissions.',
+		'Display the filename, permissions, acl of ../sample/files . Don\'t display the comments about effective permissions.',
 		'Display all ownership related information about the file ../sample/files. Do not display the comments about the effective rights.']},ignore_index=True)
 
-getfacl = getfacl.append({'Command':'getfacl -sR myfile','NL Queries':['Display file name,owner, group, access control list of all files and folders in myfile, recursively, iff it has other than the base ACL entries.',
+getfacl = getfacl.append({'Command':'getfacl -sR myfile','NL Queries':['Display file name,owner, group, access control list of all files and folders in myfile, recursively, if it has other than the base ACL entries.',
 			'If files and folders in myfile has not only the base ACL entries, show all information about it.',
 			'Display the filename, permissions, acl of all files and folders in myfile directory, recursively, if it has other than the base ACL entries.',
-			'Skip showing the details about any file or folder in myfile if it has only the base ACL entries.Else recursively show the details for all files']},ignore_index=True)
+			'Skip showing the details about any file or folder in myfile if it has only the base ACL entries. Else recursively show the details for all files.']},ignore_index=True)
 
 print getfacl.shape
 
