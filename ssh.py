@@ -163,5 +163,5 @@ ssh = ssh.append({'Command':  'ssh -o StrictHostKeyChecking=no user@172.23.23.20
                                  'Disabling strict host checking, log in as user@172.23.23.203 .']}, ignore_index = True)
 
 
-print ssh
+print ssh.shape
 
