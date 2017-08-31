@@ -493,7 +493,7 @@ mv = mv.append({'Command':         'mv -n --strip-trailing-slashes undo/// redo/
 
 
 
-print mv
+print mv.shape
 
 
 
