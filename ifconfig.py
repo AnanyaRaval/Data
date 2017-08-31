@@ -22,17 +22,17 @@ ifconfig = ifconfig.append({'Command':'ifconfig enp2s0','NL Queries':['Show netw
 										'How do I check link, hardware address, inetaddress, broadcast address etc. of enp2s0 interface.',
 										'Display details of enp2s0 network interface only.']},ignore_index=True)
 
-ifconfig = ifconfig.append({'Command':'ifup eth0','NL Queries':['Enable eth0 network interface.',
-													'How do I make eth0 card active?',
-													'Turn on eth0 card.']},ignore_index=True)
+#ifconfig = ifconfig.append({'Command':'ifup eth0','NL Queries':['Enable eth0 network interface.',
+#													'How do I make eth0 card active?',
+#													'Turn on eth0 card.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig eth0 down','NL Queries':['Turn down device eth0.',
 															'Disable card eth0 down.',
 															'How do I disable my eth0 card?']},ignore_index=True)
 
-ifconfig = ifconfig.append({'Command':'ifdown eth0','NL Queries':['Disable eth0 network interface.',	
-																'How do I make eth0 card inactive?',
-																'Turn off eth0 card.']},ignore_index=True)
+#ifconfig = ifconfig.append({'Command':'ifdown eth0','NL Queries':['Disable eth0 network interface.',	
+#																'How do I make eth0 card inactive?',
+#																'Turn off eth0 card.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig enp2s0 netmask 255.255.255.244','NL Queries':['Make netmask of enp2s0 as 255.255.255.224.',
 																				'How do I assign network mask as 255.255.255.224 to interface enp2s0?',
@@ -44,7 +44,7 @@ ifconfig = ifconfig.append({'Command':'ifconfig lxcbr0 broadcast 172.16.25.63','
 
 ifconfig = ifconfig.append({'Command':'ifconfig enp2s0 172.16.25.125 netmask 255.255.255.244 broadcast 172.16.25.63','NL Queries':['Make ip as 172.16.25.125 ,netmask as 255.255.255.244 ,broadcast address as 172.16.25.63 for the interface enp2s0.',
 													'Assign ip,netmask,broadcast addresses as 172.16.25.125, 255.255.255.244, 172.16.25.63 to the interface enp2s0?',
-													'Change ip => 172.16.25.125, netmask => 255.255.255.224, broadcast address => 172.16.25.63 of enp2s0.']},ignore_index=True)
+													'Make ip = 172.16.25.125, netmask = 255.255.255.224, broadcast address = 172.16.25.63 of enp2s0.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig lo mtu 1000','NL Queries':['Set the maximum transmission unit to lo interface to 1000 packets',
 													'Assign mtu = 1000 packets for lo interface',
@@ -72,7 +72,7 @@ ifconfig = ifconfig.append({'Command':'ifconfig eth0:0 down','NL Queries':['Remo
 
 ifconfig = ifconfig.append({'Command':'ifconfig eth0 hw ether AA:BB:CC:DD:EE:FF','NL Queries':['Change MAC address of eth0 interface to AA:BB:CC:DD:EE:FF',
 							'How to change media access control address of eth0 network interface to AA:BB:CC:DD:EE:FF.',
-							'Modify the MAC address of eth0 => Aa:BB:CC:DD:EE:FF.']},ignore_index=True)
+							'Modify the MAC address of eth0 = Aa:BB:CC:DD:EE:FF.']},ignore_index=True)
 
 ifconfig = ifconfig.append({'Command':'ifconfig -s','NL Queries':['Show all interactive network interface in a short list.',
 								'List of all interface networks in short form.',
