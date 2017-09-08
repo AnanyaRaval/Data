@@ -24,11 +24,11 @@ less = less.append({'Command':'less --help',
 less = less.append({'Command':'less -a new.txt',
 					'NL Queries':['Open file with name new.txt. Start forward search from bottom of screen and backward search from top of screen.',
 								'Open file new.txt to search for a pattern in the file skipping all lines displayed on the screen.',
-								'How to search in lines of the file new.txt not displayed on screen ,while using less?',
-								'Search for pattern in new.txt in this folder using less. Do not search in lines displayed on the screen.']},ignore_index = True)
+								'How to search in lines of the file new.txt not displayed on screen ,while using?',
+								'Search for pattern in new.txt in this folder. Do not search in lines displayed on the screen.']},ignore_index = True)
 
 less = less.append({'Command':'less -b3 new.txt',
-					'NL Queries':['Open file new.txt with less.Allow only a buffer space of 3Kb.',
+					'NL Queries':['Open file new.txt.Allow only a buffer space of 3Kb.',
 								'Allocate 3kb buffer space while opening file new.txt.',
 								'How do I allocate only 3kb of buffer space to new.txt while opening it?']},ignore_index = True)
 
@@ -55,7 +55,7 @@ less = less.append({'Command':'less -g list.txt',
 
 less = less.append({'Command':'less -G list.txt',
 					'NL Queries':['Open list.txt in command line,one pageful at a time. While searching, go to the location where the query is matched in that pageful without highlighting the match.',
-								'Open list.txt in "less" mode. Display the location where the query was matched, without highlighting the query word.',
+								'Open list.txt. Display the location where the query was matched, without highlighting the query word.',
 								'How to supress highlighting, while searching the file => list.txt in command line?']},ignore_index = True)
 
 less = less.append({'Command':'less -K instructions.txt',
@@ -143,12 +143,12 @@ less = less.append({'Command':'less -~ new.txt',
 #-p
 less = less.append({'Command':'less -p hello list.txt',
 					'NL Queries':['Open list.txt in command line, one pageful at a time. While searching, highlight the all locations where the hello word.',
-								'Open list.txt in "less" mode.Highlight all locations that match the hello word.',
+								'Open list.txt.Highlight all locations that match the hello word.',
 								'How to highlight matching word hello while searching the file = list.txt in command line?']},ignore_index = True)
 
 less = less.append({'Command':'less -p \"hello world\" list.txt',
 					'NL Queries':['Open list.txt in command line, one pageful at a time. While searching, highlight the all locations where the \"hello world\" word.',
-								'Open list.txt in "less" mode.Highlight all locations that match the \"hello world\" word.',
+								'Open list.txt. Highlight all locations that match the \"hello world\" word.',
 								'How to highlight matching words \"hello world\" while searching the file = list.txt in command line?']},ignore_index = True)
 
 less = less.append({'Command':'less -p h+ello list.txt',
@@ -173,7 +173,7 @@ less = less.append({'Command':'less -p ^hello list.txt',
 
 less = less.append({'Command':'less -p hello$ list.txt',
 					'NL Queries':['Open list.txt in command line, one pageful at a time. While searching, highlight the locations where the hello word was at the end of string or line.',
-								'Open list.txt in "less" mode.Highlight the locations that match the hello word at the ending of line or string.',
+								'Open list.txt.Highlight the locations that match the hello word at the ending of line or string.',
 								'How to highlight matching words hello at ending for line or string while searching the file = list.txt in command line?']},ignore_index = True)
 
 less = less.append({'Command':'less -p [CT]all list.txt',
@@ -209,7 +209,7 @@ less = less.append({'Command':'less -gp he*llo list.txt',
 
 less = less.append({'Command':'less -gp ^hello list.txt',
 					'NL Queries':['Open list.txt in command line, one pageful at a time. While searching, highlight the last locations where the hello word was at the beginning of string or line.',
-								'Open list.txt in "less" mode.Highlight the last locations that match the hello word at the starting of line or string.',
+								'Open list.txt. Highlight the last locations that match the hello word at the starting of line or string.',
 								'How to highlight last matching words hello at starting for line or string while searching the file = list.txt in command line?']},ignore_index = True)
 
 less = less.append({'Command':'less -gp hello$ list.txt',
@@ -454,7 +454,7 @@ less = less.append({'Command':'less +5 -Ip hello list.txt',
 
 less = less.append({'Command':'less +5 -gIp hello list.txt',
 					'NL Queries':['Open list.txt in command line from 5th line, one pageful at a time. While searching, highlight the last locations where the hello word. Ignore case while searching.',
-								'Open list.txt in "less" mode. Skip first 4 lines. Highlight last locations that match the hello word. Consider small and capital letters as identical.',
+								'Open list.txt. Skip first 4 lines. Highlight last locations that match the hello word. Consider small and capital letters as identical.',
 								'How to highlight last matching word hello while searching the file = list.txt in command line? Do not differentiate upper and lower case as different. Skip the first 4 lines.']},ignore_index = True)
 
 less = less.append({'Command':'less -gj4p hello list.txt',
@@ -473,6 +473,7 @@ less = less.append({'Command':'less -gIj4~p hello list.txt',
 								'How to highlight last matching word hello while searching the file = list.txt in command line with ignoring case? Display the highlighted location at line 4. Do not show tilda at start or end of file.']},ignore_index = True)
 
 
+#less.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/Model/csv_files/less.csv',index=False)
 print less.shape
 
 
