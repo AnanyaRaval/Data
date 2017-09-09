@@ -1,7 +1,7 @@
 import pandas as pd 
 
 sleep = pd.DataFrame(columns = ['Command','NL Queries'])
-.
+
 sleep = sleep.append({'Command':'sleep 4','NL Queries':['Pause shell for 4 seconds.',
 														 'Pause command line for 4 seconds.',
 														 'Suspend current processes for4 seconds .']},ignore_index=True)
