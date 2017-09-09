@@ -35,7 +35,7 @@ less = less.append({'Command':'less -b3 new.txt',
 less = less.append({'Command':'less -E ~/hi.txt',
 					'NL Queries':['Open ~/hi.txt and exit the file after reaching the end.',
 								'Open file hi.txt in home directory and close it once it\'s last line is reached.',
-								'Display contents of hi.txt using less command. Exit once end of file has reached.',
+								'Display contents of hi.txt. Exit once end of file has reached.',
 								'Show contents on hi.txt present in home folder. Close file once end has reached.']},ignore_index = True)
 
 less = less.append({'Command':'less -f new.txt',
@@ -399,7 +399,7 @@ less = less.append({'Command':'less -gip hello list.txt',
 
 less = less.append({'Command':'less -GIp hello list.txt',
 					'NL Queries':['Open list.txt in command line, one pageful at a time. While searching, do not highlight the last locations where the hello word. Ignore case while searching.',
-								'Open list.txt in "less" mode. Do not highlight the last locations that match the hello word. Do not differentiate uppercase with lowercase.',
+								'Open list.txt. Do not highlight the last locations that match the hello word. Do not differentiate uppercase with lowercase.',
 								'Do not highlight last matching word hello while searching the file = list.txt in command line? Consider lowercase and uppercase letters the same.']},ignore_index = True)
 
 less = less.append({'Command':'less -Gip hello list.txt',
