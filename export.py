@@ -18,7 +18,7 @@ export = export.append({'Command':'export PATH=$PATH:/home/himanshu/practice/','
 
 export = export.append({'Command':'export EDITOR=/usr/bin/vim','NL Queries':['How do I create an environment variable called EDITOR and assign it the shortcurt /usr/bin/vim?',
 																		'Command to add short-cut to /usr/bin/vim to variable EDITOR',
-																		'Make an environment variable EDITOR.Assign path /usr/bin/vim to it.']},ignore_index=True)
+																		'Make an environment variable EDITOR. Assign path /usr/bin/vim to it.']},ignore_index=True)
 
 export = export.append({'Command':'export PS1=\'\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] \'','NL Queries':['How do I change the prompt in command line to include current folder name?',
 																								'Includes the current directory name in the command line prompt.',
@@ -27,13 +27,13 @@ export = export.append({'Command':'export PS1=\'\[\e[1;32m\][\u@\h \W]\$\[\e[0m\
 export = export.append({'Command':'export FOO','NL Queries':['Allowes usage of variable FOO in the child processes.',
 																'How do I use the variable FOO in my child processes?']},ignore_index=True)
 
-export = export.append({'Command':'export -f function_name','NL Queries':['How do I export a shell function?',
+export = export.append({'Command':'export -f function_name','NL Queries':['How do I add shell function named function_name to environment of subsequently executing commands?',
 																		'Allows the usage of function function_name to all the child processes.',
-																		'Exports a shell function to child processes.']},ignore_index=True)
+																		'Provide shell function function_name to child processes.']},ignore_index=True)
 
-export = export.append({'Command':'export -n EDITOR','NL Queries':['How do I remove EDITOR from the export variable list?',
+export = export.append({'Command':'export -n EDITOR','NL Queries':['How do I remove EDITOR from the variable list?',
 																	'Delete EDITOR from exported list.',
 																	'Remove the variable EDITOR from exported list.']},ignore_index=True)
 
-
+#export.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/export.csv',index=False)
 print export.shape
