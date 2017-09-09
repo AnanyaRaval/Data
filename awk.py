@@ -12,7 +12,7 @@ awk = awk.append({'Command':'awk \'{print}\' marks.txt',
 
 awk = awk.append({'Command':'awk \'/a/ {print $4 "\t" $3}\' marks.txt',
 				'NL Queries':['Print tab-separated columns 4 and 3 of marks.txt containing string "a".',
-							'How do I see the columns 4 and 3 of table in marks.txt? I need to see only those which have "a" in their value.',
+							'How do I see the columns 4 and 3 of table in marks.txt? I need to see only those which have "a" in their value?',
 							'Display column 4 then followed by tab space then by column 3 of marks.txt. Display only those which contain "a" in records.']},ignore_index=True)
 
 awk = awk.append({'Command':'awk -F, \'{print $2}\' table.csv',
@@ -141,7 +141,8 @@ awk = awk.append({'Command':'awk \'/hello/\' {print $1} \' marks.txt',
 
 awk = awk.append({'Command':'awk -f script.awk table.csv',
 				'NL Queries':['Run script.awk on table.csv.',
-							'How do run external awk script script.awk on table.csv?',
-							'Run external awk script script.awk on table.csv.']},ignore_index=True)
+							'How do run external script script.awk on table.csv?',
+							'Run external script script.awk on table.csv.']},ignore_index=True)
 
+#awk.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/Model/csv_files/awk.csv',index=False)
 print (awk.shape)
