@@ -26,7 +26,7 @@ uniq = uniq.append({'Command':'uniq -d test','NL Queries':['Print only the lines
 
 uniq = uniq.append({'Command':'uniq -D samarth.txt','NL Queries':['Print only the lines that have multiple consecutive occurences in the file samarth.txt as many times as they occur in the file.',
 																'Display only continuous repeated lines from the file samarth.txt as many times as they repeat.',
-																'How to filter out only repeated lines from the file samarth.txt? Print each line as many times as it occurs in the file.',
+																'How to filter out only repeated lines from the file samarth.txt? Print each line as many times as it occurs in the file?',
 																'Single command to see only repeated lines in the file samarth.txt as many times as they occur in the file.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -f 3 ananya.txt','NL Queries':['Show ananya.txt without consecutive duplicate lines. Ignore first 3 fields when comparing lines.',
@@ -41,7 +41,7 @@ uniq = uniq.append({'Command':'uniq -i tutorial.txt','NL Queries':['Show tutoria
 
 uniq = uniq.append({'Command':'uniq -s 8 tutorial.txt','NL Queries':['Show tutorial.txt without consecutive duplicate lines. Don\'t consider the first 8 characters of each line when comparing them.',
 																	'Don\'t consider the first 8 characters while comparing lines and display only unique lines from the file tutorial.txt on the command line.',
-																	'How to see unique lines from tutorial.txt? Ignore first 8 characters when comparing the lines.',
+																	'How to see unique lines from tutorial.txt? Ignore first 8 characters when comparing the lines?'
 																	'Single command to see only unique lines from tutorial.txt while avoiding first 8 characters when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -u instructions.txt','NL Queries':['Print only non-repeating lines in the file instructions.txt on command line.',
@@ -50,7 +50,7 @@ uniq = uniq.append({'Command':'uniq -u instructions.txt','NL Queries':['Print on
 
 uniq = uniq.append({'Command':'uniq -w 8 tutorial.txt','NL Queries':['Show tutorial.txt without consecutive duplicate lines. Consider only the first 8 characters of each line when comparing them.',
 																	'Consider first 8 characters while comparing lines and display only unique lines from the file tutorial.txt on the command line.',
-																	'How to see unique lines from tutorial.txt? Only consider first 8 characters when comparing the lines.',
+																	'How to see unique lines from tutorial.txt? Only consider first 8 characters when comparing the lines?',
 																	'Single command to see only unique lines from tutorial.txt while taking first 8 characters into account when comparing lines.']},ignore_index=True)
 
 ###
@@ -89,7 +89,7 @@ uniq = uniq.append({'Command':'uniq -c -s 8 tutorial.txt','NL Queries':['Show tu
 
 uniq = uniq.append({'Command':'uniq -c -w 8 tutorial.txt','NL Queries':['Show tutorial.txt without consecutive duplicate lines. Consider only the first 8 characters of each line when comparing them. The output should also include the number of times each line repeats consecutively in the file.',
 																		'Consider first 8 characters while comparing lines and display only unique lines from the file tutorial.txt on the command line along with it\'s number of occurences in the file.',
-																		'How to see unique lines from tutorial.txt? Only consider first 8 characters when comparing the lines and print the number of times each line repeats consecutively in the file.',
+																		'How to see unique lines from tutorial.txt? Only consider first 8 characters when comparing the lines and print the number of times each line repeats consecutively in the file?',
 																		'Single command to see only unique lines from tutorial.txt while taking first 8 characters into account when comparing lines. Prefix each line with the number of times it consecutively repeats in the file.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -d -f 2 sample.txt','NL Queries':['Print only the lines that have multiple consecutive occurences in the file sample.txt. Ignore first 2 fields when comparing lines.',
@@ -104,17 +104,17 @@ uniq = uniq.append({'Command':'uniq -d -i sample.txt','NL Queries':['Print only 
 
 uniq = uniq.append({'Command':'uniq -d -s 10 tutorial.txt','NL Queries':['Show tutorial.txt with lines that have multiple consecutive occurences. Don\'t consider the first 10 characters of each line when comparing them.',
 																		'Don\'t consider the first 10 characters while comparing lines and display only those lines that repeat consecutively in the file tutorial.txt on the command line.',
-																		'How to see only repeated lines from tutorial.txt? Ignore first 10 characters when comparing the lines.',
+																		'How to see only repeated lines from tutorial.txt? Ignore first 10 characters when comparing the lines?',
 																		'Single command to see only repeated lines from tutorial.txt while avoiding first 10 characters when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -d -w 10 tutorial.txt','NL Queries':['From tutorial.txt, only show lines that have multiple consecutive occurences. Consider only the first 10 characters of each line when comparing them.',
 																		'Consider first 10 characters while comparing lines and display only consecutive repeated lines from the file tutorial.txt on the command line.',
-																		'How to see lines with multiple consecutive occurences from tutorial.txt? Only consider first 10 characters when comparing the lines.',
+																		'How to see lines with multiple consecutive occurences from tutorial.txt? Only consider first 10 characters when comparing the lines?',
 																		'Single command to see only consecutive repeated lines from tutorial.txt while taking only first 10 characters into account when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -D -f 5 moons.txt','NL Queries':['Print only the lines that have multiple consecutive occurences in the file moons.txt as many times as they occur in the file. Ignore first 5 fields when comparing lines.',
 																	'Display only repeated lines from the file moons.txt as many times as they repeat irrespective of first 5 fields.',
-																	'How to filter out only repeated lines from the file moons.txt without considering first 5 fields when comparing lines? Print each line as many times as it occurs in the file.',
+																	'How to filter out only repeated lines from the file moons.txt without considering first 5 fields when comparing lines? Print each line as many times as it occurs in the file?',
 																	'Single command to see only repeated lines in the file moons.txt as many times as they occur in the file irrespective of first 5 fields.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -D -i scrolls.txt','NL Queries':['Print only the lines that have multiple consecutive occurences in the file scrolls.txt as many times as they occur in the file. Ignore case when comparing lines.',
@@ -140,12 +140,12 @@ uniq = uniq.append({'Command':'uniq -f 3 -i ananya.txt','NL Queries':['Show anan
 
 uniq = uniq.append({'Command':'uniq -s 8 -i tutorial.txt','NL Queries':['Show tutorial.txt without consecutive duplicate lines. Don\'t consider the first 8 characters of each line or the case when comparing them.',
 																		'Don\'t consider the first 8 characters as well as the case while comparing lines and display only unique lines from the file tutorial.txt on the command line.',
-																		'How to see unique lines from tutorial.txt? Ignore first 8 characters and the case when comparing the lines.',
+																		'How to see unique lines from tutorial.txt? Ignore first 8 characters and the case when comparing the lines?',
 																		'Single command to see only unique lines from tutorial.txt while avoiding first 8 characters as well as the case when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -w 8 -i tutorial.txt','NL Queries':['Show tutorial.txt without consecutive duplicate lines. Consider only the first 8 characters of each line and ignore case when comparing them.',
 																		'Consider first 8 characters and ignore the case while comparing lines and display only unique lines from the file tutorial.txt on the command line.',
-																		'How to see unique lines from tutorial.txt? Only consider first 8 characters irrespective of case when comparing the lines.',
+																		'How to see unique lines from tutorial.txt? Only consider first 8 characters irrespective of case when comparing the lines?',
 																		'Single command to see only unique lines from tutorial.txt while taking first 8 characters into account and ignoring the case when comparing lines.']},ignore_index=True)
 
 ####
@@ -160,12 +160,12 @@ uniq = uniq.append({'Command':'uniq -u -i course.txt','NL Queries':['In course.t
 
 uniq = uniq.append({'Command':'uniq -u -s 8 tutorial.txt','NL Queries':['From tutorial.txt, show only non-repeating lines. Don\'t consider the first 8 characters of each line when comparing them.',
 																		'Don\'t consider the first 8 characters while comparing lines and display only non-repeating lines from the file tutorial.txt on the command line.',
-																		'How to see non-repeating lines from tutorial.txt? Ignore first 8 characters when comparing the lines.',
+																		'How to see non-repeating lines from tutorial.txt? Ignore first 8 characters when comparing the lines?',
 																		'Single command to see only non-repeating lines from tutorial.txt while avoiding first 8 characters when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -u -w 8 tutorial.txt','NL Queries':['From tutorial.txt, show only non-repeating lines. Consider only the first 8 characters of each line when comparing them.',
 																		'Consider first 8 characters while comparing lines and display only non-repeating lines from the file tutorial.txt on the command line.',
-																		'How to see non-repeating lines from tutorial.txt? Only consider first 8 characters when comparing the lines.',
+																		'How to see non-repeating lines from tutorial.txt? Only consider first 8 characters when comparing the lines?',
 																		'Single command to see only non-repeating lines from tutorial.txt while taking first 8 characters into account when comparing lines.']},ignore_index=True)
 
 ####
@@ -176,7 +176,7 @@ uniq = uniq.append({'Command':'uniq -c -d -i myfile.txt','NL Queries':['Print on
 
 uniq = uniq.append({'Command':'uniq -c -d -f 5 tutorial.txt','NL Queries':['From tutorial.txt, only show lines that have multiple consecutive occurences. Don\'t consider the first 5 fields of each line when comparing them. Prefix each line with the number of times it consecutively repeats in the file.',
 																		'Don\'t consider the first 5 fields while comparing lines and display only consecutively repeating lines from the file tutorial.txt on the command line along with it\'s number of occurences.',
-																		'How to see repeating lines from tutorial.txt? Ignore first 5 fields when comparing the lines and print the number of times each line repeats consecutively in the file.',
+																		'How to see repeating lines from tutorial.txt? Ignore first 5 fields when comparing the lines and print the number of times each line repeats consecutively in the file?',
 																		'Single command to see only the lines from tutorial.txt that have multiple consecutive occurences while avoiding first 5 fields when comparing lines. The output should also include the number of times each line repeats consecutively in the file.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -c -d -s 8 tutorial.txt','NL Queries':['From tutorial.txt, only show lines that have multiple consecutive occurences. Don\'t consider the first 8 characters of each line when comparing them. Prefix each line with the number of times it consecutively repeats in the file.',
@@ -212,7 +212,7 @@ uniq = uniq.append({'Command':'uniq -d -f 2 -i sample.txt','NL Queries':['Print 
 
 uniq = uniq.append({'Command':'uniq -d -s 10 -i tutorial.txt','NL Queries':['Show tutorial.txt with lines that have multiple consecutive occurences. Don\'t consider the first 10 characters of each line or the case when comparing them.',
 																			'Don\'t consider the first 10 characters as well as the case while comparing lines and display only those lines that repeat consecutively in the file tutorial.txt on the command line.',
-																			'How to see only continuous repeated lines from tutorial.txt? Ignore first 10 characters and the case when comparing the lines.',
+																			'How to see only continuous repeated lines from tutorial.txt? Ignore first 10 characters and the case when comparing the lines?',
 																			'Single command to see only continuous repeated lines from tutorial.txt while avoiding first 10 characters and the case when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -d -w 10 -i tutorial.txt','NL Queries':['From tutorial.txt, only show lines that have multiple consecutive occurences. Consider only the first 10 characters of each line and ignore the case when comparing them.',
@@ -241,18 +241,18 @@ uniq = uniq.append({'Command':'uniq -u -f 3 -i summer.txt','NL Queries':['In sum
 
 uniq = uniq.append({'Command':'uniq -u -s 8 -i tutorial.txt','NL Queries':['From tutorial.txt, show only non-repeating lines. Don\'t consider the first 8 characters of each line or the case when comparing them.',
 																		'Don\'t consider the first 8 characters and the case while comparing lines and display only non-repeating lines from the file tutorial.txt on the command line.',
-																		'How to see non-repeating lines from tutorial.txt? Ignore first 8 characters as well as the case when comparing the lines.',
+																		'How to see non-repeating lines from tutorial.txt? Ignore first 8 characters as well as the case when comparing the lines?0',
 																		'Single command to see only non-repeating lines from tutorial.txt while avoiding first 8 characters and the case when comparing lines.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -u -w 8 -i tutorial.txt','NL Queries':['From tutorial.txt, show only non-repeating lines. Consider only the first 8 characters of each line and ignore the case when comparing them.',
 																		'Consider first 8 characters while comparing lines, ignore the case and display only non-repeating lines from the file tutorial.txt on the command line.',
-																		'How to see non-repeating lines from tutorial.txt? Only consider first 8 characters and ignore the case when comparing the lines.',
+																		'How to see non-repeating lines from tutorial.txt? Only consider first 8 characters and ignore the case when comparing the lines?',
 																		'Single command to see only non-repeating lines from tutorial.txt while taking first 8 characters into account and ignoring case when comparing lines.']},ignore_index=True)
 
 ###
 uniq = uniq.append({'Command':'uniq -c -d -f 5 -i tutorial.txt','NL Queries':['From tutorial.txt, only show lines that have multiple consecutive occurences. Don\'t consider the first 5 fields of each line or the case when comparing them. Prefix each line with the number of times it consecutively repeats in the file.',
 																			'Don\'t consider the first 5 fields and the case while comparing lines and display only consecutively repeating lines from the file tutorial.txt on the command line along with it\'s number of occurences.',
-																			'How to see repeating lines from tutorial.txt? Ignore first 5 fields or the case when comparing the lines and print the number of times each line repeats consecutively in the file.',
+																			'How to see repeating lines from tutorial.txt? Ignore first 5 fields or the case when comparing the lines and print the number of times each line repeats consecutively in the file?',
 																			'Single command to see only the lines from tutorial.txt that have multiple consecutive occurences while avoiding first 5 fields or the case when comparing lines. The output should also include the number of times each line repeats consecutively in the file.']},ignore_index=True)
 
 uniq = uniq.append({'Command':'uniq -c -d -s 8 -i tutorial.txt','NL Queries':['From tutorial.txt, only show lines that have multiple consecutive occurences. Don\'t consider the first 8 characters of each line or the case when comparing them. Prefix each line with the number of times it consecutively repeats in the file.',
@@ -265,4 +265,5 @@ uniq = uniq.append({'Command':'uniq -c -d -w 8 -i tutorial.txt','NL Queries':['S
 																			'How to see lines from tutorial.txt that have multiple consecutive occurences? Only consider first 8 characters and ignore the case when comparing the lines and print the number of times each line repeats consecutively in the file.',
 																			'Single command to see only consecutively repeating lines from tutorial.txt while taking first 8 characters into account and ignoring the case when comparing lines. Prefix each line with the number of times it consecutively repeats in the file.']},ignore_index=True)
 
-print uniq
+#uniq.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/uniq.csv',index=False)
+print uniq.shape
