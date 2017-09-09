@@ -2,23 +2,24 @@ import pandas as pd
 
 tar = pd.DataFrame(columns = ['Command','NL Queries'])
 
-tar = tar.append({'Command':'tar cvzf MyImages-14-09-12.tar.gz /home/MyImages','NL Queries':['Create a new tar archive for /home/MyImages folder in current directory. It\'s name should be MyImages-14-09-12.tar.gz. Display the progress of files.']},ignore_index = True)
-tar = tar.append({'Command':'tar -xvf compressed.tar','NL Queries':['Untar compressed.tar in current directory. Show the files in the tar archive.']},ignore_index=True)
-tar = tar.append({'Command':'tar -xvf Phpfiles-org.tar --wildcards \'*.php\'','NL Queries':['Extract all .php files from Phpfiles-org.tar in the current folder.','How do I extract the files ending with .php from Phpfiles-org.tar']},ignore_index = True)
+tar = tar.append({'Command':'tar cvzf MyImages-14-09-12.tar.gz /home/MyImages','NL Queries':['Create a new archive for /home/MyImages folder in current directory. It\'s name should be MyImages-14-09-12.tar.gz. Display the progress of files.']},ignore_index = True)
+tar = tar.append({'Command':'tar -xvf compressed.tar','NL Queries':['Untar compressed.tar in current directory. Show the files in the archive.']},ignore_index=True)
+tar = tar.append({'Command':'tar -xvf Phpfiles-org.tar --wildcards \'*.php\'','NL Queries':['Extract all .php files from Phpfiles-org.tar in the current folder.',
+                                                                                 'How do I extract the files ending with .php from Phpfiles-org.tar?']},ignore_index = True)
 
 
 #1
 tar = tar.append({'Command': 'tar -cf test.tar test_folder',
                   'NL Queries': ['Create archive of test_folder directory with name test.tar .',
                                  'Make archive of the test_folder named test.tar .',
-                                 'Make tar archive of the test_folder and name it as test.tar .',
+                                 'Make archive of the test_folder and name it as test.tar .',
                                  'Create test.tar as an archive of test_folder folder.']}, ignore_index = True)
 
 #2
 tar = tar.append({'Command': 'tar -cvf test.tar test_folder',
                   'NL Queries': ['Create archive of test_folder directory with name test.tar and display the details.',
-                                 'Create tar archive of test_folder folder with name test.tar and show the files added.',
-                                 'Make tar of the test_folder with name test.tar displaying the files added.',
+                                 'Create archive of test_folder folder with name test.tar and show the files added.',
+                                 'Make of the test_folder with name test.tar displaying the files added.',
                                  'Archive the folder test_folder with name test.tar and show the details of operations performed.']}, ignore_index = True)
 
 #3
@@ -40,14 +41,14 @@ tar = tar.append({'Command': 'tar -cjf test.tar.bz2 test_folder',
                   'NL Queries': ['Create compressed archive of test_folder directory in bzip2 format and name it test.tar.bz2 .',
                                  'Make bzip2 compressed archive of test_folder and save it as test.tar.bz2 .',
                                  'Make the bz2 archive of test_folder directory and store it as test.tar.bz2 .',
-                                 'Use Burrows-Wheeler algorithm to compress the tar archive of test_folder and name it as tes.tar.bz2 .']}, ignore_index = True)
+                                 'Use Burrows-Wheeler algorithm to compress the archive of test_folder and name it as tes.tar.bz2 .']}, ignore_index = True)
 
 #6
 tar = tar.append({'Command': 'tar -cvjf test.tar.bz2 test_folder',
                   'NL Queries': ['Create compressed archive of test_folder directory in bzip2 format and name it test.tar.bz2 and show the details.',
                                  'Make bzip2 compressed archive of test_folder and save it as test.tar.bz2 and display the progress of process.',
                                  'Make the bz2 archive of test_folder directory and store it as test.tar.bz2 and show the process details.',
-                                 'Use Burrows-Wheeler algorithm to compress the tar archive of test_folder and name it as tes.tar.bz2 and show the files added to archive.']}, ignore_index = True)
+                                 'Use Burrows-Wheeler algorithm to compress the archive of test_folder and name it as tes.tar.bz2 and show the files added to archive.']}, ignore_index = True)
 
 #7
 tar = tar.append({'Command': 'tar -xf document.tar \"doc1.txt\"',
@@ -317,62 +318,62 @@ tar = tar.append({'Command': 'tar --no-xattrs -cf last.tar text.txt',
 #51
 tar = tar.append({'Command': 'tar --xattrs -czf last.tar.gz text.txt',
                   'NL Queries': ['Create gzip archive, with extended attribute support, last.tar with text.txt in it.',
-                                 'Tar the text.txt file inside last.tar.gz gzip archive with extended attribute support.',
+                                 'Archive the text.txt file inside last.tar.gz gzip archive with extended attribute support.',
                                  'Archive text.txt in new gzip archive last.tar.gz with extended attribute support.']}, ignore_index = True)
 
 #52
 tar = tar.append({'Command': 'tar --no-xattrs -czf last.tar.gz text.txt',
                   'NL Queries': ['Create gzip archive, without extended attribute support, last.tar with text.txt in it.',
-                                 'Tar the text.txt file inside last.tar.gz gzip archive without extended attribute support.',
+                                 'Archive the text.txt file inside last.tar.gz gzip archive without extended attribute support.',
                                  'Archive text.txt in new gzip archive last.tar.gz without extended attribute support.']}, ignore_index = True)
 
 #53
 tar = tar.append({'Command': 'tar --xattrs -cjf last.tar.bz2 text.txt',
                   'NL Queries': ['Create bzip2 archive, with extended attribute support, last.tar with text.txt in it.',
-                                 'Tar the text.txt file inside last.tar.bz2 bzip2 archive with extended attribute support.',
-                                 'Archive text.txt in new bzip2 archive last.tar.bz2 with extended attribute support.']}, ignore_index = True)
+                                 'Archive the text.txt file inside last.tar.bz2 bzip2 archive with extended attribute support.',
+                                 'Put text.txt in new bzip2 archive last.tar.bz2 with extended attribute support.']}, ignore_index = True)
 
 #54
 tar = tar.append({'Command': 'tar --no-xattrs -cjf last.tar.bz2 text.txt',
                   'NL Queries': ['Create bxip2 archive, without extended attribute support, last.tar with text.txt in it.',
-                                 'Tar the text.txt file inside last.tar.bz2 bzip2 archive without extended attribute support.',
-                                 'Archive text.txt in new bzip2 archive last.tar.bz2 without extended attribute support.']}, ignore_index = True)
+                                 'Archive the text.txt file inside last.tar.bz2 bzip2 archive without extended attribute support.',
+                                 'Put text.txt in new bzip2 archive last.tar.bz2 without extended attribute support.']}, ignore_index = True)
 
 #55
 tar = tar.append({'Command': 'tar --selinux -cf suits.tar harvey.txt',
                   'NL Queries': ['Create an archive named suits.tar of harvey.txt with SELinux support.',
                                  'Archive harvey.txt with name suits.tar and selinux support.',
-                                 'Tar harvey.txt in new archive, suits.tar with sel enabled.']}, ignore_index = True)
+                                 'Put harvey.txt in new archive, suits.tar with sel enabled.']}, ignore_index = True)
 
 #56
 tar = tar.append({'Command': 'tar --no-selinux -cf suits.tar harvey.txt',
                   'NL Queries': ['Create an archive named suits.tar of harvey.txt without SELinux support.',
                                  'Archive harvey.txt with name suits.tar and selinux support disabled.',
-                                 'Tar harvey.txt in new archive, suits.tar without sel.']}, ignore_index = True)
+                                 'Put harvey.txt in new archive, suits.tar without sel.']}, ignore_index = True)
 
 #57
 tar = tar.append({'Command': 'tar --selinux -cjf last.tar.bz2 text.txt',
                   'NL Queries': ['Create bzip2 archive, with extended selinux support, last.tar with text.txt in it.',
                                  'Create bz2 archive text.txt with name last.tar.bz2 and selinux support.',
-                                 'Tar text.txt in new bzip2 archive, last.tar with sel enabled.']}, ignore_index = True)
+                                 'Put text.txt in new bzip2 archive, last.tar with sel enabled.']}, ignore_index = True)
 
 #58
 tar = tar.append({'Command': 'tar --no-selinux -cjf last.tar.bz2 text.txt',
                   'NL Queries': ['Create bxip2 archive, without selinux support, last.tar with text.txt in it.',
                                  'Create bz2 archive text.txt with name last.tar.bz2 and selinux support disabled.',
-                                 'Tar text.txt in new bzip2 archive, last.tar without sel.']}, ignore_index = True)
+                                 'Put text.txt in new bzip2 archive, last.tar without sel.']}, ignore_index = True)
 
 #59
 tar = tar.append({'Command': 'tar --selinux -czf suits.tar.gz harvey.txt',
                   'NL Queries': ['Create a gzip archive named suits.tar.gz of harvey.txt with SELinux support.',
                                  'gzip archive harvey.txt with name suits.tar.gz and selinux support.',
-                                 'Tar harvey.txt in new gz archive, suits.tar.gz with sel enabled.']}, ignore_index = True)
+                                 'Put harvey.txt in new gz archive, suits.tar.gz with sel enabled.']}, ignore_index = True)
 
 #60
 tar = tar.append({'Command': 'tar --no-selinux -czf suits.tar.gz harvey.txt',
                   'NL Queries': ['Create a gzip archive named suits.tar.gz of harvey.txt without SELinux support.',
                                  'gzip archive harvey.txt with name suits.tar.gz and selinux support removed.',
-                                 'Tar harvey.txt in new gz archive, suits.tar.gz without sel.']}, ignore_index = True)
+                                 'Put harvey.txt in new gz archive, suits.tar.gz without sel.']}, ignore_index = True)
 
 #61
 tar = tar.append({'Command': 'tar --no-recursion -cwf anime.tar Manga/',
@@ -495,4 +496,4 @@ tar = tar.append({'Command': 'tar --version',
                                  'Display authors of tar command.',
                                  'Display authors and version of tar command.']}, ignore_index = True)
 
-print tar
+print tar.shape
