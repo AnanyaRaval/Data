@@ -125,7 +125,7 @@ cp = cp.append({'Command':'cp -P file_6.txt ./movie','NL Queries':['How do I cop
 
 cp = cp.append({'Command':'cp -L file_6.txt ./movie','NL Queries':['How do I get the original source file file_6.txt from symbolic link in ./movie?',
 																	'Command to get the source file file_6.txt from symbolic link in ./movie.',
-																	'']},ignore_index=True)
+																	'From symbolic link in ./movie, get the source file file_6.txt.']},ignore_index=True)
 
 cp = cp.append({'Command':'cp -a directory_1/ /home/pungki/office','NL Queries':['How do I copy all files including symbolic links in directory_1 to absolute path /home/pungki/office?',
 																				'Copy files and folders including symbolic links in directory_1 to office folder in /home/pungki.',
