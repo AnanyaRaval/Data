@@ -24,9 +24,9 @@ echo = echo.append({'Command':'echo *','NL Queries':['Print all file names in cu
 													'List all files in this folder.']},ignore_index = True)
 
 
-echo = echo.append({'Command':'echo -n \'This is echo command\'','NL Queries':['Print string \'This is echo command\' without a trailing newline.',
-																				'How do I print \'This is echo command\' without a new line at the end of the command output.',
-																				'Display string \'This is echo command\' on command line without a newline inserted at the end of the output.']},ignore_index = True)
+echo = echo.append({'Command':'echo -n \'Hello World\'','NL Queries':['Print string \'Hello World\' without a trailing newline.',
+																				'How do I print \'Hello World\' without a new line at the end of the command output.',
+																				'Display string \'Hello World\' on command line without a newline inserted at the end of the output.']},ignore_index = True)
 
 echo = echo.append({'Command':'echo -n -e \'A \v B\'','NL Queries':['Enable interpretation of backslash escape sequences and print \'A \v B\'. Do not insert newline after the output.' ,
 																'How do I enable interpretation of backslash escape sequences and print tab separated \'A \v B\' without a newline at the end of the command?',
@@ -36,4 +36,5 @@ echo = echo.append({'Command':'echo -E \'Firstname \\ Lastname\'','NL Queries':[
 																			'How do I disable interpretation of backslash escape sequences and print \'Firstname \\ Lastname\' without a newline at the end of the command??',
 																			'Print \'Firstname \\ Lastname\' after disabling interpretation of backslash escape sequences. Do not add new line at the end of output.']},ignore_index =  True)
 
+#echo.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/echo.csv',index=False)
 print echo.shape
