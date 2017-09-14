@@ -53,12 +53,12 @@ getfacl = getfacl.append({'Command':'getfacl -t instructions.txt.','NL Queries':
 					'Display all ownership related information about the file instructions.txt present in the current directory in a table.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -v','NL Queries':['Show the version of getfacl',
-									'What is the version of getfacl',
+									'What is the version of getfacl?',
 									'Display the version of getfacl and return to the command line prompt',
 									'Print the version in the command line of getfacl and exit.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -h','NL Queries':['Show help for getfacl.',
-					'What are the various flags available with getfacl command',
+					'What are the various flags available with getfacl command?',
 					'Display all the flags available for getfacl and their uses',
 					'Print help for getfacl, explaining the options.']},ignore_index=True)
 
@@ -80,7 +80,7 @@ getfacl = getfacl.append({'Command':'getfacl problems solutions.','NL Queries':[
 getfacl = getfacl.append({'Command':'getfacl -ac news.txt','NL Queries':['Display access control list for file news.txt, omitting the headers.', 
 						'How do I see the access control list of news.txt, without the comment headers?',
 						'Show the permissions,named user,named group,effective rights mask of the file news.txt. Don\'t show the headers about filename, user name and group name .',
-						'What are the base Acl entries,named user and group entries and rights mask of news.txt ?.Don\'t display the first 3 lines of the output.']},ignore_index=True)
+						'What are the base Acl entries,named user and group entries and rights mask of news.txt ?.Don\'t display the first 3 lines of the output?']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -an dir1','NL Queries':['Display access control list for the directory dir1 .Show numeric user and group IDs', 
 						'How do I see the access control list of dir1 with numeric user and group IDs?',
@@ -104,7 +104,7 @@ getfacl = getfacl.append({'Command':'getfacl -aE instructions.txt.','NL Queries'
 				'Display all ownership related information about the file instructions.txt present in the current directory without effective rights permissions.']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -as a.txt b.txt','NL Queries':['Display access control list for files a.txt and b.txt only if the file has other than base entries.',
-						 'How do I see the access control list of a.txt and b.txt? Show the details for each file if it has other than the base acl entries.']},ignore_index=True)
+						 'How do I see the access control list of a.txt and b.txt? Show the details for each file if it has other than the base acl entries?']},ignore_index=True)
 
 getfacl = getfacl.append({'Command':'getfacl -aR dir3','NL Queries':['Display access control list for directory dir3 recursively.', 
 						'How do I see the access control list of all files and folders in dir3 directory rec?',
@@ -202,6 +202,7 @@ getfacl = getfacl.append({'Command':'getfacl -sR myfile','NL Queries':['Display 
 			'Display the filename, permissions, acl of all files and folders in myfile directory, recursively, if it has other than the base ACL entries.',
 			'Skip showing the details about any file or folder in myfile if it has only the base ACL entries. Else recursively show the details for all files.']},ignore_index=True)
 
+#getfacl.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/getfacl.csv',index=False)
 print getfacl.shape
 
 #getfacl = getfacl.append({'Command':'getfacl','NL Queries':['','','','']},ignore_index=True)
