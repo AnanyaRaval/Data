@@ -244,7 +244,7 @@ mv = mv.append({'Command':         'mv -fv --backup naruto.txt anime/',
 mv = mv.append({'Command':         'mv -Z --strip-trailing-slashes undo//// redo/',
                 'NL Queries':      ['Move undo//// to redo directory after stripping trailing slashes from source and set SElinux security context to default.',
                                     'Shift undo//// into redo/ directory after the trailing slashes have been stripped and change the SELinux security to default.',
-                                    'Change the location of undo//// to redo/undo//// after removing trailing slashes from source name. Set Security Enhanced Linux context to default.']}, ignore_index = True)
+                                    'Change the location of undo//// to redo/ after removing trailing slashes from source name. Set Security Enhanced Linux context to default.']}, ignore_index = True)
 
 #38
 mv = mv.append({'Command':         'mv -iZ --backup=existing bleach.txt anime/',
@@ -492,7 +492,7 @@ mv = mv.append({'Command':         'mv -n --strip-trailing-slashes undo/// redo/
 
 
 
-
+#mv.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/mv.csv',index=False)
 print mv.shape
 
 
