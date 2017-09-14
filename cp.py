@@ -92,7 +92,7 @@ cp = cp.append({'Command':'cp file* /directory/subdirectory','NL Queries':['Copy
 
 cp = cp.append({'Command':'cp -s file.txt file2.txt','NL Queries':['Create symbolic link file2.txt to point to file1.txt.',
 																	'How to create symbolic link for file1.txt with the name file1.txt?',
-																	'Create symbolic link file2.txt for file1.txt with cp command.']},ignore_index=True)
+																	'Create symbolic link file2.txt for file1.txt.']},ignore_index=True)
 
 cp = cp.append({'Command':'cp -s ~/myfiles/file*.txt ~/myfiles2','NL Queries':['Create a symbolic link of multiple files starting with \'file\' in ~/myfiles directory as ~/myfiles2.',
 																			'How to create symbolic links for multiple files starting with \'file\' in ~/myfiles folder as ~/myfiles2?',
