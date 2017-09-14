@@ -8,7 +8,7 @@ ls = ls.append({'Command':'ls','NL Queries':['List all files in current director
 											'Name all contents of my working directory.']},ignore_index = True)
 
 ls = ls.append({'Command':'ls / ','NL Queries': ['Contents of root directory.',
-												'What are the names of files/folders in my root directory.']},ignore_index = True)
+												'What are the names of files/folders in my root directory?']},ignore_index = True)
 
 ls = ls.append({'Command':'ls ..','NL Queries':['Stuff in one directory before current one.',
 												'Files and folders present in parent directory.']},ignore_index = True)
@@ -815,6 +815,6 @@ ls = ls.append({'Command':'ls -lt -u -r ..','NL Queries':['Show a detailed list 
 
 ls = ls.append({'Command':'ls -lt -c -r ..','NL Queries':['Show a detailed list of files and folders in the parent directory and sort them by time of last modification of file status, oldest first.','List files and folders of the parent directory with their details, including the time of last modification of file status. Also, sort them by this time, oldest first.','Show and sort a detailed list of files and folders in the previous directory by their time of last modification of file status, oldest first.','Single command to see a detailed list of files and folders of the preceding folder sorted from the oldest modified file to the most recently modified file.']},ignore_index = True)
 '''
-#ls.to_csv('ls.csv',index = False)
+#ls.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/ls.csv',index = False)
 
 print ls.shape
