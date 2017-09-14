@@ -191,9 +191,9 @@ mkdir = mkdir.append({'Command': 'mkdir foo bar baz',
 mkdir = mkdir.append({'Command': 'mkdir -p tmpdir/{trunk/{includes,docs},branches,tags}',
 					'NL Queries':['Make folders trunk, branches, tags under tmpdir and folders includes, docs under trunk. Ignore if already exists.',
 								'How to make folders trunk, branches, tags under tmpdir and folders includes, docs under trunk? Ignore if already exists.',
-								'Create folders trunk, branches, tags under tmpdir and folders includes, docs under trunk. Ignore if already exists.',
+								'Create folders trunk, branches, tags under tmpdir and folders includes, docs under trunk. Ignore if already exists?',
 								'Make directories trunk, branches, tags under tmpdir and directories includes, docs under trunk. Ignore if already exists.',
-								'How to make directories trunk, branches, tags under tmpdir and directories includes, docs under trunk? Ignore if already exists.',
+								'How to make directories trunk, branches, tags under tmpdir and directories includes, docs under trunk? Ignore if already exists?',
 								'Create directories trunk, branches, tags under tmpdir and directories includes, docs under trunk. Ignore if already exists.',]},ignore_index = True)
 
 mkdir = mkdir.append({'Command': 'mkdir -p myfolder/main/ananya',
@@ -316,7 +316,7 @@ mkdir = mkdir.append({'Command': 'mkdir -pZ myfolder/main/ananya',
 								'Make folder ananya and it\'s parent directories(myfolder/main) if they do not exist with security context set to default.',
 								'Make directory named ananya and create parent folders(myfolder/main), if they are not present. Set security context as default type.',
 								'Create directory ananya and it\'s parent directories(myfolder/main) with security context set to default type.',
-								'How do I create a new directory ananya and it\'s parent directories(myfolder/main) and set security context to default type?',]},ignore_index = True)
+								'How do I create a new directory ananya and it\'s parent directories(myfolder/main) and set security context to default type?']},ignore_index = True)
 
 mkdir = mkdir.append({'Command': 'mkdir -m 777 -vZ mydir',
 					'NL Queries':['Create the mydir directory with a log and set its permissions such that all users may read, write and execute the contents. Set security context as default type. Show log of what is being created.',
@@ -332,7 +332,7 @@ mkdir = mkdir.append({'Command': 'mkdir -m 777 -pZ myfolder/main/ananya',
 								'How do I create a directory called ananya, it\'s parent directories(myfolder/main) if not present and set it\'s permissions so that all users can read, execute and write to it with security context set to default type?',
 								'Create the ananya folder and it\'s parent if they do not exist. Set permissions of ananya such that all users may read, write and execute the contents and make security context set to default.',
 								'Make folder with name ananya and it\'s parent folders(myfolder/main) if absent. Set permissions:read,write and execute for all users. Set security context as default type.',
-								'How do I create a folder called ananya, it\'s parent folders namely myfolder and main, if not present and set it\'s permissions so that all users can read, execute and write to it? Set security context as default type.']},ignore_index = True)
+								'How do I create a folder called ananya, it\'s parent folders namely myfolder and main, if not present and set it\'s permissions so that all users can read, execute and write to it? Set security context as default type?']},ignore_index = True)
 
 mkdir = mkdir.append({'Command': 'mkdir -pvZ myfolder/main/ananya',
 					'NL Queries':['Make folder named ananya and create parent folders(myfolder/main) if do not exist. Show log of what is being created. Set security context as default type.',
@@ -359,5 +359,5 @@ mkdir = mkdir.append({'Command': 'mkdir -m 777 -vpZ myfolder/main/ananya',
 								'Create directory named ananya with security context set to default type and it\'s parent directories(myfolder/main) if do not exist, with list of what folders being created. Make ananya folder readable,writeable and executable for all users.']},ignore_index = True)
 
 
-
+#mkdir.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/mkdir.csv',index=False)
 print (mkdir.shape)
