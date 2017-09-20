@@ -17,6 +17,8 @@ history = history.append({'Command':'history 5','NL Queries':['Show the lasst 5 
 history = history.append({'Command':'history -a','NL Queries':['Write the current commands executed to history file.',
 																'Command to write the new linux commands to history file.',
 																'How do I immediately write the new commands executed in command line to the history file?']},ignore_index=True)
+
+#history.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/history.csv',index=False)
 print history.shape
 
 

@@ -69,6 +69,60 @@ head = head.append({'Command':'head -q instructions.txt','NL Queries':['Print fi
 																		'Show the starting lines of the file instructions.txt without header.',
 																		'How do I see the first few lines of the file instructions.txt in command line without header?']},ignore_index=True)
 
+
+head = head.append({'Command':'head -q instructions.txt lol.txt > file.txt','NL Queries':['Overwrite file.txt with first few lines of the file instructions.txt and lol.txt without header.',
+																				'Overwrite file.txt with the starting lines of the file instructions.txt and lol.txt without header.',
+																				'How do I overwrite file.txt with first few lines of the file instructions.txt and lol.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q instructions.txt lol.txt >> file.txt','NL Queries':['Append file.txt with first few lines of the file instructions.txt and lol.txt without header.',
+																				'Append file.txt with starting lines of the file instructions.txt and lol.txt without header.',
+																				'How do I append file.txt with first few lines of the file instructions.txt and lol.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q instructions.txt > file.txt','NL Queries':['Overwrite file.txt with first few lines of the file instructions.txt without header.',
+																		'Overwrite file.txt with the starting lines of the file instructions.txt without header.',
+																		'How do I overwrite file.txt with the first few lines of the file instructions.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q instructions.txt >> file.txt','NL Queries':['Append with first few lines of the file instructions.txt without header.',
+																		'Append file.txt with the starting lines of the file instructions.txt without header.',
+																		'How do I append file.txt with the first few lines of the file instructions.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -v *.txt > file.txt','NL Queries':['Overwrite file.txt with first few lines of all .txt files with header before contents of each file.',
+															'Overwrite file.txt with the starting lines of all .txt files with header before contents of each file.',
+															'How do I overwrite file.txt with the first few lines of .txt all files with header before contents of each file in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -v *.txt >> file.txt','NL Queries':['Append file.txt with first few lines of all .txt files with header before contents of each file.',
+															'Append file.txt with the starting lines of all .txt files with header before contents of each file.',
+															'How do I append file.txt with the first few lines of .txt all files with header before contents of each file in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -q -v *.txt > file.txt','NL Queries':['Overwrite file.txt with first few lines of all .txt files without header before contents of each file.',
+															'Overwrite file.txt with the starting lines of all .txt files without header before contents of each file.',
+															'How do I overwrite file.txt with the first few lines of .txt all files without header before contents of each file in command line?']},ignore_index=True)
+
+head = head.append({'Command':'head -q -v *.txt >> file.txt','NL Queries':['Append file.txt with first few lines of all .txt files with header before contents of each file.',
+															'Append file.txt with the starting lines of all .txt files with header before contents of each file.',
+															'How do I append file.txt with the first few lines of .txt all files with header before contents of each file in command line?']},ignore_index=True)
+
+
+
+
+head = head.append({'Command':'head -q -c 80k instructions.txt > file.txt','NL Queries':['Overwrite file.txt with first 80 x 1024 characters of the file instructions.txt without header.',
+																			'Overwrite file.txt with the starting 80 x 1024 characters of the file instructions.txt without header.',
+																			'How do I overwrite file.txt with the first 80 x 1024 characters of the file instructions.txt in command line without header?']},ignore_index=True)
+
+head = head.append({'Command':'head -q -c 80k instructions.txt >> file.txt','NL Queries':['Append file.txt with first 80 x 1024 characters of the file instructions.txt without header.',
+																			'Append file.txt with the starting 80 x 1024 characters of the file instructions.txt without header.',
+																			'How do I append file.txt with the first 80 x 1024 characters of the file instructions.txt in command line without header?']},ignore_index=True)
+
+
+
+head = head.append({'Command':'head -q -n 2 lol.txt > file.txt','NL Queries':['Overwrite file.txt with first 2 lines of the file lol.txt without header.',
+																	'Overwrite file.txt with the first two lines of lol.txt without header.',
+																	'Command to overwrite file.txt with first two lines of lol.txt without header.']},ignore_index=True)
+
+head = head.append({'Command':'head -q -n 2 lol.txt >> file.txt','NL Queries':['Append file.txt with first 2 lines of the file lol.txt without header.',
+																	'Append file.txt with the first two lines of lol.txt without header.',
+																	'Command to append file.txt with first two lines of lol.txt without header.']},ignore_index=True)
+
 head = head.append({'Command':'head -v *.txt','NL Queries':['Print first few lines of all .txt files with header before contents of each file.',
 															'Show the starting lines of all .txt files with header before contents of each file.',
 															'How do I see the first few lines of .txt all files with header before contents of each file in command line?']},ignore_index=True)
