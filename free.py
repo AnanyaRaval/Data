@@ -769,7 +769,7 @@ free = free.append({'Command':'free -l -s 1 -h --si','NL Queries':['Display usag
 'Get statistics of available memory including low and high memory details every 1 second in human readable format. Use powers of 1000 not 1024.',
 'Display free RAM memory every 1 second in human readable format. Results should inlcude detailed low and high memory statistics. Divide by 1000 not 1024.']},ignore_index=True)
 
-free = free.append({'Command':'free -l -c 5 -h --si','NL Queries':['Display usage of RAM every 1 second for 5 seconds in human readable format. Show detailed low and high memory statistics. Use powers of 1000 not 1024.',
+free = free.append({'Command':'free -l -c 5 -h --si','NL Queries':['Display usage of eRAM every 1 second for 5 seconds in human readable format. Show detailed low and high memory statistics. Use powers of 1000 not 1024.',
 'How do I check the usage of my RAM every second including low and high memory statistics for 5 seconds in human readable format? Divide by 1000 not 1024.',
 'Get statistics of available memory including low and high memory details for the next 5 seconds in human readable format. Use powers of 1000 not 1024.',
 'Display free RAM memory for the next 5 seconds in human readable format. Also include low and high memory statistics. Divide by 1000 not 1024.']},ignore_index=True)
