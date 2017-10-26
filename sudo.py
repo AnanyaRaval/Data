@@ -18,7 +18,7 @@ sudo = sudo.append({'Command':'sudo -k',
 sudo = sudo.append({'Command':'sudo -V',
 					'NL Queries':['Display sudo version information and exit.',
 								'How do I know version of sudo?',
-								'How do i know version information of sudo?']},ignore_index=True)
+								'How do I know version information of sudo?']},ignore_index=True)
 
 sudo = sudo.append({'Command':'sudo -K',
 					'NL Queries':['Remove timestamp of current user completely.',
@@ -28,7 +28,7 @@ sudo = sudo.append({'Command':'sudo -K',
 sudo = sudo.append({'Command':'sudo -h',
 					'NL Queries':['Show help of sudo command.',
 								'How do see the help of sudo command?',
-								'How do i get the various options of sudo command?',
+								'How do I get the various options of sudo command?',
 								'Display various options of sudo command?']},ignore_index=True)
 
 sudo = sudo.append({'Command':'sudo -v',
