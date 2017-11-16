@@ -40,6 +40,6 @@ sudo = sudo.append({'Command':'sudo -b rm file.txt',
 								'How do I remove file.txt in background?']},ignore_index=True)
 
 
-print sudo
+print sudo.shape
 
 
