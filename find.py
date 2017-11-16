@@ -2,9 +2,13 @@ import pandas as pd
 
 find = pd.DataFrame(columns = ['Command','NL Queries'])
 
-find = find.append({'Command':'find . -name tecmint.txt','NL Queries':['Find all the files whose name is tecmint.txt in a current working directory.','How do I list all files named techmint.txt in this folder?']},ignore_index = True)
-find = find.append({'Command':'find /home -iname tecmint.txt','NL Queries':['Find all the files whose name is tecmint.txt and contains both capital and small letters in /home directory.','List all techmint.txt irrespective of their case in /home folder.']},ignore_index=True)
-find = find.append({'Command':'find /home/Documents -type d -name Data','NL Queries':['Find all directories whose name is Data in /home/Documents directory.','How do I list all folders named Data in /home/Documents?']},ignore_index=True)
+find = find.append({'Command':'find . -name tecmint.txt','NL Queries':['Find all the files whose name is tecmint.txt in a current working directory.',
+                                                                        'How do I list all files named techmint.txt in this folder?']},ignore_index = True)
+
+find = find.append({'Command':'find /home -iname tecmint.txt','NL Queries':['Find all the files whose name is tecmint.txt and contains both capital and small letters in /home directory.',
+                                                                            'List all techmint.txt irrespective of their case in /home folder.']},ignore_index=True)
+find = find.append({'Command':'find /home/Documents -type d -name Data','NL Queries':['Find all directories whose name is Data in /home/Documents directory.',
+                                                                                        'How do I list all folders named Data in /home/Documents?']},ignore_index=True)
 
 
 #1
@@ -1059,7 +1063,7 @@ find = find.append({'Command':      'find . -perm 0765 -size 10k',
 
 #175
 find = find.append({'Command':      'find . -perm 0777 -empty',
-                    'Command':      ['Search for all the files having permission 777 and is empty.',
+                    'NL Queries':      ['Search for all the files having permission 777 and is empty.',
                                      'How to search for empty files with permission 777 in pwd?',
                                      'List all the files with 777 permission bits and present inside current workplace.']}, ignore_index = True)
 
@@ -1308,4 +1312,6 @@ find = find.append({'Command':      'find --version',
                     'NL Queries':   ['Show version number of find command.',
                                      'Show authors of find command.',
                                      'Which version of find am I using?']}, ignore_index = True)
-print find
+
+#find.to_csv('/home/ananyaraval/Documents/Thesis/Data/UNIX/csv_files/find.csv',index=False)
+print find.shape
