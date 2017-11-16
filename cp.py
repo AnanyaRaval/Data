@@ -468,4 +468,4 @@ cp = cp.append({'Command':'cp --version','NL Queries':['How do I get to know the
 #					'How do I copy src folder to the folder present in /home/usr/rapid/?']},ignore_index=True)
 
 
-print cp
+print cp.shape
