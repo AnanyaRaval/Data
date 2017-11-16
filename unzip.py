@@ -311,6 +311,6 @@ unzip = unzip.append({'Command':'unzip -o letters.zip -x file1',
 
 
 
-print unzip
+print unzip.shape
 
 
